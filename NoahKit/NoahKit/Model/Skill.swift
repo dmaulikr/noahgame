@@ -14,5 +14,14 @@ class Skill: NSObject {
 //    private string name;
 //    private int level, reload, duration, currentReload, currentDuration;
 //    private int cost;
+    
+    var name : String!
+    var character : Character!
 
+    init(name: String!) {
+        self.name = name
+    }
+    
+    func activate(target: Attackable?) { }
+    
 }

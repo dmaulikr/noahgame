@@ -10,10 +10,20 @@
 		01886ABC1C82E9F100D3CAA5 /* NoahKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 01886ABB1C82E9F100D3CAA5 /* NoahKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		01886AC31C82E9F100D3CAA5 /* NoahKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01886AB81C82E9F100D3CAA5 /* NoahKit.framework */; };
 		01886AC81C82E9F100D3CAA5 /* NoahKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01886AC71C82E9F100D3CAA5 /* NoahKitTests.swift */; };
-		01886AD91C82EC0C00D3CAA5 /* KnightTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01886AD81C82EC0C00D3CAA5 /* KnightTests.swift */; };
 		01886B3A1C83BFAB00D3CAA5 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01886B391C83BFAB00D3CAA5 /* Character.swift */; };
 		01886B3E1C83C05E00D3CAA5 /* Skill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01886B3D1C83C05E00D3CAA5 /* Skill.swift */; };
 		01886B401C83C0DC00D3CAA5 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01886B3F1C83C0DC00D3CAA5 /* Item.swift */; };
+		01886B441C83C69700D3CAA5 /* SkillManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01886B431C83C69700D3CAA5 /* SkillManager.swift */; };
+		01886B481C83D44200D3CAA5 /* CharacterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01886B471C83D44200D3CAA5 /* CharacterTests.swift */; };
+		01886B4A1C83D62100D3CAA5 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01886B391C83BFAB00D3CAA5 /* Character.swift */; };
+		01886B4B1C83D64C00D3CAA5 /* Skill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01886B3D1C83C05E00D3CAA5 /* Skill.swift */; };
+		01886B4C1C83D7B000D3CAA5 /* SkillManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01886B431C83C69700D3CAA5 /* SkillManager.swift */; };
+		01886B501C83DB9500D3CAA5 /* DefensiveSkill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01886B4F1C83DB9500D3CAA5 /* DefensiveSkill.swift */; };
+		01886B521C83DE0000D3CAA5 /* OffensiveSkill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01886B511C83DE0000D3CAA5 /* OffensiveSkill.swift */; };
+		01886B541C83DFD600D3CAA5 /* Attackable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01886B531C83DFD600D3CAA5 /* Attackable.swift */; };
+		01886B551C83E50100D3CAA5 /* DefensiveSkill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01886B4F1C83DB9500D3CAA5 /* DefensiveSkill.swift */; };
+		01886B561C83E50400D3CAA5 /* OffensiveSkill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01886B511C83DE0000D3CAA5 /* OffensiveSkill.swift */; };
+		01886B571C83E69B00D3CAA5 /* Attackable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01886B531C83DFD600D3CAA5 /* Attackable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,10 +43,14 @@
 		01886AC21C82E9F100D3CAA5 /* NoahKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NoahKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		01886AC71C82E9F100D3CAA5 /* NoahKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoahKitTests.swift; sourceTree = "<group>"; };
 		01886AC91C82E9F100D3CAA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		01886AD81C82EC0C00D3CAA5 /* KnightTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KnightTests.swift; sourceTree = "<group>"; };
 		01886B391C83BFAB00D3CAA5 /* Character.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Character.swift; path = Model/Character.swift; sourceTree = "<group>"; };
 		01886B3D1C83C05E00D3CAA5 /* Skill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Skill.swift; path = Model/Skill.swift; sourceTree = "<group>"; };
 		01886B3F1C83C0DC00D3CAA5 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Item.swift; path = Model/Item.swift; sourceTree = "<group>"; };
+		01886B431C83C69700D3CAA5 /* SkillManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SkillManager.swift; path = Model/SkillManager.swift; sourceTree = "<group>"; };
+		01886B471C83D44200D3CAA5 /* CharacterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterTests.swift; sourceTree = "<group>"; };
+		01886B4F1C83DB9500D3CAA5 /* DefensiveSkill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DefensiveSkill.swift; path = Model/DefensiveSkill.swift; sourceTree = "<group>"; };
+		01886B511C83DE0000D3CAA5 /* OffensiveSkill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OffensiveSkill.swift; path = Model/OffensiveSkill.swift; sourceTree = "<group>"; };
+		01886B531C83DFD600D3CAA5 /* Attackable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Attackable.swift; path = Model/Attackable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,7 +105,7 @@
 			children = (
 				01886AC91C82E9F100D3CAA5 /* Info.plist */,
 				01886AC71C82E9F100D3CAA5 /* NoahKitTests.swift */,
-				01886AD81C82EC0C00D3CAA5 /* KnightTests.swift */,
+				01886B471C83D44200D3CAA5 /* CharacterTests.swift */,
 			);
 			path = NoahKitTests;
 			sourceTree = "<group>";
@@ -117,6 +131,7 @@
 		01886B351C83BE9600D3CAA5 /* Characters */ = {
 			isa = PBXGroup;
 			children = (
+				01886B531C83DFD600D3CAA5 /* Attackable.swift */,
 				01886B391C83BFAB00D3CAA5 /* Character.swift */,
 			);
 			name = Characters;
@@ -126,6 +141,9 @@
 			isa = PBXGroup;
 			children = (
 				01886B3D1C83C05E00D3CAA5 /* Skill.swift */,
+				01886B431C83C69700D3CAA5 /* SkillManager.swift */,
+				01886B4F1C83DB9500D3CAA5 /* DefensiveSkill.swift */,
+				01886B511C83DE0000D3CAA5 /* OffensiveSkill.swift */,
 			);
 			name = Skills;
 			sourceTree = "<group>";
@@ -239,8 +257,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				01886B3A1C83BFAB00D3CAA5 /* Character.swift in Sources */,
+				01886B521C83DE0000D3CAA5 /* OffensiveSkill.swift in Sources */,
 				01886B401C83C0DC00D3CAA5 /* Item.swift in Sources */,
+				01886B541C83DFD600D3CAA5 /* Attackable.swift in Sources */,
 				01886B3E1C83C05E00D3CAA5 /* Skill.swift in Sources */,
+				01886B441C83C69700D3CAA5 /* SkillManager.swift in Sources */,
+				01886B501C83DB9500D3CAA5 /* DefensiveSkill.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,8 +270,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01886AD91C82EC0C00D3CAA5 /* KnightTests.swift in Sources */,
+				01886B561C83E50400D3CAA5 /* OffensiveSkill.swift in Sources */,
+				01886B481C83D44200D3CAA5 /* CharacterTests.swift in Sources */,
+				01886B551C83E50100D3CAA5 /* DefensiveSkill.swift in Sources */,
+				01886B4C1C83D7B000D3CAA5 /* SkillManager.swift in Sources */,
+				01886B4B1C83D64C00D3CAA5 /* Skill.swift in Sources */,
 				01886AC81C82E9F100D3CAA5 /* NoahKitTests.swift in Sources */,
+				01886B4A1C83D62100D3CAA5 /* Character.swift in Sources */,
+				01886B571C83E69B00D3CAA5 /* Attackable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

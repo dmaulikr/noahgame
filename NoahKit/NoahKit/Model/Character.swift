@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Character: NSObject {
+public class Character: NSObject, Attackable {
 
 //    Entity
 //    protected string name;
@@ -36,5 +36,38 @@ class Character: NSObject {
 //    protected ItemsList items;
 //    protected Equipment equipment;
     
+    var name : String!
+    internal var health, energy : Int
+    var skills : SkillManager!
+    
+    internal init(name: String!) {
+        health = 0
+        energy = 0
+        super.init()
+        
+        self.name = name
+        skills = SkillManager(character: self)
+    }
+    
+    internal func addSkill(skill: Skill) {
+        skills.addSkill(skill)
+    }
+    
+    internal func activateSkill(name: String) {
+        skills.activateSkill(name)
+    }
+    
+    func activateMeditation(points: Int) {
+        energy += points
+    }
+    
+    func selectTarget(target: Character?) {
+        skills.selectTarget(target)
+    }
+    
+    // MARK:
+    public func activateCourt(damage: Int) {
+        health -= damage
+    }
     
 }
