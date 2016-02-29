@@ -11,8 +11,8 @@ import UIKit
 class SkillManager: NSObject {
 
     var skills : [String: Skill]
-    var character : Character!
-    var target : Character?
+    var character : Buffable!
+    var target : Attackable?
     
     init(character: Character) {
         self.character = character

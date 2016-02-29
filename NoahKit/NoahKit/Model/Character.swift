@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class Character: NSObject, Attackable {
+public class Character: NSObject, Buffable, Attackable {
 
 //    Entity
 //    protected string name;
@@ -57,17 +57,32 @@ public class Character: NSObject, Attackable {
         skills.activateSkill(name)
     }
     
-    func activateMeditation(points: Int) {
+    func debility(damage: Int) {
+        health -= damage
+    }
+    
+    // MARK: Buffable
+    public func activateElectrons(points: Int) {
         energy += points
     }
     
+    public func activateImmunity() { }
+    
+    // MARK: Attackable
     func selectTarget(target: Character?) {
-        skills.selectTarget(target)
+            skills.selectTarget(target)
     }
     
-    // MARK:
-    public func activateCourt(damage: Int) {
-        health -= damage
+    public func activateFlames(damage: Int) {
+        self.debility(damage)
+    }
+
+    public func activateThunder(damage: Int) {
+        self.debility(damage)
+    }
+
+    public func activateFinal(damage: Int) {
+        self.debility(damage)
     }
     
 }

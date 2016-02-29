@@ -18,6 +18,8 @@ public protocol Attackable {
 //    void DebilityEnergy(int damage);
 //    string Name { get; }
     
-    func activateCourt(damage: Int)
+    func activateFlames(damage: Int)
+    func activateThunder(damage: Int)
+    func activateFinal(damage: Int)
     
 }

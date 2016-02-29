@@ -8,11 +8,9 @@
 
 class OffensiveSkill: Skill {
 
-    override init(name: String!) {
+    override init(name: String) {
         super.init(name: name)
     }
     
-    override func activate(target: Attackable?) {
-        target?.activateCourt(100)
-    }
+    override func activate(target: Attackable?) { }
 }

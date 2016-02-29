@@ -8,11 +8,9 @@
 
 class DefensiveSkill: Skill {
 
-    override init(name: String!) {
+    override init(name: String) {
         super.init(name: name)
     }
     
-    override func activate(target: Attackable?) {
-        character.activateMeditation(100)
-    }
+    override func activate(target: Attackable?) { }
 }

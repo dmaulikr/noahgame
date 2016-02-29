@@ -11,36 +11,63 @@ import XCTest
 class CharacterTests: XCTestCase {
 
     var character : Character!
+    var enemy : Character!
     
     override func setUp() {
         super.setUp()
-        let skill1 = DefensiveSkill(name: "DefensiveSkill")
-        let skill2 = OffensiveSkill(name: "OffensiveSkill")
         
         character = Character(name: "Character")
-        character.addSkill(skill1)
-        character.addSkill(skill2)
+        character.addSkill(Electrons())
+        character.addSkill(Flames())
+        character.addSkill(Thunder())
+        character.addSkill(Final())
+        
+        enemy = Character(name: "Enemy")
     }
     
     override func tearDown() {
         super.tearDown()
     }
     
-    func testActivateDefensiveSkill() {
+    // Defensive Skills
+    func testActivateElectronsSkill() {
         let energy = character.energy
-        character.activateSkill("DefensiveSkill")
+        character.activateSkill(SkillNames.Electrons.rawValue)
         
         XCTAssertEqual(character.energy, energy + 100)
     }
     
-    func testActivateOffensiveSkill() {
-        let enemy = Character(name: "Enemy")
+    // Offensive Skills
+    func testActivateFlamesSkill() {
         let health = enemy.health
         
         character.selectTarget(enemy)
-        character.activateSkill("OffensiveSkill")
+        character.activateSkill(SkillNames.Flames.rawValue)
         
         XCTAssertEqual(enemy.health, health - 100)
     }
     
+    func testActivateThunderSkill() {
+        let health = enemy.health
+        
+        character.selectTarget(enemy)
+        character.activateSkill(SkillNames.Thunder.rawValue)
+        
+        XCTAssertEqual(enemy.health, health - 200)
+    }
+    
+    func testActivateFinalSkill() {
+        let health = enemy.health
+        
+        character.selectTarget(enemy)
+        character.activateSkill(SkillNames.Final.rawValue)
+        
+        XCTAssertEqual(enemy.health, health - 300)
+    }
+    
+    func testSkillNames() {
+        let skill = Electrons()
+        
+        XCTAssertEqual(skill.name, SkillNames.Electrons.rawValue)
+    }
 }
