@@ -20,8 +20,7 @@ class KnightTests: XCTestCase {
     }
 
     func testExample() {
-        let knight = Knight()
-        knight.name = "Knight"
+        let knight = Knight(name:"Knight")
         
         XCTAssertEqual(knight.name, "Knight")
     }
