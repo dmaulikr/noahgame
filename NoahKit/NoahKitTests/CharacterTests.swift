@@ -70,4 +70,58 @@ class CharacterTests: XCTestCase {
         
         XCTAssertEqual(skill.name, SkillNames.Electrons.rawValue)
     }
+
+    func testMoveCharacter() {
+        character.moveUp()
+        
+        XCTAssertEqual(character.position.x, 1)
+        XCTAssertEqual(character.position.y, 0)
+    }
+
+    func testSumeVectors() {
+        let vector = Vector(x: 1, y: 1)
+        vector.sume(Vector.up)
+        
+        XCTAssertEqual(vector.x, 1)
+        XCTAssertEqual(vector.y, 2)
+    }
+    
+    func testMagnitudeVector() {
+        let vector = Vector(x: 3, y: 4)
+        
+        XCTAssertEqual(vector.magnitude(), 5)
+    }
+    
+    func testMoveUpVector() {
+        let vector = Vector.zero
+        vector.move(Vector.up, angle: 0) // angle in X direction
+        
+        XCTAssertEqual(vector.x, 1)
+        XCTAssertEqual(Int(vector.y), 0)
+    }
+    
+    func testMoveDownVector() {
+        let vector = Vector.zero
+        vector.move(Vector.down, angle: 0) // angle in X direction
+        
+        XCTAssertEqual(vector.x, -1)
+        XCTAssertEqual(Int(vector.y), 0)
+    }
+    
+    func testMoveRightVector() {
+        let vector = Vector.zero
+        vector.move(Vector.right, angle: 0) // angle in X direction
+        
+        XCTAssertEqual(Int(vector.x), 0)
+        XCTAssertEqual(vector.y, 1)
+    }
+    
+    func testMoveLeftVector() {
+        let vector = Vector.zero
+        vector.move(Vector.left, angle: 0) // angle in X direction
+        
+        XCTAssertEqual(Int(vector.x), 0)
+        XCTAssertEqual(vector.y, -1)
+    }
+    
 }

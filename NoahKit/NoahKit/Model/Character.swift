@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class Character: NSObject, Buffable, Attackable {
+public class Character: NSObject, Buffable, Attackable, Movable {
 
 //    Entity
 //    protected string name;
@@ -40,6 +40,9 @@ public class Character: NSObject, Buffable, Attackable {
     internal var health, energy : Int
     var skills : SkillManager!
     
+    var position = Vector.zero
+    var rotation : Float = 0
+    
     internal init(name: String!) {
         health = 0
         energy = 0
@@ -57,8 +60,12 @@ public class Character: NSObject, Buffable, Attackable {
         skills.activateSkill(name)
     }
     
-    func debility(damage: Int) {
+    func debilityHealth(damage: Int) {
         health -= damage
+    }
+    
+    func selectTarget(target: Attackable?) {
+        skills.target = target
     }
     
     // MARK: Buffable
@@ -69,20 +76,40 @@ public class Character: NSObject, Buffable, Attackable {
     public func activateImmunity() { }
     
     // MARK: Attackable
-    func selectTarget(target: Character?) {
-            skills.selectTarget(target)
-    }
-    
     public func activateFlames(damage: Int) {
-        self.debility(damage)
+        self.debilityHealth(damage)
     }
 
     public func activateThunder(damage: Int) {
-        self.debility(damage)
+        self.debilityHealth(damage)
     }
 
     public func activateFinal(damage: Int) {
-        self.debility(damage)
+        self.debilityHealth(damage)
     }
     
+    // MARK: Movable
+    internal func moveUp() {
+        position.move(Vector.up, angle: rotation)
+    }
+    
+    internal func moveDown() {
+        position.move(Vector.down, angle: rotation)
+    }
+    
+    internal func moveRight() {
+        position.move(Vector.right, angle: rotation)
+    }
+    
+    internal func moveLeft() {
+        position.move(Vector.left, angle: rotation)
+    }
+    
+    public func rotateRight() {
+        rotation += 1
+    }
+
+    public func rotateLeft() {
+        rotation -= 1
+    }
 }

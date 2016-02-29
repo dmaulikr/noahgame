@@ -38,6 +38,11 @@
 		01886B6D1C84046900D3CAA5 /* Immunity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01886B681C8403EE00D3CAA5 /* Immunity.swift */; };
 		01886B6F1C84082B00D3CAA5 /* Buffable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01886B6E1C84082B00D3CAA5 /* Buffable.swift */; };
 		01886B701C8408B200D3CAA5 /* Buffable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01886B6E1C84082B00D3CAA5 /* Buffable.swift */; };
+		01886B751C84109900D3CAA5 /* Movable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01886B741C84109900D3CAA5 /* Movable.swift */; };
+		01886B771C84111100D3CAA5 /* Vector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01886B761C84111100D3CAA5 /* Vector.swift */; };
+		01886B781C84134D00D3CAA5 /* Movable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01886B741C84109900D3CAA5 /* Movable.swift */; };
+		01886B791C84135300D3CAA5 /* Vector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01886B761C84111100D3CAA5 /* Vector.swift */; };
+		01886B7B1C84174A00D3CAA5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01886B7A1C84174A00D3CAA5 /* CoreGraphics.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +77,9 @@
 		01886B661C8403C800D3CAA5 /* Final.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Final.swift; path = Model/Final.swift; sourceTree = "<group>"; };
 		01886B681C8403EE00D3CAA5 /* Immunity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Immunity.swift; path = Model/Immunity.swift; sourceTree = "<group>"; };
 		01886B6E1C84082B00D3CAA5 /* Buffable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Buffable.swift; path = Model/Buffable.swift; sourceTree = "<group>"; };
+		01886B741C84109900D3CAA5 /* Movable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Movable.swift; path = Model/Movable.swift; sourceTree = "<group>"; };
+		01886B761C84111100D3CAA5 /* Vector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Vector.swift; path = Model/Vector.swift; sourceTree = "<group>"; };
+		01886B7A1C84174A00D3CAA5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01886B7B1C84174A00D3CAA5 /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,6 +105,7 @@
 		01886AAE1C82E9F100D3CAA5 = {
 			isa = PBXGroup;
 			children = (
+				01886B7A1C84174A00D3CAA5 /* CoreGraphics.framework */,
 				01886ABA1C82E9F100D3CAA5 /* NoahKit */,
 				01886AC61C82E9F100D3CAA5 /* NoahKitTests */,
 				01886AB91C82E9F100D3CAA5 /* Products */,
@@ -116,6 +126,7 @@
 			children = (
 				01886ABB1C82E9F100D3CAA5 /* NoahKit.h */,
 				01886ABD1C82E9F100D3CAA5 /* Info.plist */,
+				01886B711C840E5C00D3CAA5 /* Persistence */,
 				01886B291C839F5200D3CAA5 /* Model */,
 			);
 			path = NoahKit;
@@ -155,6 +166,8 @@
 				01886B391C83BFAB00D3CAA5 /* Character.swift */,
 				01886B531C83DFD600D3CAA5 /* Attackable.swift */,
 				01886B6E1C84082B00D3CAA5 /* Buffable.swift */,
+				01886B741C84109900D3CAA5 /* Movable.swift */,
+				01886B761C84111100D3CAA5 /* Vector.swift */,
 			);
 			name = Characters;
 			sourceTree = "<group>";
@@ -190,6 +203,13 @@
 				01886B661C8403C800D3CAA5 /* Final.swift */,
 			);
 			name = Offensives;
+			sourceTree = "<group>";
+		};
+		01886B711C840E5C00D3CAA5 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Persistence;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -306,9 +326,11 @@
 				01886B401C83C0DC00D3CAA5 /* Item.swift in Sources */,
 				01886B541C83DFD600D3CAA5 /* Attackable.swift in Sources */,
 				01886B3E1C83C05E00D3CAA5 /* Skill.swift in Sources */,
+				01886B751C84109900D3CAA5 /* Movable.swift in Sources */,
 				01886B5C1C83FECC00D3CAA5 /* Electrons.swift in Sources */,
 				01886B631C84039300D3CAA5 /* Thunder.swift in Sources */,
 				01886B441C83C69700D3CAA5 /* SkillManager.swift in Sources */,
+				01886B771C84111100D3CAA5 /* Vector.swift in Sources */,
 				01886B591C83FB0700D3CAA5 /* SkillNames.swift in Sources */,
 				01886B691C8403EF00D3CAA5 /* Immunity.swift in Sources */,
 				01886B501C83DB9500D3CAA5 /* DefensiveSkill.swift in Sources */,
@@ -327,6 +349,7 @@
 				01886B551C83E50100D3CAA5 /* DefensiveSkill.swift in Sources */,
 				01886B4C1C83D7B000D3CAA5 /* SkillManager.swift in Sources */,
 				01886B4B1C83D64C00D3CAA5 /* Skill.swift in Sources */,
+				01886B791C84135300D3CAA5 /* Vector.swift in Sources */,
 				01886B6B1C84046200D3CAA5 /* Thunder.swift in Sources */,
 				01886B6C1C84046400D3CAA5 /* Final.swift in Sources */,
 				01886B5D1C83FEDD00D3CAA5 /* Electrons.swift in Sources */,
@@ -335,6 +358,7 @@
 				01886B701C8408B200D3CAA5 /* Buffable.swift in Sources */,
 				01886B4A1C83D62100D3CAA5 /* Character.swift in Sources */,
 				01886B571C83E69B00D3CAA5 /* Attackable.swift in Sources */,
+				01886B781C84134D00D3CAA5 /* Movable.swift in Sources */,
 				01886B6D1C84046900D3CAA5 /* Immunity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

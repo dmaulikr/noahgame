@@ -10,9 +10,9 @@ import UIKit
 
 class SkillManager: NSObject {
 
-    var skills : [String: Skill]
     var character : Buffable!
-    var target : Attackable?
+    internal var target : Attackable?
+    var skills : [String: Skill]
     
     init(character: Character) {
         self.character = character
@@ -28,7 +28,4 @@ class SkillManager: NSObject {
         skills[name]!.activate(target)
     }
     
-    func selectTarget(target: Character?) {
-        self.target = target
-    }
 }
