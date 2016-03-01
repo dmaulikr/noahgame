@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>NoahGame2D.xcscheme</key>
+		<key>NoahGame3D.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,17 +12,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>01886AE21C837F5700D3CAA5</key>
+		<key>0142F7821C853D5100E0575D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>01886AF81C837F5800D3CAA5</key>
+		<key>0142F7981C853D5100E0575D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>01886B031C837F5800D3CAA5</key>
+		<key>0142F7A31C853D5100E0575D</key>
 		<dict>
 			<key>primary</key>
 			<true/>

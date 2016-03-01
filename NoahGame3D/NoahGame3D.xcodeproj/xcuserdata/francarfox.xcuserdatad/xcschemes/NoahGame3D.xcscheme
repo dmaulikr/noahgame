@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "01886AE21C837F5700D3CAA5"
-               BuildableName = "NoahGame2D.app"
-               BlueprintName = "NoahGame2D"
-               ReferencedContainer = "container:NoahGame2D.xcodeproj">
+               BlueprintIdentifier = "0142F7821C853D5100E0575D"
+               BuildableName = "NoahGame3D.app"
+               BlueprintName = "NoahGame3D"
+               ReferencedContainer = "container:NoahGame3D.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,30 +32,30 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "01886AF81C837F5800D3CAA5"
-               BuildableName = "NoahGame2DTests.xctest"
-               BlueprintName = "NoahGame2DTests"
-               ReferencedContainer = "container:NoahGame2D.xcodeproj">
+               BlueprintIdentifier = "0142F7981C853D5100E0575D"
+               BuildableName = "NoahGame3DTests.xctest"
+               BlueprintName = "NoahGame3DTests"
+               ReferencedContainer = "container:NoahGame3D.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "01886B031C837F5800D3CAA5"
-               BuildableName = "NoahGame2DUITests.xctest"
-               BlueprintName = "NoahGame2DUITests"
-               ReferencedContainer = "container:NoahGame2D.xcodeproj">
+               BlueprintIdentifier = "0142F7A31C853D5100E0575D"
+               BuildableName = "NoahGame3DUITests.xctest"
+               BlueprintName = "NoahGame3DUITests"
+               ReferencedContainer = "container:NoahGame3D.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "01886AE21C837F5700D3CAA5"
-            BuildableName = "NoahGame2D.app"
-            BlueprintName = "NoahGame2D"
-            ReferencedContainer = "container:NoahGame2D.xcodeproj">
+            BlueprintIdentifier = "0142F7821C853D5100E0575D"
+            BuildableName = "NoahGame3D.app"
+            BlueprintName = "NoahGame3D"
+            ReferencedContainer = "container:NoahGame3D.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -75,10 +75,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "01886AE21C837F5700D3CAA5"
-            BuildableName = "NoahGame2D.app"
-            BlueprintName = "NoahGame2D"
-            ReferencedContainer = "container:NoahGame2D.xcodeproj">
+            BlueprintIdentifier = "0142F7821C853D5100E0575D"
+            BuildableName = "NoahGame3D.app"
+            BlueprintName = "NoahGame3D"
+            ReferencedContainer = "container:NoahGame3D.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -94,10 +94,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "01886AE21C837F5700D3CAA5"
-            BuildableName = "NoahGame2D.app"
-            BlueprintName = "NoahGame2D"
-            ReferencedContainer = "container:NoahGame2D.xcodeproj">
+            BlueprintIdentifier = "0142F7821C853D5100E0575D"
+            BuildableName = "NoahGame3D.app"
+            BlueprintName = "NoahGame3D"
+            ReferencedContainer = "container:NoahGame3D.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

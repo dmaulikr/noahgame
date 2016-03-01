@@ -1,8 +1,8 @@
 //
 //  GameViewController.swift
-//  NoahGame2D
+//  NoahGame3D
 //
-//  Created by Franklin Fox on 28/2/16.
+//  Created by Franklin Fox on 1/3/16.
 //  Copyright (c) 2016 FoxDev. All rights reserved.
 //
 

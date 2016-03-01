@@ -1,13 +1,12 @@
 //
 //  AppDelegate.swift
-//  NoahGame2D
+//  NoahGame3D
 //
-//  Created by Franklin Fox on 28/2/16.
+//  Created by Franklin Fox on 1/3/16.
 //  Copyright © 2016 FoxDev. All rights reserved.
 //
 
 import UIKit
-import NoahKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,7 +16,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        
         return true
     }
 

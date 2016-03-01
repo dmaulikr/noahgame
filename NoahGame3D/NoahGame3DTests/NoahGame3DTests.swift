@@ -1,15 +1,15 @@
 //
-//  NoahGame2DTests.swift
-//  NoahGame2DTests
+//  NoahGame3DTests.swift
+//  NoahGame3DTests
 //
-//  Created by Franklin Fox on 28/2/16.
+//  Created by Franklin Fox on 1/3/16.
 //  Copyright © 2016 FoxDev. All rights reserved.
 //
 
 import XCTest
-@testable import NoahGame2D
+@testable import NoahGame3D
 
-class NoahGame2DTests: XCTestCase {
+class NoahGame3DTests: XCTestCase {
     
     override func setUp() {
         super.setUp()

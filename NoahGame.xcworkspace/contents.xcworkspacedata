@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "container:NoahGame2D/NoahGame2D.xcodeproj">
+      location = "group:NoahGame3D/NoahGame3D.xcodeproj">
    </FileRef>
 </Workspace>

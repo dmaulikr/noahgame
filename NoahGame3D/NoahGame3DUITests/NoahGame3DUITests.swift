@@ -1,14 +1,14 @@
 //
-//  NoahGame2DUITests.swift
-//  NoahGame2DUITests
+//  NoahGame3DUITests.swift
+//  NoahGame3DUITests
 //
-//  Created by Franklin Fox on 28/2/16.
+//  Created by Franklin Fox on 1/3/16.
 //  Copyright © 2016 FoxDev. All rights reserved.
 //
 
 import XCTest
 
-class NoahGame2DUITests: XCTestCase {
+class NoahGame3DUITests: XCTestCase {
         
     override func setUp() {
         super.setUp()
