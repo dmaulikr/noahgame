@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0142F7E71C8550D300E0575D /* SRWebSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = 0142F7E51C8550D300E0575D /* SRWebSocket.h */; };
+		0142F7E81C8550D300E0575D /* SRWebSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 0142F7E61C8550D300E0575D /* SRWebSocket.m */; };
+		0142F7EA1C8551D700E0575D /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0142F7E91C8551D700E0575D /* libicucore.tbd */; };
 		01886ABC1C82E9F100D3CAA5 /* NoahKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 01886ABB1C82E9F100D3CAA5 /* NoahKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		01886AC31C82E9F100D3CAA5 /* NoahKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01886AB81C82E9F100D3CAA5 /* NoahKit.framework */; };
 		01886AC81C82E9F100D3CAA5 /* NoahKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01886AC71C82E9F100D3CAA5 /* NoahKitTests.swift */; };
@@ -42,7 +45,6 @@
 		01886B771C84111100D3CAA5 /* Vector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01886B761C84111100D3CAA5 /* Vector.swift */; };
 		01886B781C84134D00D3CAA5 /* Movable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01886B741C84109900D3CAA5 /* Movable.swift */; };
 		01886B791C84135300D3CAA5 /* Vector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01886B761C84111100D3CAA5 /* Vector.swift */; };
-		01886B7B1C84174A00D3CAA5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01886B7A1C84174A00D3CAA5 /* CoreGraphics.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0142F7E51C8550D300E0575D /* SRWebSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRWebSocket.h; sourceTree = "<group>"; };
+		0142F7E61C8550D300E0575D /* SRWebSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRWebSocket.m; sourceTree = "<group>"; };
+		0142F7E91C8551D700E0575D /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
 		01886AB81C82E9F100D3CAA5 /* NoahKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NoahKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		01886ABB1C82E9F100D3CAA5 /* NoahKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoahKit.h; sourceTree = "<group>"; };
 		01886ABD1C82E9F100D3CAA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -79,7 +84,6 @@
 		01886B6E1C84082B00D3CAA5 /* Buffable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Buffable.swift; path = Model/Buffable.swift; sourceTree = "<group>"; };
 		01886B741C84109900D3CAA5 /* Movable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Movable.swift; path = Model/Movable.swift; sourceTree = "<group>"; };
 		01886B761C84111100D3CAA5 /* Vector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Vector.swift; path = Model/Vector.swift; sourceTree = "<group>"; };
-		01886B7A1C84174A00D3CAA5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01886B7B1C84174A00D3CAA5 /* CoreGraphics.framework in Frameworks */,
+				0142F7EA1C8551D700E0575D /* libicucore.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,12 +106,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0142F7E31C85505700E0575D /* Connection */ = {
+			isa = PBXGroup;
+			children = (
+				0142F7E41C85507300E0575D /* WebSocket */,
+			);
+			name = Connection;
+			sourceTree = "<group>";
+		};
+		0142F7E41C85507300E0575D /* WebSocket */ = {
+			isa = PBXGroup;
+			children = (
+				0142F7E51C8550D300E0575D /* SRWebSocket.h */,
+				0142F7E61C8550D300E0575D /* SRWebSocket.m */,
+			);
+			name = WebSocket;
+			sourceTree = "<group>";
+		};
+		0142F7EB1C85521200E0575D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0142F7E91C8551D700E0575D /* libicucore.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		01886AAE1C82E9F100D3CAA5 = {
 			isa = PBXGroup;
 			children = (
-				01886B7A1C84174A00D3CAA5 /* CoreGraphics.framework */,
 				01886ABA1C82E9F100D3CAA5 /* NoahKit */,
 				01886AC61C82E9F100D3CAA5 /* NoahKitTests */,
+				0142F7EB1C85521200E0575D /* Frameworks */,
 				01886AB91C82E9F100D3CAA5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -128,6 +157,7 @@
 				01886ABD1C82E9F100D3CAA5 /* Info.plist */,
 				01886B711C840E5C00D3CAA5 /* Persistence */,
 				01886B291C839F5200D3CAA5 /* Model */,
+				0142F7E31C85505700E0575D /* Connection */,
 			);
 			path = NoahKit;
 			sourceTree = "<group>";
@@ -220,6 +250,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				01886ABC1C82E9F100D3CAA5 /* NoahKit.h in Headers */,
+				0142F7E71C8550D300E0575D /* SRWebSocket.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,6 +355,7 @@
 				01886B3A1C83BFAB00D3CAA5 /* Character.swift in Sources */,
 				01886B521C83DE0000D3CAA5 /* OffensiveSkill.swift in Sources */,
 				01886B401C83C0DC00D3CAA5 /* Item.swift in Sources */,
+				0142F7E81C8550D300E0575D /* SRWebSocket.m in Sources */,
 				01886B541C83DFD600D3CAA5 /* Attackable.swift in Sources */,
 				01886B3E1C83C05E00D3CAA5 /* Skill.swift in Sources */,
 				01886B751C84109900D3CAA5 /* Movable.swift in Sources */,
