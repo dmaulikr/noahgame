@@ -139,12 +139,11 @@
 		0142F7851C853D5100E0575D /* NoahGame3D */ = {
 			isa = PBXGroup;
 			children = (
+				0142F7DB1C85405500E0575D /* Resources */,
+				0142F7D91C85404000E0575D /* Screens */,
+				0142F7DC1C8540BB00E0575D /* Views */,
 				0142F7861C853D5100E0575D /* AppDelegate.swift */,
-				0142F7881C853D5100E0575D /* art.scnassets */,
 				0142F78A1C853D5100E0575D /* GameViewController.swift */,
-				0142F78C1C853D5100E0575D /* Main.storyboard */,
-				0142F78F1C853D5100E0575D /* Assets.xcassets */,
-				0142F7911C853D5100E0575D /* LaunchScreen.storyboard */,
 				0142F7941C853D5100E0575D /* Info.plist */,
 			);
 			path = NoahGame3D;
@@ -175,6 +174,31 @@
 				0142F7D21C853E5900E0575D /* NoahKitTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		0142F7D91C85404000E0575D /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Screens;
+			sourceTree = "<group>";
+		};
+		0142F7DB1C85405500E0575D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0142F78F1C853D5100E0575D /* Assets.xcassets */,
+				0142F7881C853D5100E0575D /* art.scnassets */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		0142F7DC1C8540BB00E0575D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0142F78C1C853D5100E0575D /* Main.storyboard */,
+				0142F7911C853D5100E0575D /* LaunchScreen.storyboard */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
