@@ -9,6 +9,7 @@
         <scene sceneID="edf-4n-pXq">
             <objects>
                 <navigationController navigationBarHidden="YES" id="Qgp-dP-ePb" sceneMemberID="viewController">
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="r8J-Gd-SAH">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -20,7 +21,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jlb-ey-Tzi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1190.5" y="321.5"/>
+            <point key="canvasLocation" x="-1328.5" y="321.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="IEl-Wm-e3P">
@@ -31,11 +32,11 @@
                         <viewControllerLayoutGuide type="bottom" id="c5K-s7-lp9"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="xqW-r1-I2p">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0YX-e8-wrc">
-                                <rect key="frame" x="172" y="319" width="30" height="30"/>
+                                <rect key="frame" x="318" y="173" width="30" height="30"/>
                                 <state key="normal" title="Play">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -61,14 +62,14 @@
             <objects>
                 <viewController id="BV1-FR-VrT" customClass="GameViewController" customModule="NoahGame3D" customModuleProvider="target" sceneMemberID="viewController">
                     <sceneKitView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="3se-qz-xqx">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </sceneKitView>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="61.5" y="321.5"/>
+            <point key="canvasLocation" x="198.5" y="321.5"/>
         </scene>
     </scenes>
 </document>

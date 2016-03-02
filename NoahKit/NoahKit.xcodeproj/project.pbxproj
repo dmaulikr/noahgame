@@ -10,6 +10,7 @@
 		0142F7E71C8550D300E0575D /* SRWebSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = 0142F7E51C8550D300E0575D /* SRWebSocket.h */; };
 		0142F7E81C8550D300E0575D /* SRWebSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 0142F7E61C8550D300E0575D /* SRWebSocket.m */; };
 		0142F7EA1C8551D700E0575D /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0142F7E91C8551D700E0575D /* libicucore.tbd */; };
+		0142F8031C86A3D700E0575D /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142F8021C86A3D700E0575D /* Entity.swift */; };
 		01886ABC1C82E9F100D3CAA5 /* NoahKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 01886ABB1C82E9F100D3CAA5 /* NoahKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		01886AC31C82E9F100D3CAA5 /* NoahKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01886AB81C82E9F100D3CAA5 /* NoahKit.framework */; };
 		01886AC81C82E9F100D3CAA5 /* NoahKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01886AC71C82E9F100D3CAA5 /* NoahKitTests.swift */; };
@@ -61,6 +62,7 @@
 		0142F7E51C8550D300E0575D /* SRWebSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRWebSocket.h; sourceTree = "<group>"; };
 		0142F7E61C8550D300E0575D /* SRWebSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRWebSocket.m; sourceTree = "<group>"; };
 		0142F7E91C8551D700E0575D /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		0142F8021C86A3D700E0575D /* Entity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Entity.swift; path = Model/Entity.swift; sourceTree = "<group>"; };
 		01886AB81C82E9F100D3CAA5 /* NoahKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NoahKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		01886ABB1C82E9F100D3CAA5 /* NoahKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoahKit.h; sourceTree = "<group>"; };
 		01886ABD1C82E9F100D3CAA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 		01886B291C839F5200D3CAA5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0142F8021C86A3D700E0575D /* Entity.swift */,
 				01886B351C83BE9600D3CAA5 /* Characters */,
 				01886B321C83B9A500D3CAA5 /* Items */,
 				01886B361C83BEB200D3CAA5 /* Skills */,
@@ -365,6 +368,7 @@
 				01886B771C84111100D3CAA5 /* Vector.swift in Sources */,
 				01886B591C83FB0700D3CAA5 /* SkillNames.swift in Sources */,
 				01886B691C8403EF00D3CAA5 /* Immunity.swift in Sources */,
+				0142F8031C86A3D700E0575D /* Entity.swift in Sources */,
 				01886B501C83DB9500D3CAA5 /* DefensiveSkill.swift in Sources */,
 				01886B6F1C84082B00D3CAA5 /* Buffable.swift in Sources */,
 				01886B611C84035400D3CAA5 /* Flames.swift in Sources */,

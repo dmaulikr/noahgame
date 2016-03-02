@@ -17,6 +17,12 @@
 		0142F7A91C853D5100E0575D /* NoahGame3DUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142F7A81C853D5100E0575D /* NoahGame3DUITests.swift */; };
 		0142F7D31C853E6D00E0575D /* NoahKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0142F7D01C853E5900E0575D /* NoahKit.framework */; };
 		0142F7D41C853E6D00E0575D /* NoahKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0142F7D01C853E5900E0575D /* NoahKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0142F7F21C86865B00E0575D /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142F7F11C86865B00E0575D /* Camera.swift */; };
+		0142F7F41C8689E600E0575D /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142F7F31C8689E600E0575D /* Scene.swift */; };
+		0142F7F71C868E6600E0575D /* CharacterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142F7F61C868E6600E0575D /* CharacterView.swift */; };
+		0142F7F91C86966600E0575D /* TerrainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142F7F81C86966600E0575D /* TerrainView.swift */; };
+		0142F7FB1C86977400E0575D /* WorldScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142F7FA1C86977400E0575D /* WorldScene.swift */; };
+		0142F7FF1C86A1F000E0575D /* EntityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142F7FE1C86A1F000E0575D /* EntityView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +93,12 @@
 		0142F7A81C853D5100E0575D /* NoahGame3DUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoahGame3DUITests.swift; sourceTree = "<group>"; };
 		0142F7AA1C853D5100E0575D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0142F7CA1C853E5900E0575D /* NoahKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = NoahKit.xcodeproj; path = ../NoahKit/NoahKit.xcodeproj; sourceTree = "<group>"; };
+		0142F7F11C86865B00E0575D /* Camera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
+		0142F7F31C8689E600E0575D /* Scene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
+		0142F7F61C868E6600E0575D /* CharacterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterView.swift; sourceTree = "<group>"; };
+		0142F7F81C86966600E0575D /* TerrainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TerrainView.swift; sourceTree = "<group>"; };
+		0142F7FA1C86977400E0575D /* WorldScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorldScene.swift; sourceTree = "<group>"; };
+		0142F7FE1C86A1F000E0575D /* EntityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,9 +151,10 @@
 		0142F7851C853D5100E0575D /* NoahGame3D */ = {
 			isa = PBXGroup;
 			children = (
-				0142F7DB1C85405500E0575D /* Resources */,
+				0142F7EC1C86853100E0575D /* Entities */,
 				0142F7D91C85404000E0575D /* Screens */,
 				0142F7DC1C8540BB00E0575D /* Views */,
+				0142F7DB1C85405500E0575D /* Resources */,
 				0142F7861C853D5100E0575D /* AppDelegate.swift */,
 				0142F78A1C853D5100E0575D /* GameViewController.swift */,
 				0142F7941C853D5100E0575D /* Info.plist */,
@@ -179,6 +192,9 @@
 		0142F7D91C85404000E0575D /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				0142F7F31C8689E600E0575D /* Scene.swift */,
+				0142F7FA1C86977400E0575D /* WorldScene.swift */,
+				0142F7F11C86865B00E0575D /* Camera.swift */,
 			);
 			name = Screens;
 			sourceTree = "<group>";
@@ -199,6 +215,16 @@
 				0142F7911C853D5100E0575D /* LaunchScreen.storyboard */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		0142F7EC1C86853100E0575D /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				0142F7FE1C86A1F000E0575D /* EntityView.swift */,
+				0142F7F61C868E6600E0575D /* CharacterView.swift */,
+				0142F7F81C86966600E0575D /* TerrainView.swift */,
+			);
+			name = Entities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -358,7 +384,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0142F7F71C868E6600E0575D /* CharacterView.swift in Sources */,
+				0142F7FB1C86977400E0575D /* WorldScene.swift in Sources */,
+				0142F7F21C86865B00E0575D /* Camera.swift in Sources */,
 				0142F78B1C853D5100E0575D /* GameViewController.swift in Sources */,
+				0142F7FF1C86A1F000E0575D /* EntityView.swift in Sources */,
+				0142F7F91C86966600E0575D /* TerrainView.swift in Sources */,
+				0142F7F41C8689E600E0575D /* Scene.swift in Sources */,
 				0142F7871C853D5100E0575D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

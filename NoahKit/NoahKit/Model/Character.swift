@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class Character: NSObject, Buffable, Attackable, Movable {
+public class Character: Entity, Buffable, Attackable, Movable {
 
 //    Entity
 //    protected string name;
@@ -40,10 +40,9 @@ public class Character: NSObject, Buffable, Attackable, Movable {
     internal var health, energy : Int
     var skills : SkillManager!
     
-    var position = Vector.zero
     var rotation : Float = 0
     
-    internal init(name: String!) {
+    public init(name: String!) {
         health = 0
         energy = 0
         super.init()
