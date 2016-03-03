@@ -18,7 +18,7 @@ class Camera: NSObject {
         super.init()
         
         node.camera = SCNCamera()
-        self.position = SCNVector3(x: 0, y: 0, z: 15)
+        self.position = SCNVector3(x: 0, y: 3, z: 20)
     }
     
     var position : SCNVector3 {

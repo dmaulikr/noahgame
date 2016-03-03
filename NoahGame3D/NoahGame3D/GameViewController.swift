@@ -23,7 +23,7 @@ class GameViewController: UIViewController {
         scene.addEntity(ship)
         
         // animate the 3d object
-        ship.animate()
+        scene.animate()
         
         // retrieve the SCNView
         let scnView = self.view as! SCNView

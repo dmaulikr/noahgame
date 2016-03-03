@@ -23,6 +23,7 @@
 		0142F7F91C86966600E0575D /* TerrainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142F7F81C86966600E0575D /* TerrainView.swift */; };
 		0142F7FB1C86977400E0575D /* WorldScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142F7FA1C86977400E0575D /* WorldScene.swift */; };
 		0142F7FF1C86A1F000E0575D /* EntityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142F7FE1C86A1F000E0575D /* EntityView.swift */; };
+		0142F8051C86C97000E0575D /* SceneKit Scene.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0142F8041C86C97000E0575D /* SceneKit Scene.scn */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +100,7 @@
 		0142F7F81C86966600E0575D /* TerrainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TerrainView.swift; sourceTree = "<group>"; };
 		0142F7FA1C86977400E0575D /* WorldScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorldScene.swift; sourceTree = "<group>"; };
 		0142F7FE1C86A1F000E0575D /* EntityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityView.swift; sourceTree = "<group>"; };
+		0142F8041C86C97000E0575D /* SceneKit Scene.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = "SceneKit Scene.scn"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,6 +206,7 @@
 			children = (
 				0142F78F1C853D5100E0575D /* Assets.xcassets */,
 				0142F7881C853D5100E0575D /* art.scnassets */,
+				0142F8041C86C97000E0575D /* SceneKit Scene.scn */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -357,6 +360,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0142F7891C853D5100E0575D /* art.scnassets in Resources */,
+				0142F8051C86C97000E0575D /* SceneKit Scene.scn in Resources */,
 				0142F7931C853D5100E0575D /* LaunchScreen.storyboard in Resources */,
 				0142F7901C853D5100E0575D /* Assets.xcassets in Resources */,
 				0142F78E1C853D5100E0575D /* Main.storyboard in Resources */,
