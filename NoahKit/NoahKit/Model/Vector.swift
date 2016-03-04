@@ -10,7 +10,7 @@ import UIKit
 
 class Vector: NSObject {
 
-    var x, y : Float
+    var x, y: Float
     
     init(x: Float, y: Float) {
         self.x = x
@@ -48,31 +48,31 @@ class Vector: NSObject {
         return sqrt(pow(x, 2) + pow(y, 2))
     }
     
-    internal static var up : Vector {
+    internal static var up: Vector {
         get {
             return Vector(x: 0, y: 1)
         }
     }
     
-    internal static var down : Vector {
+    internal static var down: Vector {
         get {
             return Vector(x: 0, y: -1)
         }
     }
     
-    internal static var right : Vector {
+    internal static var right: Vector {
         get {
             return Vector(x: -1, y: 0)
         }
     }
     
-    internal static var left : Vector {
+    internal static var left: Vector {
         get {
             return Vector(x: 1, y: 0)
         }
     }
     
-    internal static var zero : Vector {
+    internal static var zero: Vector {
         get {
             return Vector(x: 0, y: 0)
         }

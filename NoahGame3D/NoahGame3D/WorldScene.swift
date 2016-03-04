@@ -12,9 +12,9 @@ class WorldScene: Scene {
     
     private static var instance : WorldScene? = nil
     
-    var entities : [EntityView]
-    var character : CharacterView!
-    var terrain : TerrainView
+    var entities: [EntityView]
+    var character: CharacterView!
+    var terrain: TerrainView
     
     static func sharedInstance() -> WorldScene {
         if instance == nil {

@@ -11,7 +11,7 @@ import SceneKit
 
 class Camera: NSObject {
     
-    let node : SCNNode
+    let node: SCNNode
 
     override init() {
         node = SCNNode()
@@ -21,7 +21,7 @@ class Camera: NSObject {
         self.position = SCNVector3(x: 0, y: 3, z: 20)
     }
     
-    var position : SCNVector3 {
+    var position: SCNVector3 {
         get {
             return node.position
         }

@@ -11,8 +11,8 @@ import SceneKit
 
 class Scene: NSObject {
 
-    let scene : SCNScene!
-    var camera : Camera
+    let scene: SCNScene!
+    var camera: Camera
     
     override init() {
         scene = SCNScene(named: "art.scnassets/ship.scn")!

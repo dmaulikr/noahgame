@@ -36,11 +36,11 @@ public class Character: Entity, Buffable, Attackable, Movable {
 //    protected ItemsList items;
 //    protected Equipment equipment;
     
-    var name : String!
-    internal var health, energy : Int
-    var skills : SkillManager!
+    var name: String!
+    internal var health, energy: Int
+    var skills: SkillManager!
     
-    var rotation : Float = 0
+    var rotation: Float = 0
     
     public init(name: String!) {
         health = 0

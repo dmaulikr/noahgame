@@ -12,8 +12,8 @@ import NoahKit
 
 class EntityView: NSObject {
 
-    var entity : Entity?
-    var node : SCNNode!
+    var entity: Entity?
+    var node: SCNNode!
     
     override init() {
         entity = nil

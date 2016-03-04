@@ -15,8 +15,8 @@ class Skill: NSObject {
 //    private int level, reload, duration, currentReload, currentDuration;
 //    private int cost;
     
-    var name : String
-    var character : Buffable!
+    var name: String
+    var character: Buffable!
 
     init(name: String) {
         self.name = name

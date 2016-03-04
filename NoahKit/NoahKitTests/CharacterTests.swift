@@ -10,8 +10,8 @@ import XCTest
 
 class CharacterTests: XCTestCase {
 
-    var character : Character!
-    var enemy : Character!
+    var character: Character!
+    var enemy: Character!
     
     override func setUp() {
         super.setUp()

@@ -10,9 +10,9 @@ import UIKit
 
 class SkillManager: NSObject {
 
-    var character : Buffable!
-    internal var target : Attackable?
-    var skills : [String: Skill]
+    var character: Buffable!
+    internal var target: Attackable?
+    var skills: [String: Skill]
     
     init(character: Character) {
         self.character = character
