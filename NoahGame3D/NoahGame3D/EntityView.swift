@@ -27,4 +27,14 @@ class EntityView: NSObject {
     
     func animate() { }
     
+    var position: SCNVector3 {
+        get {
+            let vector: Vector = (entity?.position)!
+            return SCNVector3Make(vector.x, vector.y, vector.z)
+        }
+        set {
+            
+        }
+    }
+    
 }

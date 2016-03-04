@@ -12,13 +12,18 @@ import SceneKit
 class Camera: NSObject {
     
     let node: SCNNode
+    var target: EntityView?
 
     override init() {
         node = SCNNode()
         super.init()
         
         node.camera = SCNCamera()
-        self.position = SCNVector3(x: 0, y: 3, z: 20)
+        node.camera?.usesOrthographicProjection = true
+        node.camera?.orthographicScale = 20
+        node.camera?.zFar = 200
+        
+        self.position = SCNVector3(x: 0, y: 20, z: 20)
     }
     
     var position: SCNVector3 {
@@ -28,6 +33,33 @@ class Camera: NSObject {
         set {
             node.position = newValue
         }
+    }
+    
+    func addTarget(target: EntityView) {
+        self.target = target
+        
+        let constraint = SCNLookAtConstraint(target: target.node)
+        constraint.gimbalLockEnabled = true
+        node.constraints = [constraint]
+    }
+    
+    func updateMove(traslation: SCNVector3) {
+//        let forward = SCNVector3.transform(-traslation, Matrix.CreateRotationY(yaw));
+//        position += forward;
+    }
+    
+    func updateRotate(rotate: Float) {
+        node.eulerAngles.y = Float(M_PI) + rotate
+        self.updateDistance()
+    }
+
+    func updateDistance() {
+//        let forward = SCNVector3.transform(ConstantGame.CameraDistance, Matrix.CreateRotationY(yaw))
+//        position = targetPosition() + forward
+    }
+    
+    func targetPosition() -> SCNVector3 {
+        return (target?.position)!
     }
 
 }

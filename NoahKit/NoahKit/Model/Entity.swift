@@ -10,6 +10,6 @@ import UIKit
 
 public class Entity: NSObject {
     
-    var position = Vector.zero
+    public var position = Vector.zero
 
 }

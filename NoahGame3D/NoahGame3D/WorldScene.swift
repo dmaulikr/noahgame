@@ -38,6 +38,12 @@ class WorldScene: Scene {
         self.addEntity(terrain)
     }
     
+    func addMainCharacter(character: CharacterView) {
+        self.character = character
+        self.addEntity(character)
+        camera.addTarget(character)
+    }
+    
     func addEntity(entity: EntityView) {
         entities.append(entity)
         self.addNode(entity.node)

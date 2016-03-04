@@ -18,12 +18,12 @@ class GameViewController: UIViewController {
         // create a new scene
         let scene = WorldScene.sharedInstance()
         
-        // retrieve the ship node
-        let ship = CharacterView()
-        scene.addEntity(ship)
+        // retrieve the character node
+        let character = CharacterView()
+        scene.addMainCharacter(character)
         
         // animate the 3d object
-        scene.animate()
+//        scene.animate()
         
         // retrieve the SCNView
         let scnView = self.view as! SCNView
@@ -84,6 +84,20 @@ class GameViewController: UIViewController {
             return .All
         }
     }
+    
+//    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+//        print("event: \(event)")
+//    }
+    
+    var count = 0
+    
+    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        print("moved: \(count++)")
+    }
+    
+//    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+//        print("ended: \(event)")
+//    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
