@@ -30,7 +30,7 @@ class EntityView: NSObject {
     var position: SCNVector3 {
         get {
             let vector: Vector = (entity?.position)!
-            return SCNVector3Make(vector.x, vector.y, vector.z)
+            return SCNVector3Make(vector.y, vector.z, vector.x)
         }
     }
     

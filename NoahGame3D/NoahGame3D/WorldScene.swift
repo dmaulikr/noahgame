@@ -56,13 +56,13 @@ class WorldScene: Scene {
         }
     }
     
-    func moveCharacter(traslation: SCNVector3) {
-        character.move(traslation)
-        camera.move(traslation)
+    func moveCharacter(offset: Float) {
+        character.move(offset)
+        camera.moveWithTarget()
     }
     
-    func rotateCharacter(rotate: Float) {
-        character.rotate(rotate)
-        camera.rotate()
+    func rotateCharacter(offset: Float) {
+        character.rotate(offset)
+        camera.rotateWithTarget()
     }
 }

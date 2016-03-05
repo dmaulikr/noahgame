@@ -47,17 +47,12 @@ class Camera: NSObject {
         node.constraints = [constraint]
     }
     
-    func move(traslation: SCNVector3) {
-        let vector = SCNVector3Make(node.position.x + traslation.x, node.position.y + traslation.y, node.position.z + traslation.z)
-        node.position = vector
+    func moveWithTarget() {
+        orbit.position = target!.position
     }
     
-    func rotate() {
+    func rotateWithTarget() {
         orbit.eulerAngles.y = target!.rotation
     }
-    
-//    func targetPosition() -> SCNVector3 {
-//        return (target?.position)!
-//    }
 
 }

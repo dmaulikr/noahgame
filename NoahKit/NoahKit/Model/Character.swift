@@ -86,11 +86,11 @@ public class Character: Entity, Buffable, Attackable, Movable {
     }
     
     // MARK: Movable
-    internal func moveUp() {
+    public func moveUp() {
         position.move(Vector.up, angle: rotation)
     }
     
-    internal func moveDown() {
+    public func moveDown() {
         position.move(Vector.down, angle: rotation)
     }
     

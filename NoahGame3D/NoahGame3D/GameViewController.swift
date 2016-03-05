@@ -18,11 +18,8 @@ class GameViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // create a new scene
         worldScene = WorldScene.sharedInstance()
         
-        // retrieve the character node
         let character = CharacterView()
         worldScene.addMainCharacter(character)
         
@@ -39,7 +36,6 @@ class GameViewController: UIViewController {
     }
     
     func handleTap(gestureRecognize: UIGestureRecognizer) {
-        // retrieve the SCNView
         let scnView = self.view as! SCNView
         
         // check what nodes are tapped
@@ -117,15 +113,12 @@ class GameViewController: UIViewController {
         }
     }
     
-//    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
-//        print("ended: \(event)")
-//    }
+//    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) { }
     
     func move(lastLocation: CGPoint) {
         let offset = currentMove.y - lastLocation.y
-        let vector = SCNVector3Make(0, 0, -Float(offset))
-        
-        worldScene.moveCharacter(vector)
+              
+        worldScene.moveCharacter(Float(offset))
         currentMove = lastLocation
     }
     
