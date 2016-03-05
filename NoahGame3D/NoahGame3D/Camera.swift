@@ -11,10 +11,12 @@ import SceneKit
 
 class Camera: NSObject {
     
-    let node: SCNNode
+    let orbit: SCNNode
+    var node: SCNNode
     var target: EntityView?
 
     override init() {
+        orbit = SCNNode()
         node = SCNNode()
         super.init()
         
@@ -23,12 +25,14 @@ class Camera: NSObject {
         node.camera?.orthographicScale = 20
         node.camera?.zFar = 200
         
+        orbit.addChildNode(node)
+        
         self.position = SCNVector3(x: 0, y: 20, z: 20)
     }
     
     var position: SCNVector3 {
         get {
-            return node.position
+            return  node.position
         }
         set {
             node.position = newValue
@@ -43,23 +47,17 @@ class Camera: NSObject {
         node.constraints = [constraint]
     }
     
-    func updateMove(traslation: SCNVector3) {
-//        let forward = SCNVector3.transform(-traslation, Matrix.CreateRotationY(yaw));
-//        position += forward;
+    func move(traslation: SCNVector3) {
+        let vector = SCNVector3Make(node.position.x + traslation.x, node.position.y + traslation.y, node.position.z + traslation.z)
+        node.position = vector
     }
     
-    func updateRotate(rotate: Float) {
-        node.eulerAngles.y = Float(M_PI) + rotate
-        self.updateDistance()
-    }
-
-    func updateDistance() {
-//        let forward = SCNVector3.transform(ConstantGame.CameraDistance, Matrix.CreateRotationY(yaw))
-//        position = targetPosition() + forward
+    func rotate() {
+        orbit.eulerAngles.y = target!.rotation
     }
     
-    func targetPosition() -> SCNVector3 {
-        return (target?.position)!
-    }
+//    func targetPosition() -> SCNVector3 {
+//        return (target?.position)!
+//    }
 
 }

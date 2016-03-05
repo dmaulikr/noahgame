@@ -11,5 +11,6 @@ import UIKit
 public class Entity: NSObject {
     
     public var position = Vector.zero
+    public var rotation: Float = 0
 
 }

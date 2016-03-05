@@ -40,8 +40,6 @@ public class Character: Entity, Buffable, Attackable, Movable {
     internal var health, energy: Int
     var skills: SkillManager!
     
-    var rotation: Float = 0
-    
     public init(name: String!) {
         health = 0
         energy = 0
@@ -105,10 +103,10 @@ public class Character: Entity, Buffable, Attackable, Movable {
     }
     
     public func rotateRight() {
-        rotation += 1
+        rotation += 1 / 10
     }
 
     public func rotateLeft() {
-        rotation -= 1
+        rotation -= 1 / 10
     }
 }

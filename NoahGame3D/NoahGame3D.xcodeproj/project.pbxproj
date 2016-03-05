@@ -153,12 +153,12 @@
 		0142F7851C853D5100E0575D /* NoahGame3D */ = {
 			isa = PBXGroup;
 			children = (
+				0142F78A1C853D5100E0575D /* GameViewController.swift */,
 				0142F7EC1C86853100E0575D /* Entities */,
 				0142F7D91C85404000E0575D /* Screens */,
 				0142F7DC1C8540BB00E0575D /* Views */,
 				0142F7DB1C85405500E0575D /* Resources */,
 				0142F7861C853D5100E0575D /* AppDelegate.swift */,
-				0142F78A1C853D5100E0575D /* GameViewController.swift */,
 				0142F7941C853D5100E0575D /* Info.plist */,
 			);
 			path = NoahGame3D;

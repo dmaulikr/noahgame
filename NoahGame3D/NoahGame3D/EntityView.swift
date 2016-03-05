@@ -32,8 +32,11 @@ class EntityView: NSObject {
             let vector: Vector = (entity?.position)!
             return SCNVector3Make(vector.x, vector.y, vector.z)
         }
-        set {
-            
+    }
+    
+    var rotation: Float {
+        get {
+            return entity!.rotation
         }
     }
     

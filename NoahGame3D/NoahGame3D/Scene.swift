@@ -24,7 +24,7 @@ class Scene: NSObject {
     }
     
     func setup() {
-        self.addNode(camera.node)
+        self.addNode(camera.orbit)
     }
     
     func addLights() {
@@ -53,7 +53,7 @@ class Scene: NSObject {
     
     func showInView(view: SCNView) {
         view.scene = scene
-        view.allowsCameraControl = true
+//        view.allowsCameraControl = true
         view.showsStatistics = true
         view.backgroundColor = UIColor.blackColor()
     }

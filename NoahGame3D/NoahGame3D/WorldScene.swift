@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SceneKit
 
 class WorldScene: Scene {
     
@@ -53,5 +54,15 @@ class WorldScene: Scene {
         for entity in entities {
             entity.animate()
         }
+    }
+    
+    func moveCharacter(traslation: SCNVector3) {
+        character.move(traslation)
+        camera.move(traslation)
+    }
+    
+    func rotateCharacter(rotate: Float) {
+        character.rotate(rotate)
+        camera.rotate()
     }
 }

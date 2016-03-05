@@ -11,23 +11,27 @@ import QuartzCore
 import SceneKit
 
 class GameViewController: UIViewController {
+    
+    var worldScene: WorldScene!
+    var currentMove: CGPoint!
+    var currentRotate: CGPoint!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // create a new scene
-        let scene = WorldScene.sharedInstance()
+        worldScene = WorldScene.sharedInstance()
         
         // retrieve the character node
         let character = CharacterView()
-        scene.addMainCharacter(character)
+        worldScene.addMainCharacter(character)
         
         // animate the 3d object
 //        scene.animate()
         
         // retrieve the SCNView
         let scnView = self.view as! SCNView
-        scene.showInView(scnView)
+        worldScene.showInView(scnView)
         
         // add a tap gesture recognizer
         let tapGesture = UITapGestureRecognizer(target: self, action: "handleTap:")
@@ -85,19 +89,52 @@ class GameViewController: UIViewController {
         }
     }
     
-//    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-//        print("event: \(event)")
-//    }
-    
-    var count = 0
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        let screenSize = UIScreen.mainScreen().bounds
+        
+        for touch in touches {
+            let lastLocation = touch.locationInView(self.view)
+            
+            if lastLocation.x < screenSize.size.width / 2 {
+                currentMove = lastLocation
+            } else {
+                currentRotate = lastLocation
+            }
+        }
+    }
     
     override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        print("moved: \(count++)")
+        let screenSize = UIScreen.mainScreen().bounds
+        
+        for touch in touches {
+            let lastLocation = touch.locationInView(self.view)
+        
+            if lastLocation.x < screenSize.size.width / 2 {
+                self.move(lastLocation)
+            } else {
+                self.rotate(lastLocation)
+            }
+        }
     }
     
 //    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
 //        print("ended: \(event)")
 //    }
+    
+    func move(lastLocation: CGPoint) {
+        let offset = currentMove.y - lastLocation.y
+        let vector = SCNVector3Make(0, 0, -Float(offset))
+        
+        worldScene.moveCharacter(vector)
+        currentMove = lastLocation
+    }
+    
+    func rotate(lastLocation: CGPoint) {
+        let offset = currentRotate.x - lastLocation.x
+        
+        worldScene.rotateCharacter(Float(offset))
+        currentRotate = lastLocation
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
