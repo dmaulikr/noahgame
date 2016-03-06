@@ -37,12 +37,12 @@ public class Character: Entity, Buffable, Attackable, Movable {
 //    protected Equipment equipment;
     
     var name: String!
-    internal var health, energy: Int
+    public var health, energy: Int
     var skills: SkillManager!
     
     public init(name: String!) {
-        health = 0
-        energy = 0
+        health = 200
+        energy = 200
         super.init()
         
         self.name = name

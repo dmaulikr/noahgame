@@ -13,6 +13,8 @@ import SceneKit
 class GameViewController: UIViewController {
 
     @IBOutlet weak var sceneView: SCNView!
+    @IBOutlet weak var health: UILabel!
+    @IBOutlet weak var energy: UILabel!
     @IBOutlet var skills: [UIButton]!
     
     var worldScene: WorldScene!
@@ -34,6 +36,13 @@ class GameViewController: UIViewController {
         // add a tap gesture recognizer
         let tapGesture = UITapGestureRecognizer(target: self, action: "handleTap:")
         sceneView.addGestureRecognizer(tapGesture)
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        updateHealthAndEnergy()
+        updateSkillsBar()
     }
     
     func handleTap(gestureRecognize: UIGestureRecognizer) {
@@ -140,4 +149,23 @@ class GameViewController: UIViewController {
         
         worldScene.activateSKillCharacter(index!)
     }
+    
+    func updateHealthAndEnergy() {
+        let character = worldScene.character
+        
+        health.text = String(character.health)
+        energy.text = String(character.energy)
+    }
+    
+    func updateSkillsBar() {
+        let character = worldScene.character
+        
+        for button in skills {
+            let index = skills.indexOf(button)
+            let name = character.skills[index!]
+            
+            button.setTitle(name, forState: UIControlState.Normal)
+        }
+    }
+    
 }

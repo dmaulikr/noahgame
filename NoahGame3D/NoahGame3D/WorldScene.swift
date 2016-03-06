@@ -69,4 +69,5 @@ class WorldScene: Scene {
     func activateSKillCharacter(index: Int) {
         character.activateSkill(index)
     }
+    
 }

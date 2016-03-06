@@ -67,6 +67,18 @@ class CharacterView: EntityView {
         }
     }
     
+    var health: Int {
+        get {
+            return (entity as! NoahKit.Character).health
+        }
+    }
+    
+    var energy: Int {
+        get {
+            return (entity as! NoahKit.Character).energy
+        }
+    }
+    
     // MARK: Observers
     func addSkill(notification: NSNotification) {
         let skill = notification.object as! Skill
