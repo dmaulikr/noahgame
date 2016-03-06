@@ -49,11 +49,11 @@ public class Character: Entity, Buffable, Attackable, Movable {
         skills = SkillManager(character: self)
     }
     
-    internal func addSkill(skill: Skill) {
+    public func addSkill(skill: Skill) {
         skills.addSkill(skill)
     }
     
-    internal func activateSkill(name: String) {
+    public func activateSkill(name: String) {
         skills.activateSkill(name)
     }
     
@@ -72,17 +72,19 @@ public class Character: Entity, Buffable, Attackable, Movable {
     
     public func activateImmunity() { }
     
+    public func activateCurrent() { }
+    
     // MARK: Attackable
     public func activateFlames(damage: Int) {
-        self.debilityHealth(damage)
+        debilityHealth(damage)
     }
 
     public func activateThunder(damage: Int) {
-        self.debilityHealth(damage)
+        debilityHealth(damage)
     }
 
     public func activateFinal(damage: Int) {
-        self.debilityHealth(damage)
+        debilityHealth(damage)
     }
     
     // MARK: Movable
@@ -94,11 +96,11 @@ public class Character: Entity, Buffable, Attackable, Movable {
         position.move(Vector.down, angle: rotation)
     }
     
-    internal func moveRight() {
+    public func moveRight() {
         position.move(Vector.right, angle: rotation)
     }
     
-    internal func moveLeft() {
+    public func moveLeft() {
         position.move(Vector.left, angle: rotation)
     }
     

@@ -8,20 +8,22 @@
 
 import UIKit
 
-class Skill: NSObject {
+public class Skill: NSObject {
 
 //    protected IAttackCharacter character;
 //    private string name;
 //    private int level, reload, duration, currentReload, currentDuration;
 //    private int cost;
     
-    var name: String
+    public var name: String
     var character: Buffable!
 
     init(name: String) {
         self.name = name
     }
     
-    func activate(target: Attackable?) { }
+    func activate(target: Attackable?) {
+        print(name)
+    }
     
 }

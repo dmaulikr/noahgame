@@ -56,13 +56,17 @@ class WorldScene: Scene {
         }
     }
     
-    func moveCharacter(offset: Float) {
-        character.move(offset)
+    func moveCharacter(offsetX: Float, offsetY: Float) {
+        character.move(offsetX, offsetY: offsetY)
         camera.moveWithTarget()
     }
     
     func rotateCharacter(offset: Float) {
         character.rotate(offset)
         camera.rotateWithTarget()
+    }
+    
+    func activateSKillCharacter(index: Int) {
+        character.activateSkill(index)
     }
 }

@@ -22,10 +22,12 @@ class SkillManager: NSObject {
     func addSkill(skill: Skill) {
         skill.character = character
         skills[skill.name] = skill
+        
+        NSNotificationCenter.defaultCenter().postNotificationName("characterAddSkill", object: skill)
     }
     
     func activateSkill(name: String) {
-        skills[name]!.activate(target)
+        skills[name]?.activate(target)
     }
     
 }

@@ -8,13 +8,14 @@
 
 import UIKit
 
-class Final: OffensiveSkill {
+public class Final: OffensiveSkill {
 
-    init() {
+    public init() {
         super.init(name: SkillNames.Final.rawValue)
     }
     
     override func activate(target: Attackable?) {
+        super.activate(target)
         target?.activateFinal(300)
     }
     

@@ -11,6 +11,9 @@ import QuartzCore
 import SceneKit
 
 class GameViewController: UIViewController {
+
+    @IBOutlet weak var sceneView: SCNView!
+    @IBOutlet var skills: [UIButton]!
     
     var worldScene: WorldScene!
     var currentMove: CGPoint!
@@ -26,21 +29,17 @@ class GameViewController: UIViewController {
         // animate the 3d object
 //        scene.animate()
         
-        // retrieve the SCNView
-        let scnView = self.view as! SCNView
-        worldScene.showInView(scnView)
+        worldScene.showInView(sceneView)
         
         // add a tap gesture recognizer
         let tapGesture = UITapGestureRecognizer(target: self, action: "handleTap:")
-        scnView.addGestureRecognizer(tapGesture)
+        sceneView.addGestureRecognizer(tapGesture)
     }
     
     func handleTap(gestureRecognize: UIGestureRecognizer) {
-        let scnView = self.view as! SCNView
-        
         // check what nodes are tapped
-        let p = gestureRecognize.locationInView(scnView)
-        let hitResults = scnView.hitTest(p, options: nil)
+        let p = gestureRecognize.locationInView(sceneView)
+        let hitResults = sceneView.hitTest(p, options: nil)
         // check that we clicked on at least one object
         if hitResults.count > 0 {
             // retrieved the first clicked object
@@ -116,9 +115,10 @@ class GameViewController: UIViewController {
 //    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) { }
     
     func move(lastLocation: CGPoint) {
-        let offset = currentMove.y - lastLocation.y
+        let offsetX = currentMove.x - lastLocation.x
+        let offsetY = currentMove.y - lastLocation.y
               
-        worldScene.moveCharacter(Float(offset))
+        worldScene.moveCharacter(Float(offsetX), offsetY: Float(offsetY))
         currentMove = lastLocation
     }
     
@@ -134,4 +134,10 @@ class GameViewController: UIViewController {
         // Release any cached data, images, etc that aren't in use.
     }
 
+    @IBAction func activeSkill(sender: AnyObject) {
+        let button = sender as! UIButton
+        let index = skills.indexOf(button)
+        
+        worldScene.activateSKillCharacter(index!)
+    }
 }

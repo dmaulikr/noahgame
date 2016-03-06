@@ -1,22 +1,22 @@
 //
-//  Electrons.swift
+//  Current.swift
 //  NoahKit
 //
-//  Created by Franklin Fox on 29/2/16.
+//  Created by Franklin Fox on 6/3/16.
 //  Copyright © 2016 FoxDev. All rights reserved.
 //
 
 import UIKit
 
-public class Electrons: DefensiveSkill {
+public class Current: DefensiveSkill {
 
     public init() {
-        super.init(name: SkillNames.Electrons.rawValue)
+        super.init(name: SkillNames.Current.rawValue)
     }
     
     override func activate(target: Attackable?) {
         super.activate(nil)
-        character.activateElectrons(100)
+        character.activateCurrent()
     }
     
 }

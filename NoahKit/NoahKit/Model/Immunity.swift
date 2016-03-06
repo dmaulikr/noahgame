@@ -8,9 +8,9 @@
 
 import UIKit
 
-class Immunity: DefensiveSkill {
+public class Immunity: DefensiveSkill {
 
-    init() {
+    public init() {
         super.init(name: SkillNames.Immunity.rawValue)
     }
     

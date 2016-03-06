@@ -12,5 +12,6 @@ public protocol Buffable {
 
     func activateElectrons(points: Int)
     func activateImmunity()
+    func activateCurrent()
     
 }
