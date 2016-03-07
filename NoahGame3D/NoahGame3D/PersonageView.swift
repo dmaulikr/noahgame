@@ -95,7 +95,13 @@ class PersonageView: EntityView {
         if target.entity is Attackable {
             let attackable = target.entity as! Attackable
             (entity as! Personage).selectTarget(attackable)
+        } else {
+            deselectTarget()
         }
+    }
+    
+    func deselectTarget() {
+        (entity as! Personage).deselectTarget()
     }
     
     // MARK: Observers

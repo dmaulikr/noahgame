@@ -71,11 +71,16 @@ class WorldScene: Scene {
     }
     
     func selectTargetNode(node: SCNNode) {
+        let nodeName = node.name?.stringByReplacingOccurrencesOfString("Mesh", withString: "")
+    
         for entity in entities {
-            if entity.node.name == node.name {
+            if entity.node.name == nodeName {
                 personage.selectTarget(entity)
+                return
             }
         }
+        
+        personage.deselectTarget()
     }
     
 }

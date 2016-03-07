@@ -202,7 +202,7 @@ class GameViewController: UIViewController {
         let target = worldScene.personage.target
         
         targetName.text = target?.name
-        targetHealth.text = String(target?.health)
-        targetEnergy.text = String(target?.energy)
+        targetHealth.text = target?.health != nil ? String(target?.health) : ""
+        targetEnergy.text = target?.energy != nil ? String(target?.energy) : ""
     }
 }
