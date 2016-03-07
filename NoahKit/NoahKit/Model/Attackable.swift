@@ -18,8 +18,8 @@ public protocol Attackable: PersonageProtocol {
 //    void DebilityEnergy(int damage);
 //    string Name { get; }
     
-    func activateFlames(damage: Int)
-    func activateThunder(damage: Int)
-    func activateFinal(damage: Int)
+    func activateFlames(points: Int)
+    func activateThunder(points: Int)
+    func activateFinal(pointss: Int)
     
 }

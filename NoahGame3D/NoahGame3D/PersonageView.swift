@@ -13,9 +13,9 @@ class PersonageView: EntityView {
     
     var skills: [String]
     
-    override init() {
+    init(name: String!) {
         skills = [String]()
-        super.init(entity: Personage(name: "Personage"), nodeName: "ship")
+        super.init(entity: Personage(name: name), nodeName: "ship")
     
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "addSkill:", name: OperationNames.AddSkill.rawValue, object: nil)
         
@@ -67,6 +67,12 @@ class PersonageView: EntityView {
         }
     }
     
+    var name: String {
+        get {
+            return (entity as! Personage).name
+        }
+    }
+    
     var health: Int {
         get {
             return (entity as! Personage).health
@@ -76,6 +82,19 @@ class PersonageView: EntityView {
     var energy: Int {
         get {
             return (entity as! Personage).energy
+        }
+    }
+    
+    var target: Attackable? {
+        get {
+            return (entity as! Personage).target
+        }
+    }
+    
+    func selectTarget(target: EntityView) {
+        if target.entity is Attackable {
+            let attackable = target.entity as! Attackable
+            (entity as! Personage).selectTarget(attackable)
         }
     }
     

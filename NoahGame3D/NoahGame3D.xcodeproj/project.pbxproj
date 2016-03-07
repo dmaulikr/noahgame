@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01132ED51C8D4FF500F23048 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01132ED41C8D4FF500F23048 /* MenuViewController.swift */; };
 		0142F7871C853D5100E0575D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142F7861C853D5100E0575D /* AppDelegate.swift */; };
 		0142F7891C853D5100E0575D /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 0142F7881C853D5100E0575D /* art.scnassets */; };
 		0142F78B1C853D5100E0575D /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142F78A1C853D5100E0575D /* GameViewController.swift */; };
@@ -79,6 +80,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		01132ED41C8D4FF500F23048 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		0142F7831C853D5100E0575D /* NoahGame3D.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoahGame3D.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0142F7861C853D5100E0575D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0142F7881C853D5100E0575D /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 		0142F7851C853D5100E0575D /* NoahGame3D */ = {
 			isa = PBXGroup;
 			children = (
+				01132ED41C8D4FF500F23048 /* MenuViewController.swift */,
 				0142F78A1C853D5100E0575D /* GameViewController.swift */,
 				0142F7EC1C86853100E0575D /* Entities */,
 				0142F7D91C85404000E0575D /* Screens */,
@@ -393,6 +396,7 @@
 				0142F7FB1C86977400E0575D /* WorldScene.swift in Sources */,
 				0142F7F21C86865B00E0575D /* Camera.swift in Sources */,
 				0142F78B1C853D5100E0575D /* GameViewController.swift in Sources */,
+				01132ED51C8D4FF500F23048 /* MenuViewController.swift in Sources */,
 				0142F7FF1C86A1F000E0575D /* EntityView.swift in Sources */,
 				0142F7F91C86966600E0575D /* TerrainView.swift in Sources */,
 				0142F7F41C8689E600E0575D /* Scene.swift in Sources */,

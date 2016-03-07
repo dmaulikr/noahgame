@@ -44,20 +44,13 @@ class SkillManager: NSObject {
         
         if skill is OffensiveSkill {
             if targetName == personage.name {
-                
+                skill?.activate(personage)
             }
         } else {
             if personageName == personage.name {
-                skill!.activate(nil)
+                skill?.activate(nil)
             }
         }
-        
-        print(message["personage"])
-        print(message["skillName"])
-        print(message["target"])
-        
-        print(personage.health)
-        print(personage.energy)
     }
     
 }

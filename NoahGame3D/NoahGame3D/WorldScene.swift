@@ -70,4 +70,12 @@ class WorldScene: Scene {
         personage.activateSkill(index)
     }
     
+    func selectTargetNode(node: SCNNode) {
+        for entity in entities {
+            if entity.node.name == node.name {
+                personage.selectTarget(entity)
+            }
+        }
+    }
+    
 }

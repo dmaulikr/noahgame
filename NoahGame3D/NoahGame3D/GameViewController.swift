@@ -14,9 +14,15 @@ import NoahKit
 class GameViewController: UIViewController {
 
     @IBOutlet weak var sceneView: SCNView!
+    @IBOutlet weak var name: UILabel!
     @IBOutlet weak var health: UILabel!
     @IBOutlet weak var energy: UILabel!
+    @IBOutlet weak var targetName: UILabel!
+    @IBOutlet weak var targetHealth: UILabel!
+    @IBOutlet weak var targetEnergy: UILabel!
     @IBOutlet var skills: [UIButton]!
+    
+    var userName: String!
     
     var worldScene: WorldScene!
     var currentMove: CGPoint!
@@ -29,7 +35,7 @@ class GameViewController: UIViewController {
         
         worldScene = WorldScene.sharedInstance()
         
-        let personage = PersonageView()
+        let personage = PersonageView(name: userName)
         worldScene.addMainPersonage(personage)
         
         // animate the 3d object
@@ -45,7 +51,11 @@ class GameViewController: UIViewController {
     }
     
     func setup() {
+        name.text = worldScene.personage.name
+        
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateHealthAndEnergy", name: OperationNames.UpdatePersonage.rawValue, object: nil)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "selectTarget", name: OperationNames.SelectTarget.rawValue, object: nil)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -69,6 +79,9 @@ class GameViewController: UIViewController {
         if hitResults.count > 0 {
             // retrieved the first clicked object
             let result: AnyObject! = hitResults[0]
+            
+            // select target
+            worldScene.selectTargetNode(result.node!)
             
             // get its material
             let material = result.node!.geometry!.firstMaterial!
@@ -185,4 +198,11 @@ class GameViewController: UIViewController {
         }
     }
     
+    func selectTarget() {
+        let target = worldScene.personage.target
+        
+        targetName.text = target?.name
+        targetHealth.text = String(target?.health)
+        targetEnergy.text = String(target?.energy)
+    }
 }

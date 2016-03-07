@@ -13,6 +13,7 @@ public enum OperationNames : String {
     // notifications
     case AddSkill = "personageAddSkill"
     case UpdatePersonage = "updatePersonage"
+    case SelectTarget = "selectTarget"
     
     // server connect
     case ActivateSkill = "activateSkill"

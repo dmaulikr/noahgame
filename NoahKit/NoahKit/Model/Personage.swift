@@ -57,8 +57,8 @@ public class Personage: Entity, Buffable, Attackable, Movable {
         skills.activateSkill(name)
     }
     
-    func debilityHealth(damage: Int) {
-        health -= damage
+    func debilityHealth(points: Int) {
+        health -= points
         
         NSNotificationCenter.defaultCenter().postNotificationName(OperationNames.UpdatePersonage.rawValue, object: nil)
     }
@@ -69,8 +69,22 @@ public class Personage: Entity, Buffable, Attackable, Movable {
         NSNotificationCenter.defaultCenter().postNotificationName(OperationNames.UpdatePersonage.rawValue, object: nil)
     }
     
-    func selectTarget(target: Attackable?) {
+    public func selectTarget(target: Attackable) {
         skills.target = target
+        
+        NSNotificationCenter.defaultCenter().postNotificationName(OperationNames.SelectTarget.rawValue, object: nil)
+    }
+    
+    public func deselectTarget() {
+        skills.target = nil
+        
+        NSNotificationCenter.defaultCenter().postNotificationName(OperationNames.SelectTarget.rawValue, object: nil)
+    }
+    
+    public var target: Attackable? {
+        get {
+            return skills.target
+        }
     }
     
     // MARK: Buffable
@@ -83,16 +97,16 @@ public class Personage: Entity, Buffable, Attackable, Movable {
     public func activateCurrent() { }
     
     // MARK: Attackable
-    public func activateFlames(damage: Int) {
-        debilityHealth(damage)
+    public func activateFlames(points: Int) {
+        debilityHealth(points)
     }
 
-    public func activateThunder(damage: Int) {
-        debilityHealth(damage)
+    public func activateThunder(points: Int) {
+        debilityHealth(points)
     }
 
-    public func activateFinal(damage: Int) {
-        debilityHealth(damage)
+    public func activateFinal(points: Int) {
+        debilityHealth(points)
     }
     
     // MARK: Movable

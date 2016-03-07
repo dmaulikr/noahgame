@@ -23,6 +23,7 @@ class EntityView: NSObject {
     init(entity: Entity, nodeName: String) {
         self.entity = entity
         node = WorldScene.sharedInstance().getEntityWithName(nodeName)
+        node.name = nodeName
     }
     
     func animate() { }
