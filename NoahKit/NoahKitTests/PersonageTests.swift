@@ -1,5 +1,5 @@
 //
-//  CharacterTests.swift
+//  PersonageTests.swift
 //  NoahKit
 //
 //  Created by Franklin Fox on 28/2/16.
@@ -10,19 +10,19 @@ import XCTest
 
 class CharacterTests: XCTestCase {
 
-    var character: Character!
-    var enemy: Character!
+    var personage: Personage!
+    var enemy: Personage!
     
     override func setUp() {
         super.setUp()
         
-        character = Character(name: "Character")
-        character.addSkill(Electrons())
-        character.addSkill(Flames())
-        character.addSkill(Thunder())
-        character.addSkill(Final())
+        personage = Personage(name: "Personage")
+        personage.addSkill(Electrons())
+        personage.addSkill(Flames())
+        personage.addSkill(Thunder())
+        personage.addSkill(Final())
         
-        enemy = Character(name: "Enemy")
+        enemy = Personage(name: "Enemy")
     }
     
     override func tearDown() {
@@ -31,18 +31,18 @@ class CharacterTests: XCTestCase {
     
     // Defensive Skills
     func testActivateElectronsSkill() {
-        let energy = character.energy
-        character.activateSkill(SkillNames.Electrons.rawValue)
+        let energy = personage.energy
+        personage.activateSkill(SkillNames.Electrons.rawValue)
         
-        XCTAssertEqual(character.energy, energy + 100)
+        XCTAssertEqual(personage.energy, energy + 100)
     }
     
     // Offensive Skills
     func testActivateFlamesSkill() {
         let health = enemy.health
         
-        character.selectTarget(enemy)
-        character.activateSkill(SkillNames.Flames.rawValue)
+        personage.selectTarget(enemy)
+        personage.activateSkill(SkillNames.Flames.rawValue)
         
         XCTAssertEqual(enemy.health, health - 100)
     }
@@ -50,8 +50,8 @@ class CharacterTests: XCTestCase {
     func testActivateThunderSkill() {
         let health = enemy.health
         
-        character.selectTarget(enemy)
-        character.activateSkill(SkillNames.Thunder.rawValue)
+        personage.selectTarget(enemy)
+        personage.activateSkill(SkillNames.Thunder.rawValue)
         
         XCTAssertEqual(enemy.health, health - 200)
     }
@@ -59,8 +59,8 @@ class CharacterTests: XCTestCase {
     func testActivateFinalSkill() {
         let health = enemy.health
         
-        character.selectTarget(enemy)
-        character.activateSkill(SkillNames.Final.rawValue)
+        personage.selectTarget(enemy)
+        personage.activateSkill(SkillNames.Final.rawValue)
         
         XCTAssertEqual(enemy.health, health - 300)
     }
@@ -71,11 +71,11 @@ class CharacterTests: XCTestCase {
         XCTAssertEqual(skill.name, SkillNames.Electrons.rawValue)
     }
 
-    func testMoveCharacter() {
-        character.moveUp()
+    func testMovePersonage() {
+        personage.moveUp()
         
-        XCTAssertEqual(character.position.x, 1)
-        XCTAssertEqual(character.position.y, 0)
+        XCTAssertEqual(personage.position.x, 1)
+        XCTAssertEqual(personage.position.y, 0)
     }
 
     func testSumeVectors() {

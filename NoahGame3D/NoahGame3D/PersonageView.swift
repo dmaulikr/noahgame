@@ -1,5 +1,5 @@
 //
-//  CharacterView.swift
+//  PersonageView.swift
 //  NoahGame3D
 //
 //  Created by Franklin Fox on 1/3/16.
@@ -15,7 +15,7 @@ class CharacterView: EntityView {
     
     override init() {
         skills = [String]()
-        super.init(entity: Character(name: "Character"), nodeName: "ship")
+        super.init(entity: Personage(name: "Personage"), nodeName: "ship")
     
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "addSkill:", name: "characterAddSkill", object: nil)
         
@@ -23,7 +23,7 @@ class CharacterView: EntityView {
     }
     
     func setup() {
-        let character = entity as! NoahKit.Character
+        let character = entity as! Personage
         
         character.addSkill(Electrons())
         character.addSkill(Immunity())
@@ -39,7 +39,7 @@ class CharacterView: EntityView {
     }
     
     func move(offsetX: Float, offsetY: Float) {
-        let character = entity as! NoahKit.Character
+        let character = entity as! Personage
         
         offsetX < 0 ? character.moveRight() : character.moveLeft()
         
@@ -50,7 +50,7 @@ class CharacterView: EntityView {
     }
     
     func rotate(offset: Float) {
-        let character = entity as! NoahKit.Character
+        let character = entity as! Personage
         
         offset < 0 ? character.rotateLeft() : character.rotateRight()
         
@@ -58,7 +58,7 @@ class CharacterView: EntityView {
     }
     
     func activateSkill(index: Int) {
-        let character = entity as! NoahKit.Character
+        let character = entity as! Personage
 
         if index < skills.count {
             let skillName = skills[index]
@@ -69,13 +69,13 @@ class CharacterView: EntityView {
     
     var health: Int {
         get {
-            return (entity as! NoahKit.Character).health
+            return (entity as! Personage).health
         }
     }
     
     var energy: Int {
         get {
-            return (entity as! NoahKit.Character).energy
+            return (entity as! Personage).energy
         }
     }
     
