@@ -27,15 +27,17 @@ class SocketAPI: NSObject {
             print("Socket connected...")
         }
         
-        socket.on(OperationNames.ActivateSkill.rawValue) { data in
-            print(data)
+        socket.on(OperationNames.ActivateSkill.rawValue) { data, ack in
+            let message = data[0] as! [String: AnyObject]
+            
+            print(message["personage"])
+            print(message["skillName"])
         }
     }
     
     func connect() {
         socket.connect()
     }
-    
     
     func disconnect() {
         socket.disconnect()
@@ -44,16 +46,5 @@ class SocketAPI: NSObject {
     func sendMessage(identifier: String, message: [String: AnyObject]) {
         socket.emit(identifier, message)
     }
-    
-//    func receiveMessage(completionHandler: (messageInfo: [String: AnyObject]) -> Void) {
-//        socket.on("newChatMessage") { (dataArray, socketAck) -> Void in
-//            var messageDictionary = [String: AnyObject]()
-//            messageDictionary["nickname"] = dataArray[0] as! String
-//            messageDictionary["message"] = dataArray[1] as! String
-//            messageDictionary["date"] = dataArray[2] as! String
-//            
-//            completionHandler(messageInfo: messageDictionary)
-//        }
-//    }
     
 }
