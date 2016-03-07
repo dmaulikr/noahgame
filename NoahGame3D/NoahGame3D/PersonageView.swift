@@ -104,7 +104,6 @@ class PersonageView: EntityView {
         (entity as! Personage).deselectTarget()
     }
     
-    // MARK: Observers
     func addSkill(notification: NSNotification) {
         let skill = notification.object as! Skill
         

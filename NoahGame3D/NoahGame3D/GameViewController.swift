@@ -55,7 +55,7 @@ class GameViewController: UIViewController {
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateHealthAndEnergy", name: OperationNames.UpdatePersonage.rawValue, object: nil)
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "selectTarget", name: OperationNames.SelectTarget.rawValue, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "selectTarget", name: OperationNames.UpdateTarget.rawValue, object: nil)
     }
     
     override func viewWillAppear(animated: Bool) {

@@ -39,5 +39,11 @@ public class Server: NSObject {
         
         socket.sendMessage(OperationNames.ActivateSkill.rawValue, message: message)
     }
+    
+    func personageConnected(personage: PersonageProtocol) {
+        let message = ["name": personage.name, "health": personage.health, "energy": personage.energy]
+        
+        socket.sendMessage(OperationNames.PersonageConnected.rawValue, message: message as! [String: AnyObject])
+    }
 
 }

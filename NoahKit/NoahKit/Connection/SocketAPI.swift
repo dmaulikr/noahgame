@@ -19,18 +19,25 @@ class SocketAPI: NSObject {
         socket = SocketIOClient(socketURL: NSURL(string: url)!, options: [.Log(true), .ForcePolling(true)])
         
         self.setup()
-        self.connect()
     }
     
     func setup() {
         socket.on("connect") { data, ack in
             print("Socket connected...")
+            
+            NSNotificationCenter.defaultCenter().postNotificationName(OperationNames.PersonageConnected.rawValue, object: nil)
         }
         
         socket.on(OperationNames.ActivateSkill.rawValue) { data, ack in
             let message = data[0] as! [String: AnyObject]
             
             NSNotificationCenter.defaultCenter().postNotificationName(OperationNames.ActivateSkill.rawValue, object: message)
+        }
+        
+        socket.on(OperationNames.PersonageConnected.rawValue) { data, ack in
+            let message = data[0] as! [String: AnyObject]
+            
+            print(message)
         }
     }
     

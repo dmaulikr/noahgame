@@ -47,6 +47,16 @@ public class Personage: Entity, Buffable, Attackable, Movable {
         
         self.name = name
         skills = SkillManager(personage: self)
+        
+        setup()
+    }
+    
+    func setup() {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "update", name: OperationNames.PersonageConnected.rawValue, object: nil)
+    }
+    
+    func update() {
+        Server.sharedInstance().personageConnected(self)
     }
     
     public func addSkill(skill: Skill) {
@@ -72,13 +82,13 @@ public class Personage: Entity, Buffable, Attackable, Movable {
     public func selectTarget(target: Attackable) {
         skills.target = target
         
-        NSNotificationCenter.defaultCenter().postNotificationName(OperationNames.SelectTarget.rawValue, object: nil)
+        NSNotificationCenter.defaultCenter().postNotificationName(OperationNames.UpdateTarget.rawValue, object: nil)
     }
     
     public func deselectTarget() {
         skills.target = nil
         
-        NSNotificationCenter.defaultCenter().postNotificationName(OperationNames.SelectTarget.rawValue, object: nil)
+        NSNotificationCenter.defaultCenter().postNotificationName(OperationNames.UpdateTarget.rawValue, object: nil)
     }
     
     public var target: Attackable? {
