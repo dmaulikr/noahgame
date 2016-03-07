@@ -36,7 +36,7 @@ public class Personage: Entity, Buffable, Attackable, Movable {
 //    protected ItemsList items;
 //    protected Equipment equipment;
     
-    var name: String!
+    public var name: String!
     public var health, energy: Int
     var skills: SkillManager!
     

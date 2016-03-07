@@ -25,7 +25,7 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        Server()
+        Server.sharedInstance().connect()
         
         worldScene = WorldScene.sharedInstance()
         
@@ -47,6 +47,12 @@ class GameViewController: UIViewController {
         
         updateHealthAndEnergy()
         updateSkillsBar()
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        Server.sharedInstance().disconnect()
     }
     
     func handleTap(gestureRecognize: UIGestureRecognizer) {

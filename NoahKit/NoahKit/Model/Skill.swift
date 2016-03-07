@@ -24,6 +24,7 @@ public class Skill: NSObject {
     
     func activate(target: Attackable?) {
         print(name)
+        Server.sharedInstance().activateSkill(personage, skill: self, target: target)
     }
     
 }

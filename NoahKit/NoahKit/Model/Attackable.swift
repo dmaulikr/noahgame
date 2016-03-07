@@ -8,7 +8,7 @@
 
 import UIKit
 
-public protocol Attackable {
+public protocol Attackable: PersonageProtocol {
 
 //    bool IsNormal(IAttackCharacter character);
 //    bool IsNear(IAttackCharacter character);

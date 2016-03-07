@@ -31,6 +31,9 @@
 		01132ECB1C8D04E100F23048 /* SwiftRegex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01132EB61C8D04E100F23048 /* SwiftRegex.swift */; };
 		01132ECC1C8D04E100F23048 /* WebSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01132EB71C8D04E100F23048 /* WebSocket.swift */; };
 		01132ECD1C8D067400F23048 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142F8021C86A3D700E0575D /* Entity.swift */; };
+		01132ECF1C8D0E9200F23048 /* SocketAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01132ECE1C8D0E9100F23048 /* SocketAPI.swift */; };
+		01132ED11C8D21B400F23048 /* PersonageProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01132ED01C8D21B400F23048 /* PersonageProtocol.swift */; };
+		01132ED31C8D251F00F23048 /* OperationNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01132ED21C8D251F00F23048 /* OperationNames.swift */; };
 		0142F7EA1C8551D700E0575D /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0142F7E91C8551D700E0575D /* libicucore.tbd */; };
 		0142F8031C86A3D700E0575D /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142F8021C86A3D700E0575D /* Entity.swift */; };
 		01886ABC1C82E9F100D3CAA5 /* NoahKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 01886ABB1C82E9F100D3CAA5 /* NoahKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -104,6 +107,9 @@
 		01132EB51C8D04E100F23048 /* SocketTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SocketTypes.swift; path = Connection/SocketIO/SocketTypes.swift; sourceTree = "<group>"; };
 		01132EB61C8D04E100F23048 /* SwiftRegex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftRegex.swift; path = Connection/SocketIO/SwiftRegex.swift; sourceTree = "<group>"; };
 		01132EB71C8D04E100F23048 /* WebSocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WebSocket.swift; path = Connection/SocketIO/WebSocket.swift; sourceTree = "<group>"; };
+		01132ECE1C8D0E9100F23048 /* SocketAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SocketAPI.swift; path = Connection/SocketAPI.swift; sourceTree = "<group>"; };
+		01132ED01C8D21B400F23048 /* PersonageProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersonageProtocol.swift; path = Model/PersonageProtocol.swift; sourceTree = "<group>"; };
+		01132ED21C8D251F00F23048 /* OperationNames.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OperationNames.swift; path = Connection/OperationNames.swift; sourceTree = "<group>"; };
 		0142F7E91C8551D700E0575D /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
 		0142F8021C86A3D700E0575D /* Entity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Entity.swift; path = Model/Entity.swift; sourceTree = "<group>"; };
 		01886AB81C82E9F100D3CAA5 /* NoahKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NoahKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -155,6 +161,8 @@
 			isa = PBXGroup;
 			children = (
 				01132E751C8CF95A00F23048 /* Server.swift */,
+				01132ECE1C8D0E9100F23048 /* SocketAPI.swift */,
+				01132ED21C8D251F00F23048 /* OperationNames.swift */,
 				0142F7E41C85507300E0575D /* WebSocket */,
 			);
 			name = Connection;
@@ -264,6 +272,7 @@
 				01886B6E1C84082B00D3CAA5 /* Buffable.swift */,
 				01886B741C84109900D3CAA5 /* Movable.swift */,
 				01886B761C84111100D3CAA5 /* Vector.swift */,
+				01132ED01C8D21B400F23048 /* PersonageProtocol.swift */,
 			);
 			name = Characters;
 			sourceTree = "<group>";
@@ -420,15 +429,18 @@
 			files = (
 				01886B671C8403C800D3CAA5 /* Final.swift in Sources */,
 				01886B3A1C83BFAB00D3CAA5 /* Personage.swift in Sources */,
+				01132ED31C8D251F00F23048 /* OperationNames.swift in Sources */,
 				01886B521C83DE0000D3CAA5 /* OffensiveSkill.swift in Sources */,
 				01886B401C83C0DC00D3CAA5 /* Item.swift in Sources */,
 				01132EC51C8D04E100F23048 /* SocketIOClientStatus.swift in Sources */,
 				01132EBA1C8D04E100F23048 /* SocketAnyEvent.swift in Sources */,
+				01132ECF1C8D0E9200F23048 /* SocketAPI.swift in Sources */,
 				01886B541C83DFD600D3CAA5 /* Attackable.swift in Sources */,
 				01132EC91C8D04E100F23048 /* SocketStringReader.swift in Sources */,
 				01886B3E1C83C05E00D3CAA5 /* Skill.swift in Sources */,
 				01132ECC1C8D04E100F23048 /* WebSocket.swift in Sources */,
 				01132EC61C8D04E100F23048 /* SocketLogger.swift in Sources */,
+				01132ED11C8D21B400F23048 /* PersonageProtocol.swift in Sources */,
 				01132EBB1C8D04E100F23048 /* SocketClientSpec.swift in Sources */,
 				01132EC71C8D04E100F23048 /* SocketPacket.swift in Sources */,
 				01132EBD1C8D04E100F23048 /* SocketEngineClient.swift in Sources */,

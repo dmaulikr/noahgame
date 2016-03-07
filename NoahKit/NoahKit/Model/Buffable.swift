@@ -8,7 +8,7 @@
 
 import UIKit
 
-public protocol Buffable {
+public protocol Buffable: PersonageProtocol {
 
     func activateElectrons(points: Int)
     func activateImmunity()
