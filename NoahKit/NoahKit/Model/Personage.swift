@@ -1,5 +1,5 @@
 //
-//  Character.swift
+//  Personage.swift
 //  NoahKit
 //
 //  Created by Franklin Fox on 28/2/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class Character: Entity, Buffable, Attackable, Movable {
+public class Personage: Entity, Buffable, Attackable, Movable {
 
 //    Entity
 //    protected string name;
@@ -46,7 +46,7 @@ public class Character: Entity, Buffable, Attackable, Movable {
         super.init()
         
         self.name = name
-        skills = SkillManager(character: self)
+        skills = SkillManager(personage: self)
     }
     
     public func addSkill(skill: Skill) {
@@ -89,26 +89,26 @@ public class Character: Entity, Buffable, Attackable, Movable {
     
     // MARK: Movable
     public func moveUp() {
-        position.move(Vector.up, angle: rotation)
+        self.position.move(Vector.up, angle: self.rotation)
     }
     
     public func moveDown() {
-        position.move(Vector.down, angle: rotation)
+        self.position.move(Vector.down, angle: self.rotation)
     }
     
     public func moveRight() {
-        position.move(Vector.right, angle: rotation)
+        self.position.move(Vector.right, angle: self.rotation)
     }
     
     public func moveLeft() {
-        position.move(Vector.left, angle: rotation)
+        self.position.move(Vector.left, angle: self.rotation)
     }
     
     public func rotateRight() {
-        rotation += 1 / 10
+        self.rotation += 1 / 10
     }
 
     public func rotateLeft() {
-        rotation -= 1 / 10
+        self.rotation -= 1 / 10
     }
 }

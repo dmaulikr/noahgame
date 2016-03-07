@@ -14,7 +14,7 @@ class WorldScene: Scene {
     private static var instance : WorldScene? = nil
     
     var entities: [EntityView]
-    var character: CharacterView!
+    var personage: PersonageView!
     var terrain: TerrainView
     
     static func sharedInstance() -> WorldScene {
@@ -39,10 +39,10 @@ class WorldScene: Scene {
         self.addEntity(terrain)
     }
     
-    func addMainCharacter(character: CharacterView) {
-        self.character = character
-        self.addEntity(character)
-        camera.addTarget(character)
+    func addMainPersonage(personage: PersonageView) {
+        self.personage = personage
+        self.addEntity(personage)
+        camera.addTarget(personage)
     }
     
     func addEntity(entity: EntityView) {
@@ -56,18 +56,18 @@ class WorldScene: Scene {
         }
     }
     
-    func moveCharacter(offsetX: Float, offsetY: Float) {
-        character.move(offsetX, offsetY: offsetY)
+    func movePersonage(offsetX: Float, offsetY: Float) {
+        personage.move(offsetX, offsetY: offsetY)
         camera.moveWithTarget()
     }
     
-    func rotateCharacter(offset: Float) {
-        character.rotate(offset)
+    func rotatePersonage(offset: Float) {
+        personage.rotate(offset)
         camera.rotateWithTarget()
     }
     
-    func activateSKillCharacter(index: Int) {
-        character.activateSkill(index)
+    func activateSKillPersonage(index: Int) {
+        personage.activateSkill(index)
     }
     
 }

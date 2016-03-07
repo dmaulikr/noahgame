@@ -10,20 +10,20 @@ import UIKit
 
 class SkillManager: NSObject {
 
-    var character: Buffable!
+    var personage: Buffable!
     internal var target: Attackable?
     var skills: [String: Skill]
     
-    init(character: Character) {
-        self.character = character
+    init(personage: Personage) {
+        self.personage = personage
         skills = [String: Skill]()
     }
     
     func addSkill(skill: Skill) {
-        skill.character = character
+        skill.personage = personage
         skills[skill.name] = skill
         
-        NSNotificationCenter.defaultCenter().postNotificationName("characterAddSkill", object: skill)
+        NSNotificationCenter.defaultCenter().postNotificationName("personageAddSkill", object: skill)
     }
     
     func activateSkill(name: String) {

@@ -16,7 +16,7 @@ public class Skill: NSObject {
 //    private int cost;
     
     public var name: String
-    var character: Buffable!
+    var personage: Buffable!
 
     init(name: String) {
         self.name = name

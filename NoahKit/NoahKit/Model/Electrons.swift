@@ -16,7 +16,7 @@ public class Electrons: DefensiveSkill {
     
     override func activate(target: Attackable?) {
         super.activate(nil)
-        character.activateElectrons(100)
+        personage.activateElectrons(100)
     }
     
 }

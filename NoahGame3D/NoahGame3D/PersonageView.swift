@@ -9,7 +9,7 @@
 import SceneKit
 import NoahKit
 
-class CharacterView: EntityView {
+class PersonageView: EntityView {
     
     var skills: [String]
     
@@ -17,20 +17,20 @@ class CharacterView: EntityView {
         skills = [String]()
         super.init(entity: Personage(name: "Personage"), nodeName: "ship")
     
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "addSkill:", name: "characterAddSkill", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "addSkill:", name: "personageAddSkill", object: nil)
         
         self.setup()
     }
     
     func setup() {
-        let character = entity as! Personage
+        let personage = entity as! Personage
         
-        character.addSkill(Electrons())
-        character.addSkill(Immunity())
-        character.addSkill(Current())
-        character.addSkill(Flames())
-        character.addSkill(Thunder())
-        character.addSkill(Final())
+        personage.addSkill(Electrons())
+        personage.addSkill(Immunity())
+        personage.addSkill(Current())
+        personage.addSkill(Flames())
+        personage.addSkill(Thunder())
+        personage.addSkill(Final())
     }
     
     override func animate() {
@@ -39,31 +39,31 @@ class CharacterView: EntityView {
     }
     
     func move(offsetX: Float, offsetY: Float) {
-        let character = entity as! Personage
+        let personage = entity as! Personage
         
-        offsetX < 0 ? character.moveRight() : character.moveLeft()
+        offsetX < 0 ? personage.moveRight() : personage.moveLeft()
         
-        offsetY < 0 ? character.moveUp() : character.moveDown()
+        offsetY < 0 ? personage.moveUp() : personage.moveDown()
         
         node.position = position
         print(node.position)
     }
     
     func rotate(offset: Float) {
-        let character = entity as! Personage
+        let personage = entity as! Personage
         
-        offset < 0 ? character.rotateLeft() : character.rotateRight()
+        offset < 0 ? personage.rotateLeft() : personage.rotateRight()
         
         node.eulerAngles.y = entity!.rotation
     }
     
     func activateSkill(index: Int) {
-        let character = entity as! Personage
+        let personage = entity as! Personage
 
         if index < skills.count {
             let skillName = skills[index]
             
-            character.activateSkill(skillName)
+            personage.activateSkill(skillName)
         }
     }
     

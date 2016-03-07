@@ -25,8 +25,8 @@ class GameViewController: UIViewController {
         super.viewDidLoad()
         worldScene = WorldScene.sharedInstance()
         
-        let character = CharacterView()
-        worldScene.addMainCharacter(character)
+        let personage = PersonageView()
+        worldScene.addMainPersonage(personage)
         
         // animate the 3d object
 //        scene.animate()
@@ -127,14 +127,14 @@ class GameViewController: UIViewController {
         let offsetX = currentMove.x - lastLocation.x
         let offsetY = currentMove.y - lastLocation.y
               
-        worldScene.moveCharacter(Float(offsetX), offsetY: Float(offsetY))
+        worldScene.movePersonage(Float(offsetX), offsetY: Float(offsetY))
         currentMove = lastLocation
     }
     
     func rotate(lastLocation: CGPoint) {
         let offset = currentRotate.x - lastLocation.x
         
-        worldScene.rotateCharacter(Float(offset))
+        worldScene.rotatePersonage(Float(offset))
         currentRotate = lastLocation
     }
     
@@ -147,22 +147,22 @@ class GameViewController: UIViewController {
         let button = sender as! UIButton
         let index = skills.indexOf(button)
         
-        worldScene.activateSKillCharacter(index!)
+        worldScene.activateSKillPersonage(index!)
     }
     
     func updateHealthAndEnergy() {
-        let character = worldScene.character
+        let personage = worldScene.personage
         
-        health.text = String(character.health)
-        energy.text = String(character.energy)
+        health.text = String(personage.health)
+        energy.text = String(personage.energy)
     }
     
     func updateSkillsBar() {
-        let character = worldScene.character
+        let personage = worldScene.personage
         
         for button in skills {
             let index = skills.indexOf(button)
-            let name = character.skills[index!]
+            let name = personage.skills[index!]
             
             button.setTitle(name, forState: UIControlState.Normal)
         }

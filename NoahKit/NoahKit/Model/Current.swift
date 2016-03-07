@@ -16,7 +16,7 @@ public class Current: DefensiveSkill {
     
     override func activate(target: Attackable?) {
         super.activate(nil)
-        character.activateCurrent()
+        personage.activateCurrent()
     }
     
 }

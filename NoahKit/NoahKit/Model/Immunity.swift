@@ -16,7 +16,7 @@ public class Immunity: DefensiveSkill {
     
     override func activate(target: Attackable?) {
         super.activate(nil)
-        character.activateImmunity()
+        personage.activateImmunity()
     }
     
 }

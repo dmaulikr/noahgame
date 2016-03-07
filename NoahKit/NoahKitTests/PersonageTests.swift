@@ -8,7 +8,7 @@
 
 import XCTest
 
-class CharacterTests: XCTestCase {
+class PersonageTests: XCTestCase {
 
     var personage: Personage!
     var enemy: Personage!
