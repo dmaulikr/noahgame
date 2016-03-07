@@ -8,9 +8,9 @@
 
 import UIKit
 
-class Server: NSObject {
+public class Server: NSObject {
 
-    override init() {
+    public override init() {
         let socket = SocketIOClient(socketURL: NSURL(string: "http://localhost:8080")!, options: [.Log(true), .ForcePolling(true)])
         
         socket.on("connect") {data, ack in

@@ -10,11 +10,7 @@ import UIKit
 
 public class Entity: NSObject {
     
-    public var position: Vector!
+    public var position: Vector! = Vector.zero
     public var rotation: Float = 0
-    
-    override init() {
-        position = Vector.zero
-    }
 
 }

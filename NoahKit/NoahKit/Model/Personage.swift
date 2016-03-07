@@ -89,26 +89,26 @@ public class Personage: Entity, Buffable, Attackable, Movable {
     
     // MARK: Movable
     public func moveUp() {
-        self.position.move(Vector.up, angle: self.rotation)
+        position.move(Vector.up, angle: rotation)
     }
     
     public func moveDown() {
-        self.position.move(Vector.down, angle: self.rotation)
+        position.move(Vector.down, angle: rotation)
     }
     
     public func moveRight() {
-        self.position.move(Vector.right, angle: self.rotation)
+        position.move(Vector.right, angle: rotation)
     }
     
     public func moveLeft() {
-        self.position.move(Vector.left, angle: self.rotation)
+        position.move(Vector.left, angle: rotation)
     }
     
     public func rotateRight() {
-        self.rotation += 1 / 10
+        rotation += 1 / 10
     }
 
     public func rotateLeft() {
-        self.rotation -= 1 / 10
+        rotation -= 1 / 10
     }
 }

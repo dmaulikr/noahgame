@@ -9,6 +9,7 @@
 import UIKit
 import QuartzCore
 import SceneKit
+import NoahKit
 
 class GameViewController: UIViewController {
 
@@ -23,6 +24,9 @@ class GameViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        Server()
+        
         worldScene = WorldScene.sharedInstance()
         
         let personage = PersonageView()

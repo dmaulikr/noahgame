@@ -30,6 +30,7 @@
 		01132ECA1C8D04E100F23048 /* SocketTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01132EB51C8D04E100F23048 /* SocketTypes.swift */; };
 		01132ECB1C8D04E100F23048 /* SwiftRegex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01132EB61C8D04E100F23048 /* SwiftRegex.swift */; };
 		01132ECC1C8D04E100F23048 /* WebSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01132EB71C8D04E100F23048 /* WebSocket.swift */; };
+		01132ECD1C8D067400F23048 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142F8021C86A3D700E0575D /* Entity.swift */; };
 		0142F7EA1C8551D700E0575D /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0142F7E91C8551D700E0575D /* libicucore.tbd */; };
 		0142F8031C86A3D700E0575D /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142F8021C86A3D700E0575D /* Entity.swift */; };
 		01886ABC1C82E9F100D3CAA5 /* NoahKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 01886ABB1C82E9F100D3CAA5 /* NoahKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -478,6 +479,7 @@
 				01886AC81C82E9F100D3CAA5 /* NoahKitTests.swift in Sources */,
 				01886B701C8408B200D3CAA5 /* Buffable.swift in Sources */,
 				01886B4A1C83D62100D3CAA5 /* Personage.swift in Sources */,
+				01132ECD1C8D067400F23048 /* Entity.swift in Sources */,
 				01886B571C83E69B00D3CAA5 /* Attackable.swift in Sources */,
 				01886B781C84134D00D3CAA5 /* Movable.swift in Sources */,
 				01886B6D1C84046900D3CAA5 /* Immunity.swift in Sources */,
