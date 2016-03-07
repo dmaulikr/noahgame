@@ -11,4 +11,7 @@ import UIKit
 public protocol PersonageProtocol {
 
     var name: String! { get }
+    var health: Int { get }
+    var energy: Int { get }
+    
 }

@@ -40,6 +40,12 @@ class GameViewController: UIViewController {
         // add a tap gesture recognizer
         let tapGesture = UITapGestureRecognizer(target: self, action: "handleTap:")
         sceneView.addGestureRecognizer(tapGesture)
+        
+        setup()
+    }
+    
+    func setup() {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateHealthAndEnergy", name: OperationNames.UpdatePersonage.rawValue, object: nil)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -158,6 +164,7 @@ class GameViewController: UIViewController {
         let index = skills.indexOf(button)
         
         worldScene.activateSKillPersonage(index!)
+        updateHealthAndEnergy()
     }
     
     func updateHealthAndEnergy() {

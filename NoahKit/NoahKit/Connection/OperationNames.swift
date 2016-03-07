@@ -8,8 +8,13 @@
 
 import UIKit
 
-enum OperationNames : String {
+public enum OperationNames : String {
+
+    // notifications
+    case AddSkill = "personageAddSkill"
+    case UpdatePersonage = "updatePersonage"
     
+    // server connect
     case ActivateSkill = "activateSkill"
 
 }

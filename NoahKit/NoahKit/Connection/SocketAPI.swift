@@ -30,8 +30,7 @@ class SocketAPI: NSObject {
         socket.on(OperationNames.ActivateSkill.rawValue) { data, ack in
             let message = data[0] as! [String: AnyObject]
             
-            print(message["personage"])
-            print(message["skillName"])
+            NSNotificationCenter.defaultCenter().postNotificationName(OperationNames.ActivateSkill.rawValue, object: message)
         }
     }
     

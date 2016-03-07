@@ -15,16 +15,18 @@ public class Skill: NSObject {
 //    private int level, reload, duration, currentReload, currentDuration;
 //    private int cost;
     
-    public var name: String
+    public var name: String!
     var personage: Buffable!
 
     init(name: String) {
+        super.init()
         self.name = name
     }
     
-    func activate(target: Attackable?) {
-        print(name)
+    func activateSkill(target: Attackable?) {
         Server.sharedInstance().activateSkill(personage, skill: self, target: target)
     }
+    
+    func activate(target: Attackable?) { }
     
 }

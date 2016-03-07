@@ -59,6 +59,14 @@ public class Personage: Entity, Buffable, Attackable, Movable {
     
     func debilityHealth(damage: Int) {
         health -= damage
+        
+        NSNotificationCenter.defaultCenter().postNotificationName(OperationNames.UpdatePersonage.rawValue, object: nil)
+    }
+    
+    func debilityEnergy(points: Int) {
+        energy -= points
+        
+        NSNotificationCenter.defaultCenter().postNotificationName(OperationNames.UpdatePersonage.rawValue, object: nil)
     }
     
     func selectTarget(target: Attackable?) {
@@ -67,7 +75,7 @@ public class Personage: Entity, Buffable, Attackable, Movable {
     
     // MARK: Buffable
     public func activateElectrons(points: Int) {
-        energy += points
+        debilityEnergy(-points)
     }
     
     public func activateImmunity() { }
