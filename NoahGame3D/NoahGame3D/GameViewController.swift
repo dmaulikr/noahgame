@@ -143,8 +143,16 @@ class GameViewController: UIViewController {
             let lastLocation = touch.locationInView(self.view)
         
             if lastLocation.x < screenSize.size.width / 2 {
+                if currentMove == nil {
+                    currentMove = currentRotate
+                }
+                
                 self.move(lastLocation)
             } else {
+                if currentRotate == nil {
+                    currentRotate = currentMove
+                }
+                
                 self.rotate(lastLocation)
             }
         }
