@@ -20,14 +20,14 @@ class MenuViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    @IBAction func didOnline(sender: AnyObject) {
+    @IBAction func didOnline(_ sender: AnyObject) {
         // login - connect with server
     }
 
     // MARK: - Navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "menuToGameSegue" {
-            let game = segue.destinationViewController as! GameViewController
+            let game = segue.destination as! GameViewController
             
             if userName.text != nil {
                 game.userName = userName.text

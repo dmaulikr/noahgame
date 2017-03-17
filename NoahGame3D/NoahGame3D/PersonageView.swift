@@ -17,7 +17,7 @@ class PersonageView: EntityView {
         skills = [String]()
         super.init(entity: Personage(name: name), nodeName: "ship")
     
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "addSkill:", name: OperationNames.AddSkill.rawValue, object: nil)
+        NotificationCenter.default.addObserver(self, selector: "addSkill:", name: NSNotification.Name(rawValue: OperationNames.AddSkill.rawValue), object: nil)
         
         self.setup()
     }
@@ -34,11 +34,11 @@ class PersonageView: EntityView {
     }
     
     override func animate() {
-        let action = SCNAction.repeatActionForever(SCNAction.rotateByX(0, y: 2, z: 0, duration: 1))
+        let action = SCNAction.repeatForever(SCNAction.rotateBy(x: 0, y: 2, z: 0, duration: 1))
         node.runAction(action)
     }
     
-    func move(offsetX: Float, offsetY: Float) {
+    func move(_ offsetX: Float, offsetY: Float) {
         let personage = entity as! Personage
         
         offsetX < 0 ? personage.moveRight() : personage.moveLeft()
@@ -49,7 +49,7 @@ class PersonageView: EntityView {
         print(node.position)
     }
     
-    func rotate(offset: Float) {
+    func rotate(_ offset: Float) {
         let personage = entity as! Personage
         
         offset < 0 ? personage.rotateLeft() : personage.rotateRight()
@@ -57,7 +57,7 @@ class PersonageView: EntityView {
         node.eulerAngles.y = entity!.rotation
     }
     
-    func activateSkill(index: Int) {
+    func activateSkill(_ index: Int) {
         let personage = entity as! Personage
 
         if index < skills.count {
@@ -91,7 +91,7 @@ class PersonageView: EntityView {
         }
     }
     
-    func selectTarget(target: EntityView) {
+    func selectTarget(_ target: EntityView) {
         if target.entity is Attackable {
             let attackable = target.entity as! Attackable
             (entity as! Personage).selectTarget(attackable)
@@ -104,7 +104,7 @@ class PersonageView: EntityView {
         (entity as! Personage).deselectTarget()
     }
     
-    func addSkill(notification: NSNotification) {
+    func addSkill(_ notification: Notification) {
         let skill = notification.object as! Skill
         
         skills.append(skill.name)

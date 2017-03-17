@@ -20,21 +20,21 @@ class SkillManager: NSObject {
         self.personage = personage
         skills = [String: Skill]()
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "activateSkillNotify:", name: OperationNames.ActivateSkill.rawValue, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(SkillManager.activateSkillNotify(_:)), name: NSNotification.Name(rawValue: OperationNames.ActivateSkill.rawValue), object: nil)
     }
     
-    func addSkill(skill: Skill) {
+    func addSkill(_ skill: Skill) {
         skill.personage = personage
         skills[skill.name] = skill
         
-        NSNotificationCenter.defaultCenter().postNotificationName(OperationNames.AddSkill.rawValue, object: skill)
+        NotificationCenter.default.post(name: Notification.Name(rawValue: OperationNames.AddSkill.rawValue), object: skill)
     }
     
-    func activateSkill(name: String) {
+    func activateSkill(_ name: String) {
         skills[name]?.activateSkill(target)
     }
     
-    func activateSkillNotify(notification: NSNotification) {
+    func activateSkillNotify(_ notification: Notification) {
         let message = notification.object as! NSDictionary
         let personageName = message["personage"] as! String
         let skillName = message["skillName"] as! String

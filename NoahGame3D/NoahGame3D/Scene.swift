@@ -31,31 +31,31 @@ class Scene: NSObject {
         // create and add a light to the scene
         let lightNode = SCNNode()
         lightNode.light = SCNLight()
-        lightNode.light!.type = SCNLightTypeOmni
+        lightNode.light!.type = SCNLight.LightType.omni
         lightNode.position = SCNVector3(x: 0, y: 10, z: 10)
         self.addNode(lightNode)
         
         // create and add an ambient light to the scene
         let ambientLightNode = SCNNode()
         ambientLightNode.light = SCNLight()
-        ambientLightNode.light!.type = SCNLightTypeAmbient
-        ambientLightNode.light!.color = UIColor.darkGrayColor()
+        ambientLightNode.light!.type = SCNLight.LightType.ambient
+        ambientLightNode.light!.color = UIColor.darkGray
         self.addNode(ambientLightNode)
     }
     
-    func addNode(node: SCNNode) {
+    func addNode(_ node: SCNNode) {
         scene.rootNode.addChildNode(node)
     }
     
-    func getEntityWithName(name: String) -> SCNNode {
-        return scene.rootNode.childNodeWithName(name, recursively: true)!
+    func getEntityWithName(_ name: String) -> SCNNode {
+        return scene.rootNode.childNode(withName: name, recursively: true)!
     }
     
-    func showInView(view: SCNView) {
+    func showInView(_ view: SCNView) {
         view.scene = scene
 //        view.allowsCameraControl = true
         view.showsStatistics = true
-        view.backgroundColor = UIColor.blackColor()
+        view.backgroundColor = UIColor.black
     }
     
 }

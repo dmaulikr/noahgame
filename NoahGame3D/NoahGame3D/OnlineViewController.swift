@@ -19,8 +19,8 @@ class OnlineViewController: UIViewController {
     }
     
     
-    @IBAction func didBack(sender: AnyObject) {
-        self.navigationController?.popViewControllerAnimated(true)
+    @IBAction func didBack(_ sender: AnyObject) {
+        self.navigationController?.popViewController(animated: true)
     }
 
     /*

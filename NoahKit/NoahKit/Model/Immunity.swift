@@ -8,13 +8,13 @@
 
 import UIKit
 
-public class Immunity: DefensiveSkill {
+open class Immunity: DefensiveSkill {
 
     public init() {
         super.init(name: SkillNames.Immunity.rawValue)
     }
     
-    override func activate(target: Attackable?) {
+    override func activate(_ target: Attackable?) {
         super.activate(nil)
         personage.activateImmunity()
     }

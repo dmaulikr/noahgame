@@ -11,7 +11,7 @@ import SceneKit
 
 class WorldScene: Scene {
     
-    private static var instance : WorldScene? = nil
+    fileprivate static var instance : WorldScene? = nil
     
     var entities: [EntityView]
     var personage: PersonageView!
@@ -25,7 +25,7 @@ class WorldScene: Scene {
         return instance!
     }
 
-    private override init() {
+    fileprivate override init() {
         entities = [EntityView]()
         terrain = TerrainView()
         super.init()
@@ -39,13 +39,13 @@ class WorldScene: Scene {
         self.addEntity(terrain)
     }
     
-    func addMainPersonage(personage: PersonageView) {
+    func addMainPersonage(_ personage: PersonageView) {
         self.personage = personage
         self.addEntity(personage)
         camera.addTarget(personage)
     }
     
-    func addEntity(entity: EntityView) {
+    func addEntity(_ entity: EntityView) {
         entities.append(entity)
         self.addNode(entity.node)
     }
@@ -56,22 +56,22 @@ class WorldScene: Scene {
         }
     }
     
-    func movePersonage(offsetX: Float, offsetY: Float) {
+    func movePersonage(_ offsetX: Float, offsetY: Float) {
         personage.move(offsetX, offsetY: offsetY)
         camera.moveWithTarget()
     }
     
-    func rotatePersonage(offset: Float) {
+    func rotatePersonage(_ offset: Float) {
         personage.rotate(offset)
         camera.rotateWithTarget()
     }
     
-    func activateSKillPersonage(index: Int) {
+    func activateSKillPersonage(_ index: Int) {
         personage.activateSkill(index)
     }
     
-    func selectTargetNode(node: SCNNode) {
-        let nodeName = node.name?.stringByReplacingOccurrencesOfString("Mesh", withString: "")
+    func selectTargetNode(_ node: SCNNode) {
+        let nodeName = node.name?.replacingOccurrences(of: "Mesh", with: "")
     
         for entity in entities {
             if entity.node.name == nodeName {

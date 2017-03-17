@@ -14,7 +14,7 @@ class TerrainView: EntityView {
     override init() {
         super.init()
         node.geometry = SCNFloor()
-        node.geometry?.firstMaterial?.diffuse.contents = UIColor.greenColor()
+        node.geometry?.firstMaterial?.diffuse.contents = UIColor.green
     }
     
 }

@@ -10,7 +10,7 @@ import UIKit
 
 public protocol Buffable: Attackable {
 
-    func activateElectrons(points: Int)
+    func activateElectrons(_ points: Int)
     func activateImmunity()
     func activateCurrent()
     

@@ -8,14 +8,14 @@
 
 import UIKit
 
-public class Skill: NSObject {
+open class Skill: NSObject {
 
 //    protected IAttackCharacter character;
 //    private string name;
 //    private int level, reload, duration, currentReload, currentDuration;
 //    private int cost;
     
-    public var name: String!
+    open var name: String!
     var personage: Buffable!
 
     init(name: String) {
@@ -23,10 +23,10 @@ public class Skill: NSObject {
         self.name = name
     }
     
-    func activateSkill(target: Attackable?) {
-        Server.sharedInstance().activateSkill(personage, skill: self, target: target)
+    func activateSkill(_ target: Attackable?) {
+        Server.sharedInstance().activateSkill(personage: personage, skill: self, target: target)
     }
     
-    func activate(target: Attackable?) { }
+    func activate(_ target: Attackable?) { }
     
 }

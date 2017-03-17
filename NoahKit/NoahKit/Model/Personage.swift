@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class Personage: Entity, Buffable, Attackable, Movable {
+open class Personage: Entity, Buffable, Attackable, Movable {
 
 //    Entity
 //    protected string name;
@@ -36,8 +36,8 @@ public class Personage: Entity, Buffable, Attackable, Movable {
 //    protected ItemsList items;
 //    protected Equipment equipment;
     
-    public var name: String!
-    public var health, energy: Int
+    open var name: String!
+    open var health, energy: Int
     var skills: SkillManager!
     
     public init(name: String!) {
@@ -52,95 +52,95 @@ public class Personage: Entity, Buffable, Attackable, Movable {
     }
     
     func setup() {
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "update", name: OperationNames.PersonageConnected.rawValue, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(Personage.update), name: NSNotification.Name(rawValue: OperationNames.PersonageConnected.rawValue), object: nil)
     }
     
     func update() {
-        Server.sharedInstance().personageConnected(self)
+        Server.sharedInstance().personageConnected(personage: self)
     }
     
-    public func addSkill(skill: Skill) {
+    open func addSkill(_ skill: Skill) {
         skills.addSkill(skill)
     }
     
-    public func activateSkill(name: String) {
+    open func activateSkill(_ name: String) {
         skills.activateSkill(name)
     }
     
-    func debilityHealth(points: Int) {
+    func debilityHealth(_ points: Int) {
         health -= points
         
-        NSNotificationCenter.defaultCenter().postNotificationName(OperationNames.UpdatePersonage.rawValue, object: nil)
+        NotificationCenter.default.post(name: Notification.Name(rawValue: OperationNames.UpdatePersonage.rawValue), object: nil)
     }
     
-    func debilityEnergy(points: Int) {
+    func debilityEnergy(_ points: Int) {
         energy -= points
         
-        NSNotificationCenter.defaultCenter().postNotificationName(OperationNames.UpdatePersonage.rawValue, object: nil)
+        NotificationCenter.default.post(name: Notification.Name(rawValue: OperationNames.UpdatePersonage.rawValue), object: nil)
     }
     
-    public func selectTarget(target: Attackable) {
+    open func selectTarget(_ target: Attackable) {
         skills.target = target
         
-        NSNotificationCenter.defaultCenter().postNotificationName(OperationNames.UpdateTarget.rawValue, object: nil)
+        NotificationCenter.default.post(name: Notification.Name(rawValue: OperationNames.UpdateTarget.rawValue), object: nil)
     }
     
-    public func deselectTarget() {
+    open func deselectTarget() {
         skills.target = nil
         
-        NSNotificationCenter.defaultCenter().postNotificationName(OperationNames.UpdateTarget.rawValue, object: nil)
+        NotificationCenter.default.post(name: Notification.Name(rawValue: OperationNames.UpdateTarget.rawValue), object: nil)
     }
     
-    public var target: Attackable? {
+    open var target: Attackable? {
         get {
             return skills.target
         }
     }
     
     // MARK: Buffable
-    public func activateElectrons(points: Int) {
+    open func activateElectrons(_ points: Int) {
         debilityEnergy(-points)
     }
     
-    public func activateImmunity() { }
+    open func activateImmunity() { }
     
-    public func activateCurrent() { }
+    open func activateCurrent() { }
     
     // MARK: Attackable
-    public func activateFlames(points: Int) {
+    open func activateFlames(_ points: Int) {
         debilityHealth(points)
     }
 
-    public func activateThunder(points: Int) {
+    open func activateThunder(_ points: Int) {
         debilityHealth(points)
     }
 
-    public func activateFinal(points: Int) {
+    open func activateFinal(_ points: Int) {
         debilityHealth(points)
     }
     
     // MARK: Movable
-    public func moveUp() {
+    open func moveUp() {
         position.move(Vector.up, angle: rotation)
     }
     
-    public func moveDown() {
+    open func moveDown() {
         position.move(Vector.down, angle: rotation)
     }
     
-    public func moveRight() {
+    open func moveRight() {
         position.move(Vector.right, angle: rotation)
     }
     
-    public func moveLeft() {
+    open func moveLeft() {
         position.move(Vector.left, angle: rotation)
     }
     
-    public func rotateRight() {
+    open func rotateRight() {
         rotation += 1 / 10
     }
 
-    public func rotateLeft() {
+    open func rotateLeft() {
         rotation -= 1 / 10
     }
 }

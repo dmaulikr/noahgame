@@ -8,9 +8,9 @@
 
 import UIKit
 
-public class Vector: NSObject {
+open class Vector: NSObject {
 
-    public var x, y, z: Float
+    open var x, y, z: Float
     
     init(x: Float, y: Float) {
         self.x = x
@@ -18,7 +18,7 @@ public class Vector: NSObject {
         self.z = 0
     }
     
-    internal func move(traslation: Vector, angle: Float) {
+    internal func move(_ traslation: Vector, angle: Float) {
         var newAngle = angle
         
         if traslation.x < 0 {   // left
@@ -40,7 +40,7 @@ public class Vector: NSObject {
         self.sume(Vector(x: proyX, y: proyY))
     }
     
-    func sume(vector: Vector) {
+    func sume(_ vector: Vector) {
         x += vector.x
         y += vector.y
     }

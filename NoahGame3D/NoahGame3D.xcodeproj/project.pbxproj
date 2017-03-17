@@ -307,13 +307,16 @@
 					0142F7821C853D5100E0575D = {
 						CreatedOnToolsVersion = 7.2.1;
 						DevelopmentTeam = N5ZAM4EK33;
+						LastSwiftMigration = 0820;
 					};
 					0142F7981C853D5100E0575D = {
 						CreatedOnToolsVersion = 7.2.1;
+						LastSwiftMigration = 0820;
 						TestTargetID = 0142F7821C853D5100E0575D;
 					};
 					0142F7A31C853D5100E0575D = {
 						CreatedOnToolsVersion = 7.2.1;
+						LastSwiftMigration = 0820;
 						TestTargetID = 0142F7821C853D5100E0575D;
 					};
 				};
@@ -559,6 +562,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.foxdev.NoahGame3D;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -574,6 +578,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.foxdev.NoahGame3D;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -586,6 +591,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.foxdev.NoahGame3DTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NoahGame3D.app/NoahGame3D";
 			};
 			name = Debug;
@@ -598,6 +604,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.foxdev.NoahGame3DTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NoahGame3D.app/NoahGame3D";
 			};
 			name = Release;
@@ -610,6 +617,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.foxdev.NoahGame3DUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = NoahGame3D;
 				USES_XCTRUNNER = YES;
 			};
@@ -622,6 +630,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.foxdev.NoahGame3DUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = NoahGame3D;
 				USES_XCTRUNNER = YES;
 			};

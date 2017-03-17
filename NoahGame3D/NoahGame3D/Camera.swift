@@ -39,11 +39,11 @@ class Camera: NSObject {
         }
     }
     
-    func addTarget(target: EntityView) {
+    func addTarget(_ target: EntityView) {
         self.target = target
         
         let constraint = SCNLookAtConstraint(target: target.node)
-        constraint.gimbalLockEnabled = true
+        constraint.isGimbalLockEnabled = true
         node.constraints = [constraint]
     }
     

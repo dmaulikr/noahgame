@@ -44,7 +44,7 @@ class GameViewController: UIViewController {
         worldScene.showInView(sceneView)
         
         // add a tap gesture recognizer
-        let tapGesture = UITapGestureRecognizer(target: self, action: "handleTap:")
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(GameViewController.handleTap(_:)))
         sceneView.addGestureRecognizer(tapGesture)
         
         setup()
@@ -53,27 +53,27 @@ class GameViewController: UIViewController {
     func setup() {
         name.text = worldScene.personage.name
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateHealthAndEnergy", name: OperationNames.UpdatePersonage.rawValue, object: nil)
+        NotificationCenter.default.addObserver(self, selector: "updateHealthAndEnergy", name: NSNotification.Name(rawValue: OperationNames.UpdatePersonage.rawValue), object: nil)
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "selectTarget", name: OperationNames.UpdateTarget.rawValue, object: nil)
+        NotificationCenter.default.addObserver(self, selector: "selectTarget", name: NSNotification.Name(rawValue: OperationNames.UpdateTarget.rawValue), object: nil)
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         updateHealthAndEnergy()
         updateSkillsBar()
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
         Server.sharedInstance().disconnect()
     }
     
-    func handleTap(gestureRecognize: UIGestureRecognizer) {
+    func handleTap(_ gestureRecognize: UIGestureRecognizer) {
         // check what nodes are tapped
-        let p = gestureRecognize.locationInView(sceneView)
+        let p = gestureRecognize.location(in: sceneView)
         let hitResults = sceneView.hitTest(p, options: nil)
         // check that we clicked on at least one object
         if hitResults.count > 0 {
@@ -87,46 +87,46 @@ class GameViewController: UIViewController {
             let material = result.node!.geometry!.firstMaterial!
             
             // highlight it
-            SCNTransaction.begin()
-            SCNTransaction.setAnimationDuration(0.5)
+            /*SCNTransaction.begin()
+            SCNTransaction.animationDuration = 0.5
             
             // on completion - unhighlight
             SCNTransaction.setCompletionBlock {
                 SCNTransaction.begin()
-                SCNTransaction.setAnimationDuration(0.5)
+                SCNTransaction.animationDuration = 0.5
                 
-                material.emission.contents = UIColor.blackColor()
+                material.emission.contents = UIColor.black
                 
                 SCNTransaction.commit()
             }
             
-            material.emission.contents = UIColor.redColor()
+            material.emission.contents = UIColor.red
             
-            SCNTransaction.commit()
+            SCNTransaction.commit()*/
         }
     }
     
-    override func shouldAutorotate() -> Bool {
+    override var shouldAutorotate : Bool {
         return true
     }
     
-    override func prefersStatusBarHidden() -> Bool {
+    override var prefersStatusBarHidden : Bool {
         return true
     }
     
-    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
-        if UIDevice.currentDevice().userInterfaceIdiom == .Phone {
-            return .AllButUpsideDown
+    override var supportedInterfaceOrientations : UIInterfaceOrientationMask {
+        if UIDevice.current.userInterfaceIdiom == .phone {
+            return .allButUpsideDown
         } else {
-            return .All
+            return .all
         }
     }
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        let screenSize = UIScreen.mainScreen().bounds
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let screenSize = UIScreen.main.bounds
         
         for touch in touches {
-            let lastLocation = touch.locationInView(self.view)
+            let lastLocation = touch.location(in: self.view)
             
             if lastLocation.x < screenSize.size.width / 2 {
                 currentMove = lastLocation
@@ -136,11 +136,11 @@ class GameViewController: UIViewController {
         }
     }
     
-    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        let screenSize = UIScreen.mainScreen().bounds
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let screenSize = UIScreen.main.bounds
         
         for touch in touches {
-            let lastLocation = touch.locationInView(self.view)
+            let lastLocation = touch.location(in: self.view)
         
             if lastLocation.x < screenSize.size.width / 2 {
                 if currentMove == nil {
@@ -160,7 +160,7 @@ class GameViewController: UIViewController {
     
 //    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) { }
     
-    func move(lastLocation: CGPoint) {
+    func move(_ lastLocation: CGPoint) {
         let offsetX = currentMove.x - lastLocation.x
         let offsetY = currentMove.y - lastLocation.y
               
@@ -168,7 +168,7 @@ class GameViewController: UIViewController {
         currentMove = lastLocation
     }
     
-    func rotate(lastLocation: CGPoint) {
+    func rotate(_ lastLocation: CGPoint) {
         let offset = currentRotate.x - lastLocation.x
         
         worldScene.rotatePersonage(Float(offset))
@@ -180,9 +180,9 @@ class GameViewController: UIViewController {
         // Release any cached data, images, etc that aren't in use.
     }
 
-    @IBAction func activeSkill(sender: AnyObject) {
+    @IBAction func activeSkill(_ sender: AnyObject) {
         let button = sender as! UIButton
-        let index = skills.indexOf(button)
+        let index = skills.index(of: button)
         
         worldScene.activateSKillPersonage(index!)
         updateHealthAndEnergy()
@@ -191,18 +191,18 @@ class GameViewController: UIViewController {
     func updateHealthAndEnergy() {
         let personage = worldScene.personage
         
-        health.text = String(personage.health)
-        energy.text = String(personage.energy)
+        health.text = String(describing: personage?.health)
+        energy.text = String(describing: personage?.energy)
     }
     
     func updateSkillsBar() {
         let personage = worldScene.personage
         
         for button in skills {
-            let index = skills.indexOf(button)
-            let name = personage.skills[index!]
+            let index = skills.index(of: button)
+            let name = personage?.skills[index!]
             
-            button.setTitle(name, forState: UIControlState.Normal)
+            button.setTitle(name, for: UIControlState())
         }
     }
     
@@ -210,7 +210,7 @@ class GameViewController: UIViewController {
         let target = worldScene.personage.target
         
         targetName.text = target?.name
-        targetHealth.text = target?.health != nil ? String(target?.health) : ""
-        targetEnergy.text = target?.energy != nil ? String(target?.energy) : ""
+        targetHealth.text = target?.health != nil ? String(target!.health) : ""
+        targetEnergy.text = target?.energy != nil ? String(target!.energy) : ""
     }
 }

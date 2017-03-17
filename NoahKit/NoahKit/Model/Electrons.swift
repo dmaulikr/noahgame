@@ -8,13 +8,13 @@
 
 import UIKit
 
-public class Electrons: DefensiveSkill {
+open class Electrons: DefensiveSkill {
 
     public init() {
         super.init(name: SkillNames.Electrons.rawValue)
     }
     
-    override func activate(target: Attackable?) {
+    override func activate(_ target: Attackable?) {
         super.activate(nil)
         personage.activateElectrons(100)
     }

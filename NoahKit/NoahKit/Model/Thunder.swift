@@ -8,13 +8,13 @@
 
 import UIKit
 
-public class Thunder: OffensiveSkill {
+open class Thunder: OffensiveSkill {
 
     public init() {
         super.init(name: SkillNames.Thunder.rawValue)
     }
     
-    override func activate(target: Attackable?) {
+    override func activate(_ target: Attackable?) {
         super.activate(target)
         target?.activateThunder(200)
     }

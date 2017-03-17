@@ -35,15 +35,21 @@ public class Server: NSObject {
     
     public func activateSkill(personage: PersonageProtocol, skill: Skill, target: PersonageProtocol?) {
         var message = ["personage": personage.name, "skillName": skill.name]
-        message["target"] = target?.name
         
-        socket.sendMessage(OperationNames.ActivateSkill.rawValue, message: message)
+        if target != nil {
+            message["target"] = target?.name
+        }
+        
+        socket.sendMessage(OperationNames.ActivateSkill.rawValue,
+                           message: message as [String: AnyObject])
     }
     
     func personageConnected(personage: PersonageProtocol) {
-        let message = ["name": personage.name, "health": personage.health, "energy": personage.energy]
+        let message = ["name": personage.name,
+                       "health": personage.health,
+                       "energy": personage.energy] as [String : Any]
         
-        socket.sendMessage(OperationNames.PersonageConnected.rawValue, message: message as! [String: AnyObject])
+        socket.sendMessage(OperationNames.PersonageConnected.rawValue, message: message as [String: AnyObject])
     }
 
 }
