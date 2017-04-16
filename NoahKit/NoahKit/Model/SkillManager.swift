@@ -20,14 +20,14 @@ class SkillManager: NSObject {
         self.personage = personage
         skills = [String: Skill]()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(SkillManager.activateSkillNotify(_:)), name: NSNotification.Name(rawValue: OperationNames.ActivateSkill.rawValue), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(activateSkillNotify(_:)), name: NSNotification.Name(rawValue: OperationNames.activateSkill.rawValue), object: nil)
     }
     
     func addSkill(_ skill: Skill) {
         skill.personage = personage
         skills[skill.name] = skill
         
-        NotificationCenter.default.post(name: Notification.Name(rawValue: OperationNames.AddSkill.rawValue), object: skill)
+        NotificationCenter.default.post(name: Notification.Name(rawValue: OperationNames.addSkill.rawValue), object: skill)
     }
     
     func activateSkill(_ name: String) {

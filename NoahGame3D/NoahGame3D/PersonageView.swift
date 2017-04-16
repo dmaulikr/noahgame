@@ -17,7 +17,7 @@ class PersonageView: EntityView {
         skills = [String]()
         super.init(entity: Personage(name: name), nodeName: "ship")
     
-        NotificationCenter.default.addObserver(self, selector: "addSkill:", name: NSNotification.Name(rawValue: OperationNames.AddSkill.rawValue), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(addSkill), name: NSNotification.Name(rawValue: OperationNames.addSkill.rawValue), object: nil)
         
         self.setup()
     }

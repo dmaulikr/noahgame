@@ -11,12 +11,12 @@ import UIKit
 public enum OperationNames : String {
 
     // notifications
-    case AddSkill = "personageAddSkill"
-    case UpdatePersonage = "updatePersonage"
-    case UpdateTarget = "updateTarget"
+    case addSkill = "personageAddSkill"
+    case updatePersonage = "updatePersonage"
+    case updateTarget = "updateTarget"
     
     // server connect
-    case ActivateSkill = "activateSkill"
-    case PersonageConnected = "personageConnected"
+    case activateSkill = "activateSkill"
+    case personageConnected = "personageConnected"
 
 }

@@ -52,7 +52,7 @@ open class Personage: Entity, Buffable, Attackable, Movable {
     }
     
     func setup() {
-        NotificationCenter.default.addObserver(self, selector: #selector(Personage.update), name: NSNotification.Name(rawValue: OperationNames.PersonageConnected.rawValue), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(update), name: NSNotification.Name(rawValue: OperationNames.personageConnected.rawValue), object: nil)
     }
     
     func update() {
@@ -70,25 +70,25 @@ open class Personage: Entity, Buffable, Attackable, Movable {
     func debilityHealth(_ points: Int) {
         health -= points
         
-        NotificationCenter.default.post(name: Notification.Name(rawValue: OperationNames.UpdatePersonage.rawValue), object: nil)
+        NotificationCenter.default.post(name: Notification.Name(rawValue: OperationNames.updatePersonage.rawValue), object: nil)
     }
     
     func debilityEnergy(_ points: Int) {
         energy -= points
         
-        NotificationCenter.default.post(name: Notification.Name(rawValue: OperationNames.UpdatePersonage.rawValue), object: nil)
+        NotificationCenter.default.post(name: Notification.Name(rawValue: OperationNames.updatePersonage.rawValue), object: nil)
     }
     
     open func selectTarget(_ target: Attackable) {
         skills.target = target
         
-        NotificationCenter.default.post(name: Notification.Name(rawValue: OperationNames.UpdateTarget.rawValue), object: nil)
+        NotificationCenter.default.post(name: Notification.Name(rawValue: OperationNames.updateTarget.rawValue), object: nil)
     }
     
     open func deselectTarget() {
         skills.target = nil
         
-        NotificationCenter.default.post(name: Notification.Name(rawValue: OperationNames.UpdateTarget.rawValue), object: nil)
+        NotificationCenter.default.post(name: Notification.Name(rawValue: OperationNames.updateTarget.rawValue), object: nil)
     }
     
     open var target: Attackable? {
@@ -121,19 +121,19 @@ open class Personage: Entity, Buffable, Attackable, Movable {
     
     // MARK: Movable
     open func moveUp() {
-        position.move(Vector.up, angle: rotation)
+        position.move(.up, angle: rotation)
     }
     
     open func moveDown() {
-        position.move(Vector.down, angle: rotation)
+        position.move(.down, angle: rotation)
     }
     
     open func moveRight() {
-        position.move(Vector.right, angle: rotation)
+        position.move(.right, angle: rotation)
     }
     
     open func moveLeft() {
-        position.move(Vector.left, angle: rotation)
+        position.move(.left, angle: rotation)
     }
     
     open func rotateRight() {

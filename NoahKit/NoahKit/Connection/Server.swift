@@ -40,7 +40,7 @@ public class Server: NSObject {
             message["target"] = target?.name
         }
         
-        socket.sendMessage(OperationNames.ActivateSkill.rawValue,
+        socket.sendMessage(OperationNames.activateSkill.rawValue,
                            message: message as [String: AnyObject])
     }
     
@@ -49,7 +49,7 @@ public class Server: NSObject {
                        "health": personage.health,
                        "energy": personage.energy] as [String : Any]
         
-        socket.sendMessage(OperationNames.PersonageConnected.rawValue, message: message as [String: AnyObject])
+        socket.sendMessage(OperationNames.personageConnected.rawValue, message: message as [String: AnyObject])
     }
 
 }

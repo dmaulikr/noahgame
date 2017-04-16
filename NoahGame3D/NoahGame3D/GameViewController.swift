@@ -53,9 +53,9 @@ class GameViewController: UIViewController {
     func setup() {
         name.text = worldScene.personage.name
         
-        NotificationCenter.default.addObserver(self, selector: "updateHealthAndEnergy", name: NSNotification.Name(rawValue: OperationNames.UpdatePersonage.rawValue), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateHealthAndEnergy), name: NSNotification.Name(rawValue: OperationNames.updatePersonage.rawValue), object: nil)
         
-        NotificationCenter.default.addObserver(self, selector: "selectTarget", name: NSNotification.Name(rawValue: OperationNames.UpdateTarget.rawValue), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(selectTarget), name: NSNotification.Name(rawValue: OperationNames.updateTarget.rawValue), object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -84,7 +84,7 @@ class GameViewController: UIViewController {
             worldScene.selectTargetNode(result.node!)
             
             // get its material
-            let material = result.node!.geometry!.firstMaterial!
+            //let material = result.node!.geometry!.firstMaterial!
             
             // highlight it
             /*SCNTransaction.begin()
