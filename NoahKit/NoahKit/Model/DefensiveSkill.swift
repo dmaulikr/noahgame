@@ -6,13 +6,12 @@
 //  Copyright © 2016 FoxDev. All rights reserved.
 //
 
-open class DefensiveSkill: Skill {
+class DefensiveSkill: Skill {
 
-    override init(name: String) {
-        super.init(name: name)
+    override func activateSkill(_ personage: Buffable, target: Attackable) {
+        super.activateSkill(personage, target: target)
+        
+        personage.receiveDefensiveSkill(self)
     }
     
-    override func activate(_ target: Attackable?) {
-        super.activate(target)
-    }
 }

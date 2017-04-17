@@ -6,13 +6,35 @@
 //  Copyright © 2016 FoxDev. All rights reserved.
 //
 
-open class OffensiveSkill: Skill {
+class OffensiveSkill: Skill {
+    
+    var range: Float
+    
+    init(name: SkillName,
+         cost: Int,
+         points: Int = 0,
+         reload: Int = 0,
+         duration: Int = 0,
+         range: Float = 0,
+         description: String = "") {
+        
+        self.range = range
+        
+        super.init(name: name,
+                   cost: cost,
+                   points: points,
+                   reload: reload,
+                   duration: duration,
+                   description: description)
+    }
 
-    override init(name: String) {
-        super.init(name: name)
+    override func activateSkill(_ personage: Buffable, target: Attackable) {
+        
+        if personage.isNear(target, range: range) {
+            super.activateSkill(personage, target: target)
+            target.receiveOffensiveSkill(self)
+        }
+        
     }
     
-    override func activate(_ target: Attackable?) {
-        super.activate(target)
-    }
 }

@@ -1,0 +1,750 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1B11A58D1EA3352E003D821B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B11A58C1EA3352E003D821B /* AppDelegate.swift */; };
+		1B11A58F1EA3352E003D821B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B11A58E1EA3352E003D821B /* ViewController.swift */; };
+		1B11A5921EA3352E003D821B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B11A5901EA3352E003D821B /* Main.storyboard */; };
+		1B11A5941EA3352E003D821B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B11A5931EA3352E003D821B /* Assets.xcassets */; };
+		1B11A5971EA3352E003D821B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B11A5951EA3352E003D821B /* LaunchScreen.storyboard */; };
+		1B11A5A21EA3352E003D821B /* NoahGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B11A5A11EA3352E003D821B /* NoahGameTests.swift */; };
+		1B11A5AD1EA3352E003D821B /* NoahGameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B11A5AC1EA3352E003D821B /* NoahGameUITests.swift */; };
+		1BEF46B81EA3786600FE4414 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEF46B71EA3786600FE4414 /* GameViewController.swift */; };
+		1BEF46BD1EA38B5300FE4414 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1BEF46BC1EA38B5300FE4414 /* GoogleService-Info.plist */; };
+		1BEF46D01EA38BF000FE4414 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEF46C01EA38BF000FE4414 /* Entity.swift */; };
+		1BEF46D11EA38BF000FE4414 /* Personage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEF46C11EA38BF000FE4414 /* Personage.swift */; };
+		1BEF46D21EA38BF000FE4414 /* Attackable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEF46C21EA38BF000FE4414 /* Attackable.swift */; };
+		1BEF46D31EA38BF000FE4414 /* Movable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEF46C31EA38BF000FE4414 /* Movable.swift */; };
+		1BEF46D41EA38BF000FE4414 /* Vector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEF46C41EA38BF000FE4414 /* Vector.swift */; };
+		1BEF46D51EA38BF000FE4414 /* Skill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEF46C61EA38BF000FE4414 /* Skill.swift */; };
+		1BEF46D61EA38BF000FE4414 /* SkillsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEF46C71EA38BF000FE4414 /* SkillsManager.swift */; };
+		1BEF46D71EA38BF000FE4414 /* SkillsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEF46C81EA38BF000FE4414 /* SkillsBuilder.swift */; };
+		1BEF46D81EA38BF000FE4414 /* SkillName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEF46C91EA38BF000FE4414 /* SkillName.swift */; };
+		1BEF46D91EA38BF000FE4414 /* OffensiveSkill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEF46CA1EA38BF000FE4414 /* OffensiveSkill.swift */; };
+		1BEF46DA1EA38BF000FE4414 /* DefensiveSkill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEF46CB1EA38BF000FE4414 /* DefensiveSkill.swift */; };
+		1BEF46DB1EA38BF000FE4414 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEF46CD1EA38BF000FE4414 /* Item.swift */; };
+		1BEF46DD1EA38C0500FE4414 /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEF46DC1EA38C0500FE4414 /* GameManager.swift */; };
+		1BEF46E21EA38C1600FE4414 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEF46DE1EA38C1600FE4414 /* Server.swift */; };
+		1BEF46E31EA38C1600FE4414 /* SocketAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEF46DF1EA38C1600FE4414 /* SocketAPI.swift */; };
+		1BEF46E41EA38C1600FE4414 /* OperationNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEF46E01EA38C1600FE4414 /* OperationNames.swift */; };
+		A2D119FFB53AE0322E57D739 /* Pods_NoahGame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 811D8BC1207A342C896D26D1 /* Pods_NoahGame.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1B11A59E1EA3352E003D821B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1B11A5811EA3352E003D821B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1B11A5881EA3352E003D821B;
+			remoteInfo = NoahGame;
+		};
+		1B11A5A91EA3352E003D821B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1B11A5811EA3352E003D821B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1B11A5881EA3352E003D821B;
+			remoteInfo = NoahGame;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		1BA462151EA350D8001A0305 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		0C6B65CC8F6E449444F6F809 /* Pods-NoahGame.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoahGame.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NoahGame/Pods-NoahGame.debug.xcconfig"; sourceTree = "<group>"; };
+		1B11A5891EA3352E003D821B /* NoahGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoahGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B11A58C1EA3352E003D821B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1B11A58E1EA3352E003D821B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1B11A5911EA3352E003D821B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1B11A5931EA3352E003D821B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1B11A5961EA3352E003D821B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1B11A5981EA3352E003D821B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1B11A59D1EA3352E003D821B /* NoahGameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NoahGameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B11A5A11EA3352E003D821B /* NoahGameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoahGameTests.swift; sourceTree = "<group>"; };
+		1B11A5A31EA3352E003D821B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1B11A5A81EA3352E003D821B /* NoahGameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NoahGameUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B11A5AC1EA3352E003D821B /* NoahGameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoahGameUITests.swift; sourceTree = "<group>"; };
+		1B11A5AE1EA3352E003D821B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1BEF46B71EA3786600FE4414 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		1BEF46BC1EA38B5300FE4414 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1BEF46C01EA38BF000FE4414 /* Entity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Entity.swift; path = Model/Entity.swift; sourceTree = "<group>"; };
+		1BEF46C11EA38BF000FE4414 /* Personage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Personage.swift; path = Model/Personage.swift; sourceTree = "<group>"; };
+		1BEF46C21EA38BF000FE4414 /* Attackable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Attackable.swift; path = Model/Attackable.swift; sourceTree = "<group>"; };
+		1BEF46C31EA38BF000FE4414 /* Movable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Movable.swift; path = Model/Movable.swift; sourceTree = "<group>"; };
+		1BEF46C41EA38BF000FE4414 /* Vector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Vector.swift; path = Model/Vector.swift; sourceTree = "<group>"; };
+		1BEF46C61EA38BF000FE4414 /* Skill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Skill.swift; path = Model/Skill.swift; sourceTree = "<group>"; };
+		1BEF46C71EA38BF000FE4414 /* SkillsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SkillsManager.swift; path = Model/SkillsManager.swift; sourceTree = "<group>"; };
+		1BEF46C81EA38BF000FE4414 /* SkillsBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkillsBuilder.swift; sourceTree = "<group>"; };
+		1BEF46C91EA38BF000FE4414 /* SkillName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SkillName.swift; path = Model/SkillName.swift; sourceTree = "<group>"; };
+		1BEF46CA1EA38BF000FE4414 /* OffensiveSkill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OffensiveSkill.swift; path = Model/OffensiveSkill.swift; sourceTree = "<group>"; };
+		1BEF46CB1EA38BF000FE4414 /* DefensiveSkill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DefensiveSkill.swift; path = Model/DefensiveSkill.swift; sourceTree = "<group>"; };
+		1BEF46CD1EA38BF000FE4414 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Item.swift; path = Model/Item.swift; sourceTree = "<group>"; };
+		1BEF46DC1EA38C0500FE4414 /* GameManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
+		1BEF46DE1EA38C1600FE4414 /* Server.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Server.swift; path = Connection/Server.swift; sourceTree = "<group>"; };
+		1BEF46DF1EA38C1600FE4414 /* SocketAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SocketAPI.swift; path = Connection/SocketAPI.swift; sourceTree = "<group>"; };
+		1BEF46E01EA38C1600FE4414 /* OperationNames.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OperationNames.swift; path = Connection/OperationNames.swift; sourceTree = "<group>"; };
+		811D8BC1207A342C896D26D1 /* Pods_NoahGame.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NoahGame.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		975B0FD1424BE761EF32A457 /* Pods-NoahGame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoahGame.release.xcconfig"; path = "Pods/Target Support Files/Pods-NoahGame/Pods-NoahGame.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1B11A5861EA3352E003D821B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A2D119FFB53AE0322E57D739 /* Pods_NoahGame.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1B11A59A1EA3352E003D821B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1B11A5A51EA3352E003D821B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1B11A5801EA3352E003D821B = {
+			isa = PBXGroup;
+			children = (
+				1B11A58B1EA3352E003D821B /* NoahGame */,
+				1B11A5A01EA3352E003D821B /* NoahGameTests */,
+				1B11A5AB1EA3352E003D821B /* NoahGameUITests */,
+				1B11A58A1EA3352E003D821B /* Products */,
+				4C1BB99D68DA9F9C09D9ED59 /* Pods */,
+				C0F8DA66771CE154C4E53F63 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		1B11A58A1EA3352E003D821B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1B11A5891EA3352E003D821B /* NoahGame.app */,
+				1B11A59D1EA3352E003D821B /* NoahGameTests.xctest */,
+				1B11A5A81EA3352E003D821B /* NoahGameUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1B11A58B1EA3352E003D821B /* NoahGame */ = {
+			isa = PBXGroup;
+			children = (
+				1BEF46BE1EA38BB400FE4414 /* App */,
+				1BEF46CF1EA38BF000FE4414 /* Model */,
+				1BEF46E11EA38C1600FE4414 /* Connection */,
+			);
+			path = NoahGame;
+			sourceTree = "<group>";
+		};
+		1B11A5A01EA3352E003D821B /* NoahGameTests */ = {
+			isa = PBXGroup;
+			children = (
+				1B11A5A11EA3352E003D821B /* NoahGameTests.swift */,
+				1B11A5A31EA3352E003D821B /* Info.plist */,
+			);
+			path = NoahGameTests;
+			sourceTree = "<group>";
+		};
+		1B11A5AB1EA3352E003D821B /* NoahGameUITests */ = {
+			isa = PBXGroup;
+			children = (
+				1B11A5AC1EA3352E003D821B /* NoahGameUITests.swift */,
+				1B11A5AE1EA3352E003D821B /* Info.plist */,
+			);
+			path = NoahGameUITests;
+			sourceTree = "<group>";
+		};
+		1BEF46BE1EA38BB400FE4414 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				1B11A58C1EA3352E003D821B /* AppDelegate.swift */,
+				1B11A58E1EA3352E003D821B /* ViewController.swift */,
+				1BEF46B71EA3786600FE4414 /* GameViewController.swift */,
+				1B11A5901EA3352E003D821B /* Main.storyboard */,
+				1B11A5931EA3352E003D821B /* Assets.xcassets */,
+				1B11A5951EA3352E003D821B /* LaunchScreen.storyboard */,
+				1BEF46BC1EA38B5300FE4414 /* GoogleService-Info.plist */,
+				1B11A5981EA3352E003D821B /* Info.plist */,
+			);
+			name = App;
+			sourceTree = "<group>";
+		};
+		1BEF46C51EA38BF000FE4414 /* Characters */ = {
+			isa = PBXGroup;
+			children = (
+				1BEF46C11EA38BF000FE4414 /* Personage.swift */,
+				1BEF46C21EA38BF000FE4414 /* Attackable.swift */,
+				1BEF46C31EA38BF000FE4414 /* Movable.swift */,
+				1BEF46C41EA38BF000FE4414 /* Vector.swift */,
+			);
+			name = Characters;
+			sourceTree = "<group>";
+		};
+		1BEF46CC1EA38BF000FE4414 /* Skills */ = {
+			isa = PBXGroup;
+			children = (
+				1BEF46C61EA38BF000FE4414 /* Skill.swift */,
+				1BEF46C71EA38BF000FE4414 /* SkillsManager.swift */,
+				1BEF46C81EA38BF000FE4414 /* SkillsBuilder.swift */,
+				1BEF46C91EA38BF000FE4414 /* SkillName.swift */,
+				1BEF46CA1EA38BF000FE4414 /* OffensiveSkill.swift */,
+				1BEF46CB1EA38BF000FE4414 /* DefensiveSkill.swift */,
+			);
+			name = Skills;
+			sourceTree = "<group>";
+		};
+		1BEF46CE1EA38BF000FE4414 /* Items */ = {
+			isa = PBXGroup;
+			children = (
+				1BEF46CD1EA38BF000FE4414 /* Item.swift */,
+			);
+			name = Items;
+			sourceTree = "<group>";
+		};
+		1BEF46CF1EA38BF000FE4414 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1BEF46DC1EA38C0500FE4414 /* GameManager.swift */,
+				1BEF46C01EA38BF000FE4414 /* Entity.swift */,
+				1BEF46C51EA38BF000FE4414 /* Characters */,
+				1BEF46CC1EA38BF000FE4414 /* Skills */,
+				1BEF46CE1EA38BF000FE4414 /* Items */,
+			);
+			name = Model;
+			path = ../../NoahKit/NoahKit;
+			sourceTree = "<group>";
+		};
+		1BEF46E11EA38C1600FE4414 /* Connection */ = {
+			isa = PBXGroup;
+			children = (
+				1BEF46DE1EA38C1600FE4414 /* Server.swift */,
+				1BEF46DF1EA38C1600FE4414 /* SocketAPI.swift */,
+				1BEF46E01EA38C1600FE4414 /* OperationNames.swift */,
+			);
+			name = Connection;
+			path = ../../NoahKit/NoahKit;
+			sourceTree = "<group>";
+		};
+		4C1BB99D68DA9F9C09D9ED59 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0C6B65CC8F6E449444F6F809 /* Pods-NoahGame.debug.xcconfig */,
+				975B0FD1424BE761EF32A457 /* Pods-NoahGame.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C0F8DA66771CE154C4E53F63 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				811D8BC1207A342C896D26D1 /* Pods_NoahGame.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1B11A5881EA3352E003D821B /* NoahGame */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1B11A5B11EA3352E003D821B /* Build configuration list for PBXNativeTarget "NoahGame" */;
+			buildPhases = (
+				7A27DFB9870D0F8AEBE84EB1 /* 📦 Check Pods Manifest.lock */,
+				1B11A5851EA3352E003D821B /* Sources */,
+				1B11A5861EA3352E003D821B /* Frameworks */,
+				1B11A5871EA3352E003D821B /* Resources */,
+				1BA462151EA350D8001A0305 /* Embed Frameworks */,
+				1A85A77CC1308DE60C8D3823 /* 📦 Embed Pods Frameworks */,
+				8C39791DF4649F755F2DFA8B /* 📦 Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NoahGame;
+			productName = NoahGame;
+			productReference = 1B11A5891EA3352E003D821B /* NoahGame.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1B11A59C1EA3352E003D821B /* NoahGameTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1B11A5B41EA3352E003D821B /* Build configuration list for PBXNativeTarget "NoahGameTests" */;
+			buildPhases = (
+				1B11A5991EA3352E003D821B /* Sources */,
+				1B11A59A1EA3352E003D821B /* Frameworks */,
+				1B11A59B1EA3352E003D821B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1B11A59F1EA3352E003D821B /* PBXTargetDependency */,
+			);
+			name = NoahGameTests;
+			productName = NoahGameTests;
+			productReference = 1B11A59D1EA3352E003D821B /* NoahGameTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		1B11A5A71EA3352E003D821B /* NoahGameUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1B11A5B71EA3352E003D821B /* Build configuration list for PBXNativeTarget "NoahGameUITests" */;
+			buildPhases = (
+				1B11A5A41EA3352E003D821B /* Sources */,
+				1B11A5A51EA3352E003D821B /* Frameworks */,
+				1B11A5A61EA3352E003D821B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1B11A5AA1EA3352E003D821B /* PBXTargetDependency */,
+			);
+			name = NoahGameUITests;
+			productName = NoahGameUITests;
+			productReference = 1B11A5A81EA3352E003D821B /* NoahGameUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1B11A5811EA3352E003D821B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = francarfox;
+				TargetAttributes = {
+					1B11A5881EA3352E003D821B = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = N5ZAM4EK33;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
+						};
+					};
+					1B11A59C1EA3352E003D821B = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 1B11A5881EA3352E003D821B;
+					};
+					1B11A5A71EA3352E003D821B = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 1B11A5881EA3352E003D821B;
+					};
+				};
+			};
+			buildConfigurationList = 1B11A5841EA3352E003D821B /* Build configuration list for PBXProject "NoahGame" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1B11A5801EA3352E003D821B;
+			productRefGroup = 1B11A58A1EA3352E003D821B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1B11A5881EA3352E003D821B /* NoahGame */,
+				1B11A59C1EA3352E003D821B /* NoahGameTests */,
+				1B11A5A71EA3352E003D821B /* NoahGameUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1B11A5871EA3352E003D821B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B11A5971EA3352E003D821B /* LaunchScreen.storyboard in Resources */,
+				1BEF46BD1EA38B5300FE4414 /* GoogleService-Info.plist in Resources */,
+				1B11A5941EA3352E003D821B /* Assets.xcassets in Resources */,
+				1B11A5921EA3352E003D821B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1B11A59B1EA3352E003D821B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1B11A5A61EA3352E003D821B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1A85A77CC1308DE60C8D3823 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NoahGame/Pods-NoahGame-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7A27DFB9870D0F8AEBE84EB1 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8C39791DF4649F755F2DFA8B /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NoahGame/Pods-NoahGame-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1B11A5851EA3352E003D821B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1BEF46D91EA38BF000FE4414 /* OffensiveSkill.swift in Sources */,
+				1BEF46DD1EA38C0500FE4414 /* GameManager.swift in Sources */,
+				1BEF46D31EA38BF000FE4414 /* Movable.swift in Sources */,
+				1BEF46D71EA38BF000FE4414 /* SkillsBuilder.swift in Sources */,
+				1BEF46DA1EA38BF000FE4414 /* DefensiveSkill.swift in Sources */,
+				1BEF46D81EA38BF000FE4414 /* SkillName.swift in Sources */,
+				1BEF46E41EA38C1600FE4414 /* OperationNames.swift in Sources */,
+				1BEF46D11EA38BF000FE4414 /* Personage.swift in Sources */,
+				1BEF46D41EA38BF000FE4414 /* Vector.swift in Sources */,
+				1BEF46D51EA38BF000FE4414 /* Skill.swift in Sources */,
+				1BEF46D01EA38BF000FE4414 /* Entity.swift in Sources */,
+				1BEF46D61EA38BF000FE4414 /* SkillsManager.swift in Sources */,
+				1BEF46E31EA38C1600FE4414 /* SocketAPI.swift in Sources */,
+				1BEF46DB1EA38BF000FE4414 /* Item.swift in Sources */,
+				1B11A58F1EA3352E003D821B /* ViewController.swift in Sources */,
+				1BEF46D21EA38BF000FE4414 /* Attackable.swift in Sources */,
+				1BEF46E21EA38C1600FE4414 /* Server.swift in Sources */,
+				1BEF46B81EA3786600FE4414 /* GameViewController.swift in Sources */,
+				1B11A58D1EA3352E003D821B /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1B11A5991EA3352E003D821B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B11A5A21EA3352E003D821B /* NoahGameTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1B11A5A41EA3352E003D821B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B11A5AD1EA3352E003D821B /* NoahGameUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1B11A59F1EA3352E003D821B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1B11A5881EA3352E003D821B /* NoahGame */;
+			targetProxy = 1B11A59E1EA3352E003D821B /* PBXContainerItemProxy */;
+		};
+		1B11A5AA1EA3352E003D821B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1B11A5881EA3352E003D821B /* NoahGame */;
+			targetProxy = 1B11A5A91EA3352E003D821B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1B11A5901EA3352E003D821B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1B11A5911EA3352E003D821B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		1B11A5951EA3352E003D821B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1B11A5961EA3352E003D821B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1B11A5AF1EA3352E003D821B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		1B11A5B01EA3352E003D821B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1B11A5B21EA3352E003D821B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0C6B65CC8F6E449444F6F809 /* Pods-NoahGame.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = N5ZAM4EK33;
+				INFOPLIST_FILE = NoahGame/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.francarfox.noahgame;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		1B11A5B31EA3352E003D821B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 975B0FD1424BE761EF32A457 /* Pods-NoahGame.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = N5ZAM4EK33;
+				INFOPLIST_FILE = NoahGame/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.francarfox.noahgame;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		1B11A5B51EA3352E003D821B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = NoahGameTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.francarfox.NoahGameTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NoahGame.app/NoahGame";
+			};
+			name = Debug;
+		};
+		1B11A5B61EA3352E003D821B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = NoahGameTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.francarfox.NoahGameTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NoahGame.app/NoahGame";
+			};
+			name = Release;
+		};
+		1B11A5B81EA3352E003D821B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = NoahGameUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.francarfox.NoahGameUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = NoahGame;
+			};
+			name = Debug;
+		};
+		1B11A5B91EA3352E003D821B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = NoahGameUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.francarfox.NoahGameUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = NoahGame;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1B11A5841EA3352E003D821B /* Build configuration list for PBXProject "NoahGame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B11A5AF1EA3352E003D821B /* Debug */,
+				1B11A5B01EA3352E003D821B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1B11A5B11EA3352E003D821B /* Build configuration list for PBXNativeTarget "NoahGame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B11A5B21EA3352E003D821B /* Debug */,
+				1B11A5B31EA3352E003D821B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1B11A5B41EA3352E003D821B /* Build configuration list for PBXNativeTarget "NoahGameTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B11A5B51EA3352E003D821B /* Debug */,
+				1B11A5B61EA3352E003D821B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1B11A5B71EA3352E003D821B /* Build configuration list for PBXNativeTarget "NoahGameUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B11A5B81EA3352E003D821B /* Debug */,
+				1B11A5B91EA3352E003D821B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1B11A5811EA3352E003D821B /* Project object */;
+}

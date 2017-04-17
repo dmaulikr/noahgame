@@ -6,11 +6,11 @@
 //  Copyright © 2016 FoxDev. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
-open class Vector: NSObject {
+public class Vector {
 
-    open var x, y, z: Float
+    public var x, y, z: Float
     
     init(x: Float, y: Float) {
         self.x = x
@@ -18,7 +18,7 @@ open class Vector: NSObject {
         self.z = 0
     }
     
-    internal func move(_ traslation: Vector, angle: Float) {
+    func move(_ traslation: Vector, angle: Float) {
         var newAngle = angle
         
         if traslation.x < 0 {   // left
@@ -33,50 +33,51 @@ open class Vector: NSObject {
             newAngle += Float(M_PI)
         }
         
-        let magnitude = traslation.magnitude()
+        let velocity: Float = 10
+        let magnitude = traslation.magnitude() * velocity
         let proyX = cos(newAngle) * magnitude
         let proyY = sin(newAngle) * magnitude
         
-        self.sume(Vector(x: proyX, y: proyY))
-    }
-    
-    func sume(_ vector: Vector) {
-        x += vector.x
-        y += vector.y
+        let vector = self + Vector(x: proyX, y: proyY)
+        x = vector.x
+        y = vector.y
     }
     
     func magnitude() -> Float {
         return sqrt(pow(x, 2) + pow(y, 2))
     }
     
-    internal static var up: Vector {
-        get {
-            return Vector(x: 0, y: 1)
-        }
+    static func +(vector1: Vector, vector2: Vector) -> Vector {
+        vector1.x += vector2.x
+        vector1.y += vector2.y
+        return vector1
     }
     
-    internal static var down: Vector {
-        get {
-            return Vector(x: 0, y: -1)
-        }
+    static func -(vector1: Vector, vector2: Vector) -> Vector {
+        vector1.x -= vector2.x
+        vector1.y -= vector2.y
+        return vector1
     }
     
-    internal static var right: Vector {
-        get {
-            return Vector(x: -1, y: 0)
-        }
+    //
+    public static var up: Vector {
+        get { return Vector(x: 0, y: 1) }
     }
     
-    internal static var left: Vector {
-        get {
-            return Vector(x: 1, y: 0)
-        }
+    public static var down: Vector {
+        get { return Vector(x: 0, y: -1) }
     }
     
-    internal static var zero: Vector {
-        get {
-            return Vector(x: 0, y: 0)
-        }
+    public static var right: Vector {
+        get { return Vector(x: -1, y: 0) }
+    }
+    
+    public static var left: Vector {
+        get { return Vector(x: 1, y: 0) }
+    }
+    
+    public static var zero: Vector {
+        get { return Vector(x: 0, y: 0) }
     }
     
 }

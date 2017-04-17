@@ -6,11 +6,9 @@
 //  Copyright © 2016 FoxDev. All rights reserved.
 //
 
-import UIKit
-
-open class Entity: NSObject {
+class Entity: Localizable {
     
-    open var position: Vector! = Vector.zero
-    open var rotation: Float = 0
+    var position: Vector = Vector.zero
+    var rotation: Float = 0
 
 }

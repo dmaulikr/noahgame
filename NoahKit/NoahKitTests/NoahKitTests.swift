@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import NoahKit
+//@testable import NoahKit
 
 class NoahKitTests: XCTestCase {
     
