@@ -10,20 +10,25 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet var username1: UITextField!
-    @IBOutlet var username2: UITextField!
+    @IBOutlet var nameTextField: UITextField!
+    @IBOutlet var emailTextField: UITextField!
+    @IBOutlet var passwordTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
     @IBAction func didStart(_ sender: Any) {
-        if let name1 = username1.text, !name1.isEmpty,
-           let name2 = username2.text, !name2.isEmpty {
-            GameManager.shared.createPersonage1(name: name1)
-            GameManager.shared.createPersonage2(name: name2)
+        if let name = nameTextField.text, !name.isEmpty,
+            let email = emailTextField.text, !email.isEmpty,
+            let pass = passwordTextField.text, !pass.isEmpty {
+            //GameManager.shared.createPersonage1(name: name1)
+            //GameManager.shared.createPersonage2(name: name2)
             
-            performSegue(withIdentifier: "startSegue", sender: nil)
+            //performSegue(withIdentifier: "startSegue", sender: nil)
+            
+            DatabaseService.shared.registerUser(withName: name, email: email, password: pass)
+            
         }
     }
 
