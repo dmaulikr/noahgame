@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Gloss.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>GoogleToolboxForMac.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,12 +32,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>00C0FE8FF23F4B66FC2285F896490E6D</key>
+		<key>03E6E56F8533C2E42C696D7CCAC42910</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>03E6E56F8533C2E42C696D7CCAC42910</key>
+		<key>05F208A7AEA5922FAF1917D154ADA269</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -42,7 +47,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>EE58AB7EBDBB39F7FFA256335F556B79</key>
+		<key>7173A9A3F788222977B1494268BFA6E8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C1B8CA229C9AF3CEBF0EB217B203B49C</key>
 		<dict>
 			<key>primary</key>
 			<true/>

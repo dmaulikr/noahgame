@@ -6,7 +6,7 @@
 //  Copyright © 2016 FoxDev. All rights reserved.
 //
 
-class Personage: Entity {
+class Personage: GameEntity {
     
     var name: String
     var health, energy: Int

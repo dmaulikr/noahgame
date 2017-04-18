@@ -8,16 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		1B11A58D1EA3352E003D821B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B11A58C1EA3352E003D821B /* AppDelegate.swift */; };
-		1B11A58F1EA3352E003D821B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B11A58E1EA3352E003D821B /* ViewController.swift */; };
+		1B11A58F1EA3352E003D821B /* MessagesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B11A58E1EA3352E003D821B /* MessagesController.swift */; };
 		1B11A5921EA3352E003D821B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B11A5901EA3352E003D821B /* Main.storyboard */; };
 		1B11A5941EA3352E003D821B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B11A5931EA3352E003D821B /* Assets.xcassets */; };
 		1B11A5971EA3352E003D821B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B11A5951EA3352E003D821B /* LaunchScreen.storyboard */; };
 		1B11A5A21EA3352E003D821B /* NoahGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B11A5A11EA3352E003D821B /* NoahGameTests.swift */; };
 		1B11A5AD1EA3352E003D821B /* NoahGameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B11A5AC1EA3352E003D821B /* NoahGameUITests.swift */; };
-		1B927BC41EA5B93D00055179 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B927BC31EA5B93D00055179 /* DatabaseService.swift */; };
+		1B927BC41EA5B93D00055179 /* NoahService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B927BC31EA5B93D00055179 /* NoahService.swift */; };
+		1B927BC71EA5C42B00055179 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B927BC61EA5C42B00055179 /* User.swift */; };
+		1B927BCD1EA5C99C00055179 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B927BCB1EA5C99C00055179 /* LoginController.swift */; };
+		1B927BCE1EA5C99C00055179 /* LoginController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B927BCC1EA5C99C00055179 /* LoginController.xib */; };
+		1B927BD11EA5D1AF00055179 /* NewMessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B927BD01EA5D1AF00055179 /* NewMessageController.swift */; };
 		1BEF46B81EA3786600FE4414 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEF46B71EA3786600FE4414 /* GameViewController.swift */; };
 		1BEF46BD1EA38B5300FE4414 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1BEF46BC1EA38B5300FE4414 /* GoogleService-Info.plist */; };
-		1BEF46D01EA38BF000FE4414 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEF46C01EA38BF000FE4414 /* Entity.swift */; };
+		1BEF46D01EA38BF000FE4414 /* GameEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEF46C01EA38BF000FE4414 /* GameEntity.swift */; };
 		1BEF46D11EA38BF000FE4414 /* Personage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEF46C11EA38BF000FE4414 /* Personage.swift */; };
 		1BEF46D21EA38BF000FE4414 /* Attackable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEF46C21EA38BF000FE4414 /* Attackable.swift */; };
 		1BEF46D31EA38BF000FE4414 /* Movable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEF46C31EA38BF000FE4414 /* Movable.swift */; };
@@ -70,7 +74,7 @@
 		0C6B65CC8F6E449444F6F809 /* Pods-NoahGame.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoahGame.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NoahGame/Pods-NoahGame.debug.xcconfig"; sourceTree = "<group>"; };
 		1B11A5891EA3352E003D821B /* NoahGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoahGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B11A58C1EA3352E003D821B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1B11A58E1EA3352E003D821B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1B11A58E1EA3352E003D821B /* MessagesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesController.swift; sourceTree = "<group>"; };
 		1B11A5911EA3352E003D821B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1B11A5931EA3352E003D821B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1B11A5961EA3352E003D821B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -81,10 +85,14 @@
 		1B11A5A81EA3352E003D821B /* NoahGameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NoahGameUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B11A5AC1EA3352E003D821B /* NoahGameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoahGameUITests.swift; sourceTree = "<group>"; };
 		1B11A5AE1EA3352E003D821B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1B927BC31EA5B93D00055179 /* DatabaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
+		1B927BC31EA5B93D00055179 /* NoahService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NoahService.swift; path = ../../NoahGame/NoahGame/NoahService.swift; sourceTree = "<group>"; };
+		1B927BC61EA5C42B00055179 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		1B927BCB1EA5C99C00055179 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		1B927BCC1EA5C99C00055179 /* LoginController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginController.xib; sourceTree = "<group>"; };
+		1B927BD01EA5D1AF00055179 /* NewMessageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewMessageController.swift; sourceTree = "<group>"; };
 		1BEF46B71EA3786600FE4414 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		1BEF46BC1EA38B5300FE4414 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		1BEF46C01EA38BF000FE4414 /* Entity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Entity.swift; path = Model/Entity.swift; sourceTree = "<group>"; };
+		1BEF46C01EA38BF000FE4414 /* GameEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameEntity.swift; path = Model/GameEntity.swift; sourceTree = "<group>"; };
 		1BEF46C11EA38BF000FE4414 /* Personage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Personage.swift; path = Model/Personage.swift; sourceTree = "<group>"; };
 		1BEF46C21EA38BF000FE4414 /* Attackable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Attackable.swift; path = Model/Attackable.swift; sourceTree = "<group>"; };
 		1BEF46C31EA38BF000FE4414 /* Movable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Movable.swift; path = Model/Movable.swift; sourceTree = "<group>"; };
@@ -180,18 +188,52 @@
 			path = NoahGameUITests;
 			sourceTree = "<group>";
 		};
-		1BEF46BE1EA38BB400FE4414 /* App */ = {
+		1B927BC51EA5C42300055179 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				1B11A58C1EA3352E003D821B /* AppDelegate.swift */,
-				1B11A58E1EA3352E003D821B /* ViewController.swift */,
+				1B927BC61EA5C42B00055179 /* User.swift */,
+			);
+			name = Entities;
+			sourceTree = "<group>";
+		};
+		1B927BC81EA5C97700055179 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1B927BCB1EA5C99C00055179 /* LoginController.swift */,
+				1B927BCC1EA5C99C00055179 /* LoginController.xib */,
+				1B11A58E1EA3352E003D821B /* MessagesController.swift */,
+				1B927BD01EA5D1AF00055179 /* NewMessageController.swift */,
 				1BEF46B71EA3786600FE4414 /* GameViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		1B927BCF1EA5D19200055179 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				1B11A5901EA3352E003D821B /* Main.storyboard */,
 				1B11A5931EA3352E003D821B /* Assets.xcassets */,
 				1B11A5951EA3352E003D821B /* LaunchScreen.storyboard */,
 				1BEF46BC1EA38B5300FE4414 /* GoogleService-Info.plist */,
 				1B11A5981EA3352E003D821B /* Info.plist */,
-				1B927BC31EA5B93D00055179 /* DatabaseService.swift */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		1B927BD21EA5DB3600055179 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				1BEF46DC1EA38C0500FE4414 /* GameManager.swift */,
+			);
+			name = Game;
+			sourceTree = "<group>";
+		};
+		1BEF46BE1EA38BB400FE4414 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				1B11A58C1EA3352E003D821B /* AppDelegate.swift */,
+				1B927BC81EA5C97700055179 /* Controllers */,
+				1B927BCF1EA5D19200055179 /* Resources */,
 			);
 			name = App;
 			sourceTree = "<group>";
@@ -199,6 +241,7 @@
 		1BEF46C51EA38BF000FE4414 /* Characters */ = {
 			isa = PBXGroup;
 			children = (
+				1BEF46C01EA38BF000FE4414 /* GameEntity.swift */,
 				1BEF46C11EA38BF000FE4414 /* Personage.swift */,
 				1BEF46C21EA38BF000FE4414 /* Attackable.swift */,
 				1BEF46C31EA38BF000FE4414 /* Movable.swift */,
@@ -231,8 +274,9 @@
 		1BEF46CF1EA38BF000FE4414 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				1BEF46DC1EA38C0500FE4414 /* GameManager.swift */,
-				1BEF46C01EA38BF000FE4414 /* Entity.swift */,
+				1B927BC31EA5B93D00055179 /* NoahService.swift */,
+				1B927BC51EA5C42300055179 /* Entities */,
+				1B927BD21EA5DB3600055179 /* Game */,
 				1BEF46C51EA38BF000FE4414 /* Characters */,
 				1BEF46CC1EA38BF000FE4414 /* Skills */,
 				1BEF46CE1EA38BF000FE4414 /* Items */,
@@ -386,6 +430,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B927BCE1EA5C99C00055179 /* LoginController.xib in Resources */,
 				1B11A5971EA3352E003D821B /* LaunchScreen.storyboard in Resources */,
 				1BEF46BD1EA38B5300FE4414 /* GoogleService-Info.plist in Resources */,
 				1B11A5941EA3352E003D821B /* Assets.xcassets in Resources */,
@@ -468,20 +513,23 @@
 				1BEF46D71EA38BF000FE4414 /* SkillsBuilder.swift in Sources */,
 				1BEF46DA1EA38BF000FE4414 /* DefensiveSkill.swift in Sources */,
 				1BEF46D81EA38BF000FE4414 /* SkillName.swift in Sources */,
-				1B927BC41EA5B93D00055179 /* DatabaseService.swift in Sources */,
+				1B927BC41EA5B93D00055179 /* NoahService.swift in Sources */,
 				1BEF46E41EA38C1600FE4414 /* OperationNames.swift in Sources */,
 				1BEF46D11EA38BF000FE4414 /* Personage.swift in Sources */,
 				1BEF46D41EA38BF000FE4414 /* Vector.swift in Sources */,
+				1B927BD11EA5D1AF00055179 /* NewMessageController.swift in Sources */,
+				1B927BCD1EA5C99C00055179 /* LoginController.swift in Sources */,
 				1BEF46D51EA38BF000FE4414 /* Skill.swift in Sources */,
-				1BEF46D01EA38BF000FE4414 /* Entity.swift in Sources */,
+				1BEF46D01EA38BF000FE4414 /* GameEntity.swift in Sources */,
 				1BEF46D61EA38BF000FE4414 /* SkillsManager.swift in Sources */,
 				1BEF46E31EA38C1600FE4414 /* SocketAPI.swift in Sources */,
 				1BEF46DB1EA38BF000FE4414 /* Item.swift in Sources */,
-				1B11A58F1EA3352E003D821B /* ViewController.swift in Sources */,
+				1B11A58F1EA3352E003D821B /* MessagesController.swift in Sources */,
 				1BEF46D21EA38BF000FE4414 /* Attackable.swift in Sources */,
 				1BEF46E21EA38C1600FE4414 /* Server.swift in Sources */,
 				1BEF46B81EA3786600FE4414 /* GameViewController.swift in Sources */,
 				1B11A58D1EA3352E003D821B /* AppDelegate.swift in Sources */,
+				1B927BC71EA5C42B00055179 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
