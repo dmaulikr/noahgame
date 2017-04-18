@@ -9,6 +9,7 @@
 protocol Attackable: Movable {
     
     var name: String { get }
+    var level: Int { get }
     var health: Int { get }
     var energy: Int { get }
     var delegate: AttackableDelegate? { get set }

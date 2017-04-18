@@ -16,44 +16,6 @@ class NoahService {
         FIRDatabase.database().reference(fromURL: url)
     }
     
-    func observeMessages(_ completion: @escaping (Message) -> Void) {
-        FIRDatabase.database().reference().child("messages").observe(.childAdded, with: { (snapshot) in
-            
-            if let json = snapshot.value as? [String: Any],
-                let message = Message(json: json) {
-             
-                message.id = snapshot.key
-                completion(message)
-                
-            }
-            
-        })
-    }
-    
-    
-    func sendMessage(_ message: String, toId: String, completion: (() -> Void)?) {
-        
-        if let fromId = FIRAuth.auth()?.currentUser?.uid {
-            let ref = FIRDatabase.database().reference().child("messages").childByAutoId()
-            
-            let timestamp = NSNumber(value: Date().timeIntervalSince1970)
-            let values = ["fromId": fromId,
-                          "text": message,
-                          "toId": toId,
-                          "timestamp": timestamp] as [String : Any]
-        
-            ref.updateChildValues(values, withCompletionBlock: { (error, _) in
-                
-                if error != nil {
-                    print(error!)
-                    return
-                }
-                
-                completion?()
-            })
-        }
-        
-    }
     
     func fetchUser(_ completion: @escaping (User) -> Void) {
         FIRDatabase.database().reference().child("users").observe(.childAdded, with: { (snapshot) in
@@ -151,4 +113,74 @@ class NoahService {
         })
     }
 
+}
+
+extension NoahService {
+    
+    func createChallenge(personage1: Attackable, personage2: Attackable, completion: @escaping (Challenge) -> Void) {
+        
+        let ref = FIRDatabase.database().reference().child("challenges").childByAutoId()
+
+        let values = ["pj1_name":   personage1.name,
+                      "pj1_level":  personage1.level,
+                      "pj1_health": personage1.health,
+                      "pj1_energy": personage1.energy,
+                      "pj2_name":   personage2.name,
+                      "pj2_level":  personage2.level,
+                      "pj2_health": personage2.health,
+                      "pj2_energy": personage2.energy] as [String : Any]
+        
+        ref.updateChildValues(values, withCompletionBlock: { (error, _) in
+            
+            if error != nil {
+                print(error!)
+                return
+            }
+            
+            if let challenge = Challenge(json: values) {
+                completion(challenge)
+            }
+            
+        })
+    }
+    
+    func observeMessages(_ completion: @escaping (Message) -> Void) {
+        FIRDatabase.database().reference().child("messages").observe(.childAdded, with: { (snapshot) in
+            
+            if let json = snapshot.value as? [String: Any],
+                let message = Message(json: json) {
+                
+                message.id = snapshot.key
+                completion(message)
+                
+            }
+            
+        })
+    }
+    
+    
+    func sendMessage(_ message: String, toId: String, completion: (() -> Void)?) {
+        
+        if let fromId = FIRAuth.auth()?.currentUser?.uid {
+            let ref = FIRDatabase.database().reference().child("messages").childByAutoId()
+            
+            let timestamp = NSNumber(value: Date().timeIntervalSince1970)
+            let values = ["fromId": fromId,
+                          "text": message,
+                          "toId": toId,
+                          "timestamp": timestamp] as [String : Any]
+            
+            ref.updateChildValues(values, withCompletionBlock: { (error, _) in
+                
+                if error != nil {
+                    print(error!)
+                    return
+                }
+                
+                completion?()
+            })
+        }
+        
+    }
+    
 }

@@ -17,6 +17,10 @@ class MessagesController: UIViewController {
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(signOut))
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(newMessage))
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         checkIfUserIsLoggedIn()
     }
@@ -27,8 +31,8 @@ class MessagesController: UIViewController {
             perform(#selector(signOut), with: nil, afterDelay: 0)
         } else {
             
-            if let user = UserDefaults.standard.object(forKey: "user_name") as? User {
-                self.navigationItem.title = user.name
+            if let name = UserDefaults.standard.string(forKey: "user_name") {
+                self.navigationItem.title = name
             }
             
         }

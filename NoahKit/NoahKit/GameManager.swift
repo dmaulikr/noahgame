@@ -11,14 +11,6 @@ class GameManager {
     static let shared = GameManager()
     var pj1, pj2: Attackable
     
-    var name1: String {
-        get { return pj1.name }
-    }
-    
-    var name2: String {
-        get { return pj2.name }
-    }
-    
     var delegate: AttackableDelegate? {
         get { return nil }
         set { pj1.delegate = newValue }
@@ -28,10 +20,6 @@ class GameManager {
     private init() {
         pj1 = Personage(name: "PJ1", health: 200, energy: 200)
         pj2 = Personage(name: "PJ2", health: 200, energy: 200)
-        
-        pj1.activateSkill(.flames, target: pj2)
-        pj1.activateSkill(.final, target: pj2)
-        pj2.activateSkill(.electrons, target: pj1)
         
         print("pj1 h:\(pj1.health) e:\(pj1.energy)")
         print("pj2 h:\(pj2.health) e:\(pj2.energy)")

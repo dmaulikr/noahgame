@@ -40,74 +40,9 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="N2W-Mg-X7h"/>
-                    <connections>
-                        <segue destination="sNT-ui-4ML" kind="presentation" identifier="startSegue" id="LK2-ek-oDt"/>
-                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="55" y="36"/>
-        </scene>
-        <!--Game Controller-->
-        <scene sceneID="Cat-wx-VaC">
-            <objects>
-                <viewController id="sNT-ui-4ML" customClass="GameController" customModule="NoahGame" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="BSq-nu-kMh"/>
-                        <viewControllerLayoutGuide type="bottom" id="vhl-44-z1t"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="rkb-w0-Zii">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gfw-tu-edw">
-                                <rect key="frame" x="236" y="579" width="39" height="30"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Right"/>
-                                <connections>
-                                    <action selector="didRight:" destination="sNT-ui-4ML" eventType="touchUpInside" id="Ocr-IE-c6l"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MRv-ND-mPv">
-                                <rect key="frame" x="166" y="617" width="42" height="30"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Down"/>
-                                <connections>
-                                    <action selector="didDown:" destination="sNT-ui-4ML" eventType="touchUpInside" id="ZVb-WR-jbY"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SUc-sF-mzQ">
-                                <rect key="frame" x="108" y="579" width="30" height="30"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Left"/>
-                                <connections>
-                                    <action selector="didLeft:" destination="sNT-ui-4ML" eventType="touchUpInside" id="ncq-PH-OdP"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LHm-jI-hUj">
-                                <rect key="frame" x="172" y="541" width="30" height="30"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Up"/>
-                                <connections>
-                                    <action selector="didUp:" destination="sNT-ui-4ML" eventType="touchUpInside" id="8zq-8g-yKe"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="SUc-sF-mzQ" firstAttribute="top" secondItem="LHm-jI-hUj" secondAttribute="bottom" constant="8" id="BCd-Jq-rds"/>
-                            <constraint firstItem="gfw-tu-edw" firstAttribute="leading" secondItem="MRv-ND-mPv" secondAttribute="leading" constant="70" id="Msu-Df-BNn"/>
-                            <constraint firstItem="MRv-ND-mPv" firstAttribute="top" secondItem="SUc-sF-mzQ" secondAttribute="bottom" constant="8" id="PSx-au-eI9"/>
-                            <constraint firstItem="SUc-sF-mzQ" firstAttribute="trailing" secondItem="MRv-ND-mPv" secondAttribute="trailing" constant="-70" id="V7E-Pk-y0m"/>
-                            <constraint firstItem="MRv-ND-mPv" firstAttribute="centerX" secondItem="rkb-w0-Zii" secondAttribute="centerX" id="Xsx-1w-NTs"/>
-                            <constraint firstItem="MRv-ND-mPv" firstAttribute="centerX" secondItem="LHm-jI-hUj" secondAttribute="centerX" id="fgx-ur-uG7"/>
-                            <constraint firstItem="gfw-tu-edw" firstAttribute="centerY" secondItem="SUc-sF-mzQ" secondAttribute="centerY" id="iGR-z2-jkd"/>
-                            <constraint firstItem="vhl-44-z1t" firstAttribute="top" secondItem="MRv-ND-mPv" secondAttribute="bottom" constant="20" id="mMI-OE-uKg"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GQi-yS-jcg" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="839" y="37"/>
         </scene>
     </scenes>
 </document>
