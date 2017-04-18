@@ -1,5 +1,5 @@
 //
-//  GameViewController.swift
+//  GameController.swift
 //  NoahGame
 //
 //  Created by Technorides on 4/16/17.
@@ -8,13 +8,27 @@
 
 import UIKit
 
-class GameViewController: UIViewController {
+class GameController: UIViewController {
     
     var pj1: UILabel!
+    var messages = [Message]()
+    
+    var user: User? {
+        didSet {
+            navigationItem.title = user?.name
+        }
+    }
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        sendMessage()
+        
+        observeMessages()
+        
+        /*
         pj1 = UILabel(frame: CGRect(x: 0, y: 0, width: 80, height: 20))
         pj1.text = GameManager.shared.name1
         pj1.backgroundColor = .blue
@@ -23,8 +37,29 @@ class GameViewController: UIViewController {
         view.addSubview(pj1)
         
         GameManager.shared.delegate = self
+        */
+    }
+    
+    func observeMessages() {
+        NoahService.shared.observeMessages { (message) in
+            self.messages.append(message)
+        }
     }
 
+    func sendMessage() {
+        let message = "Hello World!!!"
+        
+        if let toId = user?.id {
+            NoahService.shared.sendMessage(message, toId: toId, completion: {
+                print("didSendMessage")
+            })
+        }
+    }
+    
+}
+
+extension GameController: AttackableDelegate {
+    
     @IBAction func didUp(_ sender: Any) {
         GameManager.shared.movePersonage1(direction: .left)
     }
@@ -41,10 +76,6 @@ class GameViewController: UIViewController {
         GameManager.shared.movePersonage1(direction: .right)
     }
     
-}
-
-extension GameViewController: AttackableDelegate {
-    
     func updateStatus(_ health: Int, energy: Int) {
         print("pj h:\(health) e:\(energy)")
     }
@@ -57,3 +88,9 @@ extension GameViewController: AttackableDelegate {
     }
     
 }
+
+
+//GameManager.shared.createPersonage1(name: name1)
+//GameManager.shared.createPersonage2(name: name2)
+
+//performSegue(withIdentifier: "startSegue", sender: nil)

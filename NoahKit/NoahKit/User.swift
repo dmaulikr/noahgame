@@ -9,12 +9,17 @@
 import Gloss
 
 class User: Decodable {
+    
+    var id: String?
     var name: String?
     var email: String?
+    var profileImageUrl: String?
+    
     
     required init?(json: JSON) {
         name = "name" <~~ json
         email = "email" <~~ json
+        profileImageUrl = "profileImageUrl" <~~ json
     }
-    
+        
 }

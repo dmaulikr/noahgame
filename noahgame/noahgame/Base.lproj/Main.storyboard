@@ -28,6 +28,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="NoahGame" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
@@ -43,14 +44,13 @@
                         <segue destination="sNT-ui-4ML" kind="presentation" identifier="startSegue" id="LK2-ek-oDt"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="55" y="36"/>
         </scene>
-        <!--Game View Controller-->
+        <!--Game Controller-->
         <scene sceneID="Cat-wx-VaC">
             <objects>
-                <viewController id="sNT-ui-4ML" customClass="GameViewController" customModule="NoahGame" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="sNT-ui-4ML" customClass="GameController" customModule="NoahGame" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="BSq-nu-kMh"/>
                         <viewControllerLayoutGuide type="bottom" id="vhl-44-z1t"/>

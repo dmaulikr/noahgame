@@ -14,6 +14,7 @@
                 <outlet property="emailTextField" destination="l7c-xI-KFP" id="RY6-ju-WJf"/>
                 <outlet property="nameTextField" destination="dTG-Id-KSV" id="rHo-Sq-b9T"/>
                 <outlet property="passwordTextField" destination="Xca-9C-QOB" id="svT-R6-b3X"/>
+                <outlet property="profileImageView" destination="nbE-S8-mnm" id="Gyi-eD-5TX"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -22,42 +23,11 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W9S-ZZ-FfX">
-                    <rect key="frame" x="162.5" y="318.5" width="50" height="30"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                    <state key="normal" title="Sign In"/>
-                    <connections>
-                        <action selector="signIn:" destination="-1" eventType="touchUpInside" id="BF8-Pt-9tF"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jIF-z0-uvl">
-                    <rect key="frame" x="165" y="356.5" width="45" height="27"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                    <state key="normal" title="Sign Up"/>
-                    <connections>
-                        <action selector="signUp:" destination="-1" eventType="touchUpInside" id="PUa-RB-bye"/>
-                    </connections>
-                </button>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="asdasd" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xca-9C-QOB">
-                    <rect key="frame" x="113" y="258.5" width="150" height="30"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="150" id="03j-LE-aHc"/>
-                    </constraints>
-                    <nil key="textColor"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                </textField>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="test1@test.com" borderStyle="roundedRect" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="l7c-xI-KFP">
-                    <rect key="frame" x="113" y="213.5" width="150" height="30"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="150" id="8bm-ng-prc"/>
-                    </constraints>
-                    <nil key="textColor"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
-                </textField>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default" translatesAutoresizingMaskIntoConstraints="NO" id="nbE-S8-mnm">
+                    <rect key="frame" x="138" y="158" width="100" height="100"/>
+                </imageView>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="test1" borderStyle="roundedRect" placeholder="Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dTG-Id-KSV">
-                    <rect key="frame" x="113" y="168.5" width="150" height="30"/>
+                    <rect key="frame" x="113" y="273" width="150" height="30"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="150" id="ola-Qc-se5"/>
                     </constraints>
@@ -65,10 +35,44 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                 </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="test1@test.com" borderStyle="roundedRect" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="l7c-xI-KFP">
+                    <rect key="frame" x="113" y="318" width="150" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="150" id="8bm-ng-prc"/>
+                    </constraints>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="asdasd" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xca-9C-QOB">
+                    <rect key="frame" x="113" y="363" width="150" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="150" id="03j-LE-aHc"/>
+                    </constraints>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W9S-ZZ-FfX">
+                    <rect key="frame" x="163" y="423" width="50" height="30"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                    <state key="normal" title="Sign In"/>
+                    <connections>
+                        <action selector="signIn:" destination="-1" eventType="touchUpInside" id="BF8-Pt-9tF"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jIF-z0-uvl">
+                    <rect key="frame" x="165" y="461" width="45" height="27"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <state key="normal" title="Sign Up"/>
+                    <connections>
+                        <action selector="signUp:" destination="-1" eventType="touchUpInside" id="PUa-RB-bye"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="W9S-ZZ-FfX" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="6IV-N9-gd3"/>
+                <constraint firstItem="nbE-S8-mnm" firstAttribute="centerX" secondItem="dTG-Id-KSV" secondAttribute="centerX" id="Aff-7Y-SJ6"/>
                 <constraint firstItem="jIF-z0-uvl" firstAttribute="centerX" secondItem="W9S-ZZ-FfX" secondAttribute="centerX" id="Fzd-7h-rA0"/>
                 <constraint firstItem="W9S-ZZ-FfX" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Jeh-Lj-aLL"/>
                 <constraint firstItem="jIF-z0-uvl" firstAttribute="top" secondItem="W9S-ZZ-FfX" secondAttribute="bottom" constant="8" id="NWc-EB-FFj"/>
@@ -78,7 +82,13 @@
                 <constraint firstItem="Xca-9C-QOB" firstAttribute="top" secondItem="l7c-xI-KFP" secondAttribute="bottom" constant="15" id="jXX-Gw-vqq"/>
                 <constraint firstItem="dTG-Id-KSV" firstAttribute="centerX" secondItem="l7c-xI-KFP" secondAttribute="centerX" id="q46-cc-zjd"/>
                 <constraint firstItem="Xca-9C-QOB" firstAttribute="centerX" secondItem="W9S-ZZ-FfX" secondAttribute="centerX" id="rui-cW-Jo1"/>
+                <constraint firstItem="dTG-Id-KSV" firstAttribute="top" secondItem="nbE-S8-mnm" secondAttribute="bottom" constant="15" id="tt1-3Z-hmR"/>
+                <constraint firstItem="l7c-xI-KFP" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="zGC-A8-UHz"/>
             </constraints>
+            <point key="canvasLocation" x="33.5" y="54.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="default" width="100" height="100"/>
+    </resources>
 </document>

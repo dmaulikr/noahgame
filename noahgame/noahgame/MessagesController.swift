@@ -26,26 +26,27 @@ class MessagesController: UIViewController {
             // Fix error: Unbalanced calls to begin/end appearance transitions for nav
             perform(#selector(signOut), with: nil, afterDelay: 0)
         } else {
-         
-            /*guard let uid = FIRAuth.auth()?.currentUser?.uid else {
-                return
-            }
             
-            FIRDatabase.database().reference().child("users").child(uid).observe(.value, with: { (snapshot) in
-                
-                if let info = snapshot.value as? [String: AnyObject] {
-                    self.navigationItem.title = info["name"] as? String
-                }
-                
-            })*/
+            if let user = UserDefaults.standard.object(forKey: "user_name") as? User {
+                self.navigationItem.title = user.name
+            }
             
         }
     }
     
     func newMessage() {
         let controller = NewMessageController()
+        controller.source = self
+        
         let navController = UINavigationController(rootViewController: controller)
         present(navController, animated: true, completion: nil)
+    }
+    
+    func showGameController(withUser user: User) {
+        let controller = GameController()
+        controller.user = user
+        
+        navigationController?.pushViewController(controller, animated: true)
     }
     
     func signOut() {
@@ -63,8 +64,3 @@ class MessagesController: UIViewController {
     }
     
 }
-
-//GameManager.shared.createPersonage1(name: name1)
-//GameManager.shared.createPersonage2(name: name2)
-
-//performSegue(withIdentifier: "startSegue", sender: nil)
