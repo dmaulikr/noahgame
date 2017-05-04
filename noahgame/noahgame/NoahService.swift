@@ -10,9 +10,10 @@ import Firebase
 
 class NoahService {
     static let shared = NoahService()
-    private let url = "https://noahgame-5f590.firebaseio.com/"
     
     private init() {
+        let url = Bundle.main.infoDictionary!["databaseUrl"] as! String
+        
         FIRDatabase.database().reference(fromURL: url)
     }
     
