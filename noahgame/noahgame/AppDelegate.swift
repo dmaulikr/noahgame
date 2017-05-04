@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import CoreData
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -54,8 +55,40 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+
+        saveContext()
     }
+    
+    
+    // MARK: - Core Data stack
+    lazy var persistentContainer: NSPersistentContainer = {
+       
+        let container = NSPersistentContainer(name: "noahmodel")
+        container.loadPersistentStores(completionHandler: { description, error in
+            
+            if let err = error as? NSError {
+                fatalError("Unresolved error \(err), \(err.userInfo)")
+            }
+            
+        })
+        
+        return container
+    }()
 
-
+    // MARK: - Core Data Saving support
+    func saveContext() {
+        let context = persistentContainer.viewContext
+        if context.hasChanges {
+            
+            do {
+                try context.save()
+            } catch {
+                let err = error as NSError
+                fatalError("Unresolved error \(err), \(err.userInfo)")
+            }
+            
+        }
+    }
+    
 }
 

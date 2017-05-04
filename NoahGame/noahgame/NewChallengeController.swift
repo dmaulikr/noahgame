@@ -1,5 +1,5 @@
 //
-//  NewMessageController.swift
+//  NewChallengeController.swift
 //  NoahGame
 //
 //  Created by Technorides on 4/18/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NewMessageController: UITableViewController {
+class NewChallengeController: UITableViewController {
 
     let cellId = "cellId"
     var personages = [Personage]()
@@ -26,15 +26,23 @@ class NewMessageController: UITableViewController {
     }
     
     func fetchPersonages() {
+        let myName = Session.shared.personage?.name
+        
         NoahService.shared.fetchPersonage({ personage in
-            self.personages.append(personage)
-            self.personages = self.personages.sorted {
-                return $0.name < $1.name
+            
+            if personage.name != myName {
+                
+                self.personages.append(personage)
+                self.personages = self.personages.sorted {
+                    return $0.name < $1.name
+                }
+                
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+                
             }
             
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
         })
     }
     
@@ -76,7 +84,12 @@ class PersonageCell: UITableViewCell {
     var personage: Personage? {
         didSet {
             textLabel?.text = personage?.name
-            detailTextLabel?.text = "\(personage?.level)"
+            
+            if let level = personage?.level {
+                detailTextLabel?.text = "Level: \(level)"
+            }
+            
+            profileImageView.image = #imageLiteral(resourceName: "default")
             
 //            if let profileImageUrl = user?.profileImageUrl {
 //                profileImageView.loadImageUsingCacheWithUrlString(profileImageUrl)

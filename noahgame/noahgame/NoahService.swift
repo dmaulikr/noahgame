@@ -39,6 +39,29 @@ class NoahService {
     }
     
     
+    func signIn(_ uid: String, completion: @escaping (User) -> ()) {
+        //fetch user
+        FIRDatabase.database().reference().child("users").child(uid).observe(.value, with: { (snapshot) in
+            
+            if let json = snapshot.value as? [String: Any], let user = User(json: json) {
+                
+                user.id = snapshot.key
+                
+                //fetch personage
+                FIRDatabase.database().reference().child("personages").child(uid).observe(.value, with: { snapshot in
+                    
+                    if let json = snapshot.value as? [String: Any], let personage = Personage(json: json) {
+                        user.personage = personage
+                        completion(user)
+                    }
+                    
+                })
+                
+            }
+            
+        })
+    }
+    
     func signIn(_ email: String, password: String, completion: @escaping (User) -> ()) {
         FIRAuth.auth()?.signIn(withEmail: email, password: password) { user, error in
             
@@ -51,26 +74,7 @@ class NoahService {
                 return
             }
 
-            //fetch user
-            FIRDatabase.database().reference().child("users").child(uid).observe(.value, with: { (snapshot) in
-
-                if let json = snapshot.value as? [String: Any], let user = User(json: json) {
-                    
-                    user.id = snapshot.key
-                    
-                    //fetch personage
-                    FIRDatabase.database().reference().child("personages").child(uid).observe(.value, with: { snapshot in
-                        
-                        if let json = snapshot.value as? [String: Any], let personage = Personage(json: json) {
-                            user.personage = personage
-                            completion(user)
-                        }
-                        
-                    })
-                    
-                }
-
-            })
+            self.signIn(uid, completion: completion)
             
         }
     }

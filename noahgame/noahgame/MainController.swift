@@ -17,8 +17,7 @@ class MainController: UIViewController {
         view.backgroundColor = .white
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(signOut))
-        
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(newMessage))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(newChallenge))
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -28,20 +27,20 @@ class MainController: UIViewController {
     }
     
     func checkIfUserIsLoggedIn() {
-        if FIRAuth.auth()?.currentUser?.uid == nil {
+        guard let uid = FIRAuth.auth()?.currentUser?.uid else {
             // Fix error: Unbalanced calls to begin/end appearance transitions for nav
             perform(#selector(signOut), with: nil, afterDelay: 0)
-        } else {
-            
-            if let name = UserDefaults.standard.string(forKey: "user_name") {
-                self.navigationItem.title = name
-            }
-            
+            return
+        }
+        
+        NoahService.shared.signIn(uid) { user in
+            Session.shared.user = user
+            self.navigationItem.title = user.personage?.name
         }
     }
     
-    func newMessage() {
-        let controller = NewMessageController()
+    func newChallenge() {
+        let controller = NewChallengeController()
         controller.source = self
         
         let navController = UINavigationController(rootViewController: controller)

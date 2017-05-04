@@ -30,7 +30,6 @@ class LoginController: UIViewController {
         }
         
         NoahService.shared.signIn(email, password: pass) { user in
-            
             self.initSessionWith(user: user)
         }
     }
@@ -45,16 +44,12 @@ class LoginController: UIViewController {
         }
             
         NoahService.shared.signUp(name, email: email, password: pass, profileImage: profileImage) { user in
-            
             self.initSessionWith(user: user)
         }
     }
     
     func initSessionWith(user: User) {
-        if let personage = user.personage {
-            UserDefaults.standard.set(personage.name, forKey: "user_name")
-        }
-        
+        Session.shared.user = user
         self.dismiss(animated: true, completion: nil)
     }
     
