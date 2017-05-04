@@ -6,9 +6,34 @@
 //  Copyright © 2016 FoxDev. All rights reserved.
 //
 
-import UIKit
+protocol Attackable: Movable {
+    
+    var name: String { get }
+    var level: Int { get }
+    var health: Int { get }
+    var energy: Int { get }
+    var delegate: AttackableDelegate? { get set }
+    
+    func activateSkill(_ name: SkillName, target: Attackable)
+    func consumeEnergy(_ skill: Skill)
+    func isNear(_ localizable: Localizable, range: Float) -> Bool
+    
+    func receiveOffensiveSkill(_ skill: OffensiveSkill)
+    
+}
 
-public protocol Attackable: PersonageProtocol {
+protocol Buffable: Attackable {
+ 
+    func receiveDefensiveSkill(_ skill: DefensiveSkill)
+    
+}
+
+public protocol AttackableDelegate {
+    
+    func updateStatus(_ health: Int, energy: Int)
+    func updateLocation(_ location: Vector)
+    
+}
 
 //    bool IsNormal(IAttackCharacter character);
 //    bool IsNear(IAttackCharacter character);
@@ -17,9 +42,3 @@ public protocol Attackable: PersonageProtocol {
 //    void DebilityCritical(int damage, ISkill skill, IAttackCharacter enemy);
 //    void DebilityEnergy(int damage);
 //    string Name { get; }
-    
-    func activateFlames(_ points: Int)
-    func activateThunder(_ points: Int)
-    func activateFinal(_ pointss: Int)
-    
-}

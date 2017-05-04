@@ -6,15 +6,17 @@
 //  Copyright © 2016 FoxDev. All rights reserved.
 //
 
-import UIKit
+protocol Movable: Localizable {
 
-protocol Movable {
-
-    func moveUp()
-    func moveDown()
-    func moveRight()
-    func moveLeft()
+    func move(_ direction: Vector)
     func rotateRight()
     func rotateLeft()
 
+}
+
+protocol Localizable {
+    
+    var position: Vector { get set }
+    var rotation: Float { get set }
+    
 }

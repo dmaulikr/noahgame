@@ -6,9 +6,7 @@
 //  Copyright © 2016 FoxDev. All rights reserved.
 //
 
-import UIKit
-
-class Item: NSObject {
+class Item {
     
 //    var name : String!
 //    var category : Int

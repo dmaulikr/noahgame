@@ -6,27 +6,35 @@
 //  Copyright © 2016 FoxDev. All rights reserved.
 //
 
-import UIKit
-
-open class Skill: NSObject {
-
-//    protected IAttackCharacter character;
-//    private string name;
-//    private int level, reload, duration, currentReload, currentDuration;
-//    private int cost;
+class Skill {
     
-    open var name: String!
-    var personage: Buffable!
+    var name: SkillName
+    var cost: Int
+    var points: Int
+    var reload: Int
+    var duration: Int
+    var description: String
 
-    init(name: String) {
-        super.init()
-        self.name = name
+    init(name: SkillName,
+         cost: Int,
+         points: Int = 0,
+         reload: Int = 0,
+         duration: Int = 0,
+         description: String = "") {
+        
+        self.name       = name
+        self.cost       = cost
+        self.points     = points
+        self.reload     = reload
+        self.duration   = duration
+        self.description = description
     }
     
-    func activateSkill(_ target: Attackable?) {
-        Server.sharedInstance().activateSkill(personage: personage, skill: self, target: target)
+    func activateSkill(_ personage: Buffable, target: Attackable) {
+        personage.consumeEnergy(self)
+        
+        print("\(personage.name) attack to: \(target.name)")
+        //Server.shared.activateSkill(personage, skill: self, target: target)
     }
-    
-    func activate(_ target: Attackable?) { }
     
 }

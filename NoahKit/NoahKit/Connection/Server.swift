@@ -6,35 +6,25 @@
 //  Copyright © 2016 FoxDev. All rights reserved.
 //
 
-import UIKit
-
-public class Server: NSObject {
+class Server {
     
-    private static var instance : Server? = nil
-    var socket: SocketAPI!
-    
-    public static func sharedInstance() -> Server {
-        if instance == nil {
-            instance = Server()
-        }
-        
-        return instance!
-    }
+    static let shared = Server()
+    var socket: SocketAPI
 
-    private override init() {
+    private init() {
         socket = SocketAPI()
     }
     
-    public func connect() {
+    func connect() {
         socket.connect()
     }
     
-    public func disconnect() {
+    func disconnect() {
         socket.disconnect()
     }
     
-    public func activateSkill(personage: PersonageProtocol, skill: Skill, target: PersonageProtocol?) {
-        var message = ["personage": personage.name, "skillName": skill.name]
+    func activateSkill(_ personage: Attackable, skill: Skill, target: Attackable?) {
+        var message = ["personage": personage.name, "skillName": skill.name] as [String : Any]
         
         if target != nil {
             message["target"] = target?.name
@@ -44,7 +34,7 @@ public class Server: NSObject {
                            message: message as [String: AnyObject])
     }
     
-    func personageConnected(personage: PersonageProtocol) {
+    func personageConnected(personage: Attackable) {
         let message = ["name": personage.name,
                        "health": personage.health,
                        "energy": personage.energy] as [String : Any]
