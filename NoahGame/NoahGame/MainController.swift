@@ -35,24 +35,36 @@ class MainController: UIViewController {
         
         NoahService.shared.signIn(uid) { user in
             Session.shared.user = user
-            self.navigationItem.title = user.personage?.name
+            self.title = user.personage?.name
         }
     }
     
     func newChallenge() {
-        let controller = NewChallengeController()
-        controller.source = self
-        
-        let navController = UINavigationController(rootViewController: controller)
-        present(navController, animated: true, completion: nil)
+        if Session.shared.personage != nil {
+            
+            let controller = NewChallengeController()
+            controller.source = self
+            
+            let navController = UINavigationController(rootViewController: controller)
+            present(navController, animated: true, completion: nil)
+            
+        }
     }
     
     func showGameController(withPersonage personage: Personage) {
-        let controller = ChallengeController()
-        controller.personage = Session.shared.personage
-        controller.enemy = personage
+        guard let mypj = Session.shared.personage else {
+            return
+        }
         
-        navigationController?.pushViewController(controller, animated: true)
+        let challenge = Challenge(personage: mypj, enemy: personage)
+        
+        NoahService.shared.createChallenge(challenge) { id in
+            challenge.id = id
+            
+            let controller = ChallengeController()
+            controller.challenge = challenge
+            self.navigationController?.pushViewController(controller, animated: true)
+        }
     }
     
     func signOut() {

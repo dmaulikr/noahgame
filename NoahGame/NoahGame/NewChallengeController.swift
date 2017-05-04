@@ -17,6 +17,8 @@ class NewChallengeController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = "New Challenge"
+        
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancel))
         
         tableView.register(PersonageCell.self, forCellReuseIdentifier: cellId)

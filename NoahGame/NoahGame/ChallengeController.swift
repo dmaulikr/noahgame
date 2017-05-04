@@ -33,8 +33,9 @@ class ChallengeController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = "Challenge"
+        
         setUpPersonages()
-        createChallenge()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -73,25 +74,19 @@ class ChallengeController: UIViewController {
     }
     
     func setUpPersonages() {
-        if let pj1 = personage, let pj2 = enemy {
+        if let pj1 = challenge?.personage, let pj2 = challenge?.enemy {
             username1.text = "\(pj1.name) h:\(pj1.health) e:\(pj1.energy)"
             username2.text = "\(pj2.name) h:\(pj2.health) e:\(pj2.energy)"
         }
     }
     
     func createChallenge() {
-        if let pj1 = personage, let pj2 = enemy {
-            let challenge = Challenge(personage: pj1, enemy: pj2)
+        guard let id = challenge?.id else {
+            return
+        }
         
-            NoahService.shared.createChallenge(challenge) { id in
-                self.challenge = challenge
-                self.challenge?.id = id
-            
-                NoahService.shared.observeSkills(challengeId: id) { skillname in
-                    print("receive skillname: \(skillname)")
-                }
-
-            }
+        NoahService.shared.observeSkills(challengeId: id) { skillname in
+            print("receive skillname: \(skillname)")
         }
     }
     
@@ -118,20 +113,16 @@ class ChallengeController: UIViewController {
         let target = GameManager.shared.pj2
         GameManager.shared.pj1.activateSkill(skillName, target: target)
         
-        NoahService.shared.activateSkill(skillName.rawValue, challengeId: challenge!.id!) { message in
-            print("activé la skill: \(message)")
+        
+        //
+        guard let id = challenge?.id else {
+            return
         }
         
-    }
-
-    func sendMessage() {
-//        let message = "Hello World!!!"
-        
-//        if let toId = user?.id {
-//            NoahService.shared.sendMessage(message, toId: toId) {
-//                print("didSendMessage")
-//            }
-//        }
+        NoahService.shared.activateSkill(skillName.rawValue, challengeId: id) { message in
+            print("activé la skill: \(message)")
+        }
+    
     }
     
 }
