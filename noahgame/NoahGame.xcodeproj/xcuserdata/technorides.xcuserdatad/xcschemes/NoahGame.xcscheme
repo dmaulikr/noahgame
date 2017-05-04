@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1B9EDF1D1EBBA8E1003984CE"
+               BlueprintIdentifier = "1B9EDF911EBBB5B4003984CE"
                BuildableName = "NoahGame.app"
                BlueprintName = "NoahGame"
                ReferencedContainer = "container:NoahGame.xcodeproj">
@@ -32,7 +32,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1B9EDF311EBBA8E1003984CE"
+               BlueprintIdentifier = "1B9EDFA51EBBB5B4003984CE"
                BuildableName = "NoahGameTests.xctest"
                BlueprintName = "NoahGameTests"
                ReferencedContainer = "container:NoahGame.xcodeproj">
@@ -42,7 +42,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1B9EDF3C1EBBA8E1003984CE"
+               BlueprintIdentifier = "1B9EDFB01EBBB5B5003984CE"
                BuildableName = "NoahGameUITests.xctest"
                BlueprintName = "NoahGameUITests"
                ReferencedContainer = "container:NoahGame.xcodeproj">
@@ -52,7 +52,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1B9EDF1D1EBBA8E1003984CE"
+            BlueprintIdentifier = "1B9EDF911EBBB5B4003984CE"
             BuildableName = "NoahGame.app"
             BlueprintName = "NoahGame"
             ReferencedContainer = "container:NoahGame.xcodeproj">
@@ -75,7 +75,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1B9EDF1D1EBBA8E1003984CE"
+            BlueprintIdentifier = "1B9EDF911EBBB5B4003984CE"
             BuildableName = "NoahGame.app"
             BlueprintName = "NoahGame"
             ReferencedContainer = "container:NoahGame.xcodeproj">
@@ -94,7 +94,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1B9EDF1D1EBBA8E1003984CE"
+            BlueprintIdentifier = "1B9EDF911EBBB5B4003984CE"
             BuildableName = "NoahGame.app"
             BlueprintName = "NoahGame"
             ReferencedContainer = "container:NoahGame.xcodeproj">
