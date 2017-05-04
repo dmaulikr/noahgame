@@ -24,10 +24,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default" translatesAutoresizingMaskIntoConstraints="NO" id="nbE-S8-mnm">
-                    <rect key="frame" x="138" y="158" width="100" height="100"/>
+                    <rect key="frame" x="138" y="78.5" width="100" height="100"/>
                 </imageView>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="test1" borderStyle="roundedRect" placeholder="Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dTG-Id-KSV">
-                    <rect key="frame" x="113" y="273" width="150" height="30"/>
+                    <rect key="frame" x="113" y="193.5" width="150" height="30"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="150" id="ola-Qc-se5"/>
                     </constraints>
@@ -36,7 +36,7 @@
                     <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                 </textField>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="test1@test.com" borderStyle="roundedRect" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="l7c-xI-KFP">
-                    <rect key="frame" x="113" y="318" width="150" height="30"/>
+                    <rect key="frame" x="113" y="238.5" width="150" height="30"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="150" id="8bm-ng-prc"/>
                     </constraints>
@@ -45,7 +45,7 @@
                     <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                 </textField>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="asdasd" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xca-9C-QOB">
-                    <rect key="frame" x="113" y="363" width="150" height="30"/>
+                    <rect key="frame" x="113" y="283.5" width="150" height="30"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="150" id="03j-LE-aHc"/>
                     </constraints>
@@ -54,7 +54,7 @@
                     <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W9S-ZZ-FfX">
-                    <rect key="frame" x="163" y="423" width="50" height="30"/>
+                    <rect key="frame" x="163" y="343.5" width="50" height="30"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                     <state key="normal" title="Sign In"/>
                     <connections>
@@ -62,7 +62,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jIF-z0-uvl">
-                    <rect key="frame" x="165" y="461" width="45" height="27"/>
+                    <rect key="frame" x="165" y="381.5" width="45" height="27"/>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <state key="normal" title="Sign Up"/>
                     <connections>
@@ -83,7 +83,7 @@
                 <constraint firstItem="dTG-Id-KSV" firstAttribute="centerX" secondItem="l7c-xI-KFP" secondAttribute="centerX" id="q46-cc-zjd"/>
                 <constraint firstItem="Xca-9C-QOB" firstAttribute="centerX" secondItem="W9S-ZZ-FfX" secondAttribute="centerX" id="rui-cW-Jo1"/>
                 <constraint firstItem="dTG-Id-KSV" firstAttribute="top" secondItem="nbE-S8-mnm" secondAttribute="bottom" constant="15" id="tt1-3Z-hmR"/>
-                <constraint firstItem="l7c-xI-KFP" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="zGC-A8-UHz"/>
+                <constraint firstItem="l7c-xI-KFP" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-80" id="zGC-A8-UHz"/>
             </constraints>
             <point key="canvasLocation" x="33.5" y="54.5"/>
         </view>
