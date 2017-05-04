@@ -20,13 +20,20 @@ class NewMessageController: UITableViewController {
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancel))
         
         tableView.register(UserCell.self, forCellReuseIdentifier: cellId)
-
+        tableView.tableFooterView = UIView(frame: CGRect.zero)
+        
         fetchUser()
     }
     
     func fetchUser() {
         NoahService.shared.fetchUser({ user in
             self.users.append(user)
+            self.users = self.users.sorted {
+                if let email0 = $0.email, let email1 = $1.email {
+                    return email0 < email1
+                }
+                return true
+            }
             
             DispatchQueue.main.async {
                 self.tableView.reloadData()
@@ -71,7 +78,7 @@ class UserCell: UITableViewCell {
     
     var user: User? {
         didSet {
-            textLabel?.text = user?.name
+            textLabel?.text = user?.personage?.name
             detailTextLabel?.text = user?.email
             
             if let profileImageUrl = user?.profileImageUrl {

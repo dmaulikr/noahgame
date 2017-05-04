@@ -29,11 +29,10 @@ class LoginController: UIViewController {
             return
         }
         
-        NoahService.shared.signIn(email, password: pass, completion: { user in
-            UserDefaults.standard.set(user.name, forKey: "user_name")
+        NoahService.shared.signIn(email, password: pass) { user in
             
-            self.dismiss(animated: true, completion: nil)
-        })
+            self.initSessionWith(user: user)
+        }
     }
     
     @IBAction func signUp(_ sender: Any) {
@@ -45,11 +44,18 @@ class LoginController: UIViewController {
             return
         }
             
-        NoahService.shared.signUp(name, email: email, password: pass, profileImage: profileImage, completion: { user in
-            UserDefaults.standard.set(user.name, forKey: "user_name")
+        NoahService.shared.signUp(name, email: email, password: pass, profileImage: profileImage) { user in
             
-            self.dismiss(animated: true, completion: nil)
-        })
+            self.initSessionWith(user: user)
+        }
+    }
+    
+    func initSessionWith(user: User) {
+        if let personage = user.personage {
+            UserDefaults.standard.set(personage.name, forKey: "user_name")
+        }
+        
+        self.dismiss(animated: true, completion: nil)
     }
     
 }

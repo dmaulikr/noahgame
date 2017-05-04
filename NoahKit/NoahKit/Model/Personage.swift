@@ -6,7 +6,9 @@
 //  Copyright © 2016 FoxDev. All rights reserved.
 //
 
-class Personage: GameEntity {
+import Gloss
+
+class Personage: GameEntity, Glossy {
     
     var name: String
     var health, energy: Int
@@ -14,8 +16,26 @@ class Personage: GameEntity {
     var delegate: AttackableDelegate?
     lazy var skills: SkillsManager = SkillsManager(personage: self)
     
+    // MARK: Gloss
+    required init?(json: JSON) {
+        guard let name: String = "name" <~~ json else {
+            return nil
+        }
+        
+        self.name = name
+        level = "level" <~~ json ?? 1
+        health = 100
+        energy = 100
+    }
+    
+    func toJSON() -> JSON? {
+        return jsonify([
+            "name" ~~> name,
+            "level" ~~> level
+            ])
+    }
 
-    init(name: String, health: Int, energy: Int) {
+    init(name: String, health: Int = 100, energy: Int = 100) {
         self.name = name
         self.health = health
         self.energy = energy
@@ -81,6 +101,7 @@ extension Personage: Movable {
     }
     
 }
+
 
 //    Entity
 //    protected string name;

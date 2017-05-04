@@ -8,18 +8,26 @@
 
 import Gloss
 
-class User: Decodable {
+class User: Glossy {
     
     var id: String?
-    var name: String?
     var email: String?
     var profileImageUrl: String?
+    var personage: Personage?
     
     
     required init?(json: JSON) {
-        name = "name" <~~ json
         email = "email" <~~ json
         profileImageUrl = "profileImageUrl" <~~ json
+        personage = "personage" <~~ json
     }
-        
+    
+    func toJSON() -> JSON? {
+        return jsonify([
+            "email" ~~> email,
+            "profileImageUrl" ~~> profileImageUrl,
+            "personage" ~~> personage
+            ])
+    }
+    
 }

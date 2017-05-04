@@ -8,23 +8,27 @@
 
 import Gloss
 
-class Challenge: Decodable {
+class Challenge: Glossy {
 
-    var pj1Name: String?
-    var pj2Name: String?
-    var pj1Level, pj1Health, pj1Energy: Int?
-    var pj2Level, pj2Health, pj2Energy: Int?
+    var id: String?
+    var personage1: Personage?
+    var personage2: Personage?
     
     required init?(json: JSON) {
-        pj1Name     = "pj1_name" <~~ json
-        pj1Level    = "pj1_level" <~~ json
-        pj1Health   = "pj1_health" <~~ json
-        pj1Energy   = "pj1_energy" <~~ json
-        
-        pj2Name     = "pj2_name" <~~ json
-        pj2Level    = "pj2_level" <~~ json
-        pj2Health   = "pj2_health" <~~ json
-        pj2Energy   = "pj2_energy" <~~ json
+        personage1    = "personage1" <~~ json
+        personage2    = "personage2" <~~ json
+    }
+    
+    func toJSON() -> JSON? {
+        return jsonify([
+            "personage1" ~~> personage1,
+            "personage1" ~~> personage2
+            ])
+    }
+    
+    init(personage1: Personage, personage2: Personage) {
+        self.personage1 = personage1
+        self.personage2 = personage2
     }
     
 }

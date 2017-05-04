@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreMotion
 
 class GameController: UIViewController {
     
@@ -17,9 +18,11 @@ class GameController: UIViewController {
     var messages = [Message]()
     var challenge: Challenge?
     
+    var motionManager = CMMotionManager()
+    
     var user: User? {
         didSet {
-            navigationItem.title = user?.name
+            navigationItem.title = user?.personage?.name
         }
     }
     
@@ -31,9 +34,44 @@ class GameController: UIViewController {
         createChallenge()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        motionManager.gyroUpdateInterval = 0.2
+        
+        motionManager.startGyroUpdates(to: OperationQueue.current!) { (data, error) in
+            
+            if let rotation = data?.rotationRate {
+                //print(rotation)
+                
+                if rotation.x > 1 {
+                    print("DOWN")
+                }
+                if rotation.x < -1 {
+                    print("UP")
+                }
+                
+                if rotation.y > 1 {
+                    print("RIGHT")
+                }
+                if rotation.y < -1 {
+                    print("LEFT")
+                }
+            }
+            
+        }
+        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        motionManager.stopGyroUpdates()
+    }
+    
     func setUpPersonages() {
         if let name1 = UserDefaults.standard.string(forKey: "user_name"),
-            let name2 = user?.name {
+            let name2 = user?.personage?.name {
             
             GameManager.shared.createPersonage1(name: name1)
             GameManager.shared.createPersonage2(name: name2)
@@ -50,12 +88,12 @@ class GameController: UIViewController {
     }
     
     func createChallenge() {
-        let pj1 = GameManager.shared.pj1
-        let pj2 = GameManager.shared.pj2
+        let challenge = Challenge(personage1: GameManager.shared.pj1 as! Personage,
+                                  personage2: GameManager.shared.pj2 as! Personage)
         
-        NoahService.shared.createChallenge(personage1: pj1, personage2: pj2, completion: { challenge in
+        NoahService.shared.createChallenge(challenge) {
             self.challenge = challenge
-        })
+        }
     }
     
     @IBAction func activateSkill(_ sender: UIButton) {
@@ -94,9 +132,9 @@ class GameController: UIViewController {
         let message = "Hello World!!!"
         
         if let toId = user?.id {
-            NoahService.shared.sendMessage(message, toId: toId, completion: {
+            NoahService.shared.sendMessage(message, toId: toId) {
                 print("didSendMessage")
-            })
+            }
         }
     }
     
