@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		1B11A58D1EA3352E003D821B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B11A58C1EA3352E003D821B /* AppDelegate.swift */; };
 		1B11A58F1EA3352E003D821B /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B11A58E1EA3352E003D821B /* MainController.swift */; };
-		1B11A5921EA3352E003D821B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B11A5901EA3352E003D821B /* Main.storyboard */; };
 		1B11A5941EA3352E003D821B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B11A5931EA3352E003D821B /* Assets.xcassets */; };
 		1B11A5971EA3352E003D821B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B11A5951EA3352E003D821B /* LaunchScreen.storyboard */; };
 		1B11A5A21EA3352E003D821B /* NoahGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B11A5A11EA3352E003D821B /* NoahGameTests.swift */; };
@@ -80,7 +79,6 @@
 		1B11A5891EA3352E003D821B /* NoahGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoahGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B11A58C1EA3352E003D821B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1B11A58E1EA3352E003D821B /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
-		1B11A5911EA3352E003D821B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1B11A5931EA3352E003D821B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1B11A5961EA3352E003D821B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1B11A5981EA3352E003D821B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -205,7 +203,6 @@
 		1B48ADE01EBB72D800B755AF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				1B11A5901EA3352E003D821B /* Main.storyboard */,
 				1B11A5951EA3352E003D821B /* LaunchScreen.storyboard */,
 				1BEF46BC1EA38B5300FE4414 /* GoogleService-Info.plist */,
 				1B11A5981EA3352E003D821B /* Info.plist */,
@@ -464,7 +461,6 @@
 				1B11A5971EA3352E003D821B /* LaunchScreen.storyboard in Resources */,
 				1BEF46BD1EA38B5300FE4414 /* GoogleService-Info.plist in Resources */,
 				1B11A5941EA3352E003D821B /* Assets.xcassets in Resources */,
-				1B11A5921EA3352E003D821B /* Main.storyboard in Resources */,
 				1B927BD81EA610E300055179 /* ChallengeController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -600,14 +596,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		1B11A5901EA3352E003D821B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1B11A5911EA3352E003D821B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		1B11A5951EA3352E003D821B /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
