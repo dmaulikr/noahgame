@@ -11,28 +11,25 @@ import UIKit
 class NewMessageController: UITableViewController {
 
     let cellId = "cellId"
-    var users = [User]()
-    var source: MessagesController?
+    var personages = [Personage]()
+    var source: MainController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancel))
         
-        tableView.register(UserCell.self, forCellReuseIdentifier: cellId)
+        tableView.register(PersonageCell.self, forCellReuseIdentifier: cellId)
         tableView.tableFooterView = UIView(frame: CGRect.zero)
         
-        fetchUser()
+        fetchPersonages()
     }
     
-    func fetchUser() {
-        NoahService.shared.fetchUser({ user in
-            self.users.append(user)
-            self.users = self.users.sorted {
-                if let email0 = $0.email, let email1 = $1.email {
-                    return email0 < email1
-                }
-                return true
+    func fetchPersonages() {
+        NoahService.shared.fetchPersonage({ personage in
+            self.personages.append(personage)
+            self.personages = self.personages.sorted {
+                return $0.name < $1.name
             }
             
             DispatchQueue.main.async {
@@ -49,13 +46,13 @@ class NewMessageController: UITableViewController {
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return users.count
+        return personages.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! UserCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! PersonageCell
         
-        cell.user = users[indexPath.row]
+        cell.personage = personages[indexPath.row]
         
         return cell
     }
@@ -66,24 +63,24 @@ class NewMessageController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         dismiss(animated: true) { 
-            let user = self.users[indexPath.row]
-            self.source?.showGameController(withUser: user)
+            let personage = self.personages[indexPath.row]
+            self.source?.showGameController(withPersonage: personage)
         }
     }
 
 }
 
 
-class UserCell: UITableViewCell {
+class PersonageCell: UITableViewCell {
     
-    var user: User? {
+    var personage: Personage? {
         didSet {
-            textLabel?.text = user?.personage?.name
-            detailTextLabel?.text = user?.email
+            textLabel?.text = personage?.name
+            detailTextLabel?.text = "\(personage?.level)"
             
-            if let profileImageUrl = user?.profileImageUrl {
-                profileImageView.loadImageUsingCacheWithUrlString(profileImageUrl)
-            }
+//            if let profileImageUrl = user?.profileImageUrl {
+//                profileImageView.loadImageUsingCacheWithUrlString(profileImageUrl)
+//            }
         }
     }
     

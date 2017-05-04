@@ -28,6 +28,16 @@ class NoahService {
         })
     }
     
+    func fetchPersonage(_ completion: @escaping (Personage) -> ()) {
+        FIRDatabase.database().reference().child("personages").observe(.childAdded, with: { snapshot in
+            
+            if let json = snapshot.value as? [String: Any], let personage = Personage(json: json) {
+                completion(personage)
+            }
+            
+        })
+    }
+    
     
     func signIn(_ email: String, password: String, completion: @escaping (User) -> ()) {
         FIRAuth.auth()?.signIn(withEmail: email, password: password) { user, error in
@@ -81,8 +91,8 @@ class NoahService {
 //            let imageName = UUID().uuidString
 //            self.saveImage(profileImage, path: "profile_images", filename: "\(imageName).png") { url in }
             
-            let values = ["email": email,
-                          "profileImageUrl": nil]
+            let values = ["email": email]
+//                          "profileImageUrl": url]
             
             self.createUser(withUID: uid, values: values) { user in
             

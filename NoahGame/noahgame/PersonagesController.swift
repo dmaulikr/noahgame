@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MainController.swift
 //  NoahGame
 //
 //  Created by Technorides on 4/16/17.
@@ -9,7 +9,7 @@
 import UIKit
 import FirebaseAuth
 
-class MessagesController: UIViewController {
+class MainController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()

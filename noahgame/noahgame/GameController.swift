@@ -1,4 +1,4 @@
-//
+
 //  GameController.swift
 //  NoahGame
 //
@@ -20,9 +20,9 @@ class GameController: UIViewController {
     
     var motionManager = CMMotionManager()
     
-    var user: User? {
+    var personage: Personage? {
         didSet {
-            navigationItem.title = user?.personage?.name
+            navigationItem.title = personage?.name
         }
     }
     
@@ -70,8 +70,7 @@ class GameController: UIViewController {
     }
     
     func setUpPersonages() {
-        if let name1 = UserDefaults.standard.string(forKey: "user_name"),
-            let name2 = user?.personage?.name {
+        if let name1 = UserDefaults.standard.string(forKey: "user_name"), let name2 = personage?.name {
             
             GameManager.shared.createPersonage1(name: name1)
             GameManager.shared.createPersonage2(name: name2)
@@ -129,13 +128,13 @@ class GameController: UIViewController {
     }
 
     func sendMessage() {
-        let message = "Hello World!!!"
+//        let message = "Hello World!!!"
         
-        if let toId = user?.id {
-            NoahService.shared.sendMessage(message, toId: toId) {
-                print("didSendMessage")
-            }
-        }
+//        if let toId = user?.id {
+//            NoahService.shared.sendMessage(message, toId: toId) {
+//                print("didSendMessage")
+//            }
+//        }
     }
     
 }
