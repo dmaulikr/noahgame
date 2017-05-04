@@ -11,24 +11,24 @@ import Gloss
 class Challenge: Glossy {
 
     var id: String?
-    var personage1: Personage?
-    var personage2: Personage?
+    var personage: Personage?
+    var enemy: Personage?
     
     required init?(json: JSON) {
-        personage1    = "personage1" <~~ json
-        personage2    = "personage2" <~~ json
+        personage = "personage" <~~ json
+        enemy     = "enemy" <~~ json
     }
     
     func toJSON() -> JSON? {
         return jsonify([
-            "personage1" ~~> personage1,
-            "personage1" ~~> personage2
+            "personage" ~~> personage,
+            "enemy" ~~> enemy
             ])
     }
     
-    init(personage1: Personage, personage2: Personage) {
-        self.personage1 = personage1
-        self.personage2 = personage2
+    init(personage: Personage, enemy: Personage) {
+        self.personage = personage
+        self.enemy = enemy
     }
     
 }

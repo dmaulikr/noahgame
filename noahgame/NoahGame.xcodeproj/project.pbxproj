@@ -22,9 +22,9 @@
 		1B927BD11EA5D1AF00055179 /* NewChallengeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B927BD01EA5D1AF00055179 /* NewChallengeController.swift */; };
 		1B927BD41EA5F11600055179 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B927BD31EA5F11600055179 /* Extensions.swift */; };
 		1B927BD61EA600B100055179 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B927BD51EA600B100055179 /* Message.swift */; };
-		1B927BD81EA610E300055179 /* GameController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B927BD71EA610E300055179 /* GameController.xib */; };
+		1B927BD81EA610E300055179 /* ChallengeController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B927BD71EA610E300055179 /* ChallengeController.xib */; };
 		1B927BDB1EA61F4500055179 /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B927BDA1EA61F4500055179 /* Challenge.swift */; };
-		1BEF46B81EA3786600FE4414 /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEF46B71EA3786600FE4414 /* GameController.swift */; };
+		1BEF46B81EA3786600FE4414 /* ChallengeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEF46B71EA3786600FE4414 /* ChallengeController.swift */; };
 		1BEF46BD1EA38B5300FE4414 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1BEF46BC1EA38B5300FE4414 /* GoogleService-Info.plist */; };
 		1BEF46D01EA38BF000FE4414 /* GameEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEF46C01EA38BF000FE4414 /* GameEntity.swift */; };
 		1BEF46D11EA38BF000FE4414 /* Personage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEF46C11EA38BF000FE4414 /* Personage.swift */; };
@@ -98,9 +98,9 @@
 		1B927BD01EA5D1AF00055179 /* NewChallengeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewChallengeController.swift; sourceTree = "<group>"; };
 		1B927BD31EA5F11600055179 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		1B927BD51EA600B100055179 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
-		1B927BD71EA610E300055179 /* GameController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameController.xib; sourceTree = "<group>"; };
+		1B927BD71EA610E300055179 /* ChallengeController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChallengeController.xib; sourceTree = "<group>"; };
 		1B927BDA1EA61F4500055179 /* Challenge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
-		1BEF46B71EA3786600FE4414 /* GameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
+		1BEF46B71EA3786600FE4414 /* ChallengeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeController.swift; sourceTree = "<group>"; };
 		1BEF46BC1EA38B5300FE4414 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1BEF46C01EA38BF000FE4414 /* GameEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameEntity.swift; path = Model/GameEntity.swift; sourceTree = "<group>"; };
 		1BEF46C11EA38BF000FE4414 /* Personage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Personage.swift; path = Model/Personage.swift; sourceTree = "<group>"; };
@@ -237,7 +237,7 @@
 				1B927BCB1EA5C99C00055179 /* LoginController.swift */,
 				1B11A58E1EA3352E003D821B /* MainController.swift */,
 				1B927BD01EA5D1AF00055179 /* NewChallengeController.swift */,
-				1BEF46B71EA3786600FE4414 /* GameController.swift */,
+				1BEF46B71EA3786600FE4414 /* ChallengeController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -263,7 +263,7 @@
 			isa = PBXGroup;
 			children = (
 				1B927BCC1EA5C99C00055179 /* LoginController.xib */,
-				1B927BD71EA610E300055179 /* GameController.xib */,
+				1B927BD71EA610E300055179 /* ChallengeController.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -465,7 +465,7 @@
 				1BEF46BD1EA38B5300FE4414 /* GoogleService-Info.plist in Resources */,
 				1B11A5941EA3352E003D821B /* Assets.xcassets in Resources */,
 				1B11A5921EA3352E003D821B /* Main.storyboard in Resources */,
-				1B927BD81EA610E300055179 /* GameController.xib in Resources */,
+				1B927BD81EA610E300055179 /* ChallengeController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -562,7 +562,7 @@
 				1BEF46D21EA38BF000FE4414 /* Attackable.swift in Sources */,
 				1B927BD41EA5F11600055179 /* Extensions.swift in Sources */,
 				1BEF46E21EA38C1600FE4414 /* Server.swift in Sources */,
-				1BEF46B81EA3786600FE4414 /* GameController.swift in Sources */,
+				1BEF46B81EA3786600FE4414 /* ChallengeController.swift in Sources */,
 				1B11A58D1EA3352E003D821B /* AppDelegate.swift in Sources */,
 				1B927BC71EA5C42B00055179 /* User.swift in Sources */,
 			);

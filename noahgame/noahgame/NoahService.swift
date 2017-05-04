@@ -171,15 +171,47 @@ class NoahService {
 
 }
 
+
+// MARK: Challenge
+
 extension NoahService {
     
-    func createChallenge(_ challenge: Challenge, completion: @escaping () -> ()) {
+    func createChallenge(_ challenge: Challenge, completion: @escaping (String) -> ()) {
         
         guard let values = challenge.toJSON() else {
             return
         }
         
         let ref = FIRDatabase.database().reference().child("challenges").childByAutoId()
+        
+        ref.updateChildValues(values) { error, dataref in
+            
+            if let err = error {
+                print(err)
+                return
+            }
+            
+            completion(dataref.key)
+
+        }
+    }
+    
+    func observeSkills(challengeId: String, completion: @escaping (String) -> ()) {
+        FIRDatabase.database().reference().child("challenges").child(challengeId).child("skills").child("description").observe(.childChanged, with: { snapshot in
+            
+            if let json = snapshot.value as? [String: String], let skillname = json["description"] {
+//                message.id = snapshot.key
+                completion(skillname)
+                
+            }
+            
+        })
+    }
+    
+    func activateSkill(_ skillName: String, challengeId: String, completion: @escaping (String) -> ()) {
+        let ref = FIRDatabase.database().reference().child("challenges").child(challengeId).child("skills")
+        
+        let values = ["description": skillName]
         
         ref.updateChildValues(values) { error, _ in
             
@@ -188,23 +220,9 @@ extension NoahService {
                 return
             }
             
-            completion()
-
+            completion(skillName)
+            
         }
-    }
-    
-    func observeMessages(_ completion: @escaping (Message) -> ()) {
-        FIRDatabase.database().reference().child("messages").observe(.childAdded, with: { snapshot in
-            
-            if let json = snapshot.value as? [String: Any],
-                let message = Message(json: json) {
-                
-                message.id = snapshot.key
-                completion(message)
-                
-            }
-            
-        })
     }
     
     

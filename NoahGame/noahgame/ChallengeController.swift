@@ -1,5 +1,5 @@
 
-//  GameController.swift
+//  ChallengeController.swift
 //  NoahGame
 //
 //  Created by Technorides on 4/16/17.
@@ -9,7 +9,7 @@
 import UIKit
 import CoreMotion
 
-class GameController: UIViewController {
+class ChallengeController: UIViewController {
     
     @IBOutlet var username1: UILabel!
     @IBOutlet var username2: UILabel!
@@ -18,13 +18,16 @@ class GameController: UIViewController {
     var messages = [Message]()
     var challenge: Challenge?
     
-    var motionManager = CMMotionManager()
-    
     var personage: Personage? {
         didSet {
             navigationItem.title = personage?.name
         }
     }
+    
+    var enemy: Personage?
+    
+    var motionManager = CMMotionManager()
+    
     
     
     override func viewDidLoad() {
@@ -70,61 +73,55 @@ class GameController: UIViewController {
     }
     
     func setUpPersonages() {
-        if let name1 = UserDefaults.standard.string(forKey: "user_name"), let name2 = personage?.name {
-            
-            GameManager.shared.createPersonage1(name: name1)
-            GameManager.shared.createPersonage2(name: name2)
-            
-            let pj1 = GameManager.shared.pj1
-            let pj2 = GameManager.shared.pj2
-            
-            username1.text = "\(name1) h:\(pj1.health) e:\(pj1.energy)"
-            username2.text = "\(name2) h:\(pj2.health) e:\(pj2.energy)"
-            
+        if let pj1 = personage, let pj2 = enemy {
+            username1.text = "\(pj1.name) h:\(pj1.health) e:\(pj1.energy)"
+            username2.text = "\(pj2.name) h:\(pj2.health) e:\(pj2.energy)"
         }
-        
-        GameManager.shared.delegate = self
     }
     
     func createChallenge() {
-        let challenge = Challenge(personage1: GameManager.shared.pj1 as! Personage,
-                                  personage2: GameManager.shared.pj2 as! Personage)
+        if let pj1 = personage, let pj2 = enemy {
+            let challenge = Challenge(personage: pj1, enemy: pj2)
         
-        NoahService.shared.createChallenge(challenge) {
-            self.challenge = challenge
+            NoahService.shared.createChallenge(challenge) { id in
+                self.challenge = challenge
+                self.challenge?.id = id
+            
+                NoahService.shared.observeSkills(challengeId: id) { skillname in
+                    print("receive skillname: \(skillname)")
+                }
+
+            }
         }
     }
     
     @IBAction func activateSkill(_ sender: UIButton) {
         
         let index = skills.index(of: sender) ?? 0
-        var skill: SkillName
+        var skillName: SkillName
         
         switch index {
         case 1:
-            skill = .thunder
+            skillName = .thunder
         case 2:
-            skill = .final
+            skillName = .final
         case 3:
-            skill = .electrons
+            skillName = .electrons
         case 4:
-            skill = .immunity
+            skillName = .immunity
         case 5:
-            skill = .current
+            skillName = .current
         default:
-            skill = .flames
+            skillName = .flames
         }
         
         let target = GameManager.shared.pj2
-        GameManager.shared.pj1.activateSkill(skill, target: target)
+        GameManager.shared.pj1.activateSkill(skillName, target: target)
         
-    }
-    
-    
-    func observeMessages() {
-        NoahService.shared.observeMessages { (message) in
-            self.messages.append(message)
+        NoahService.shared.activateSkill(skillName.rawValue, challengeId: challenge!.id!) { message in
+            print("activé la skill: \(message)")
         }
+        
     }
 
     func sendMessage() {
@@ -139,7 +136,7 @@ class GameController: UIViewController {
     
 }
 
-extension GameController: AttackableDelegate {
+extension ChallengeController: AttackableDelegate {
     
     /*
     @IBAction func didUp(_ sender: Any) {

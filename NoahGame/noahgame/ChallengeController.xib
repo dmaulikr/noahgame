@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GameController" customModule="NoahGame" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChallengeController" customModule="NoahGame" customModuleProvider="target">
             <connections>
-                <outlet property="username1" destination="av0-jg-eJ9" id="WAU-ES-WtM"/>
-                <outlet property="username2" destination="bBv-Ir-U2r" id="McW-Cj-aSR"/>
+                <outlet property="username1" destination="av0-jg-eJ9" id="E9M-uz-P0S"/>
+                <outlet property="username2" destination="bBv-Ir-U2r" id="rPY-vf-fuM"/>
                 <outlet property="view" destination="iN0-l3-epB" id="dta-9u-Ul5"/>
                 <outletCollection property="skills" destination="ZSN-hG-PNS" collectionClass="NSMutableArray" id="Erk-Om-Ma7"/>
                 <outletCollection property="skills" destination="GsK-1D-dll" collectionClass="NSMutableArray" id="IN1-bT-RLT"/>
@@ -39,22 +39,37 @@
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GsK-1D-dll">
                             <rect key="frame" x="125" y="0.0" width="125" height="100"/>
                             <state key="normal" title="Button"/>
+                            <connections>
+                                <action selector="activateSkill:" destination="-1" eventType="touchUpInside" id="FvR-fX-3iy"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IwL-BL-U2h">
                             <rect key="frame" x="250" y="0.0" width="125" height="100"/>
                             <state key="normal" title="Button"/>
+                            <connections>
+                                <action selector="activateSkill:" destination="-1" eventType="touchUpInside" id="e5k-MT-lxM"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZaX-Lq-FYg">
                             <rect key="frame" x="0.0" y="100" width="125" height="100"/>
                             <state key="normal" title="Button"/>
+                            <connections>
+                                <action selector="activateSkill:" destination="-1" eventType="touchUpInside" id="6ZC-gi-mby"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TVn-pn-mBk">
                             <rect key="frame" x="125" y="100" width="125" height="100"/>
                             <state key="normal" title="Button"/>
+                            <connections>
+                                <action selector="activateSkill:" destination="-1" eventType="touchUpInside" id="6dE-tu-kot"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="odD-SS-tNc">
                             <rect key="frame" x="250" y="100" width="125" height="100"/>
                             <state key="normal" title="Button"/>
+                            <connections>
+                                <action selector="activateSkill:" destination="-1" eventType="touchUpInside" id="Xdn-EM-eaT"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZSN-hG-PNS">
                             <rect key="frame" x="0.0" y="0.0" width="125" height="100"/>

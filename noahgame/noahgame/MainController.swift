@@ -48,8 +48,9 @@ class MainController: UIViewController {
     }
     
     func showGameController(withPersonage personage: Personage) {
-        let controller = GameController()
-        controller.personage = personage
+        let controller = ChallengeController()
+        controller.personage = Session.shared.personage
+        controller.enemy = personage
         
         navigationController?.pushViewController(controller, animated: true)
     }
