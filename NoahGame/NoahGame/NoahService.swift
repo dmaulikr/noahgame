@@ -18,7 +18,7 @@ class NoahService {
     }
     
     
-    func fetchUser(_ completion: @escaping (User) -> ()) {
+    func fetchUser(_ completion: @escaping (User) -> Void) {
         FIRDatabase.database().reference().child("users").observe(.childAdded, with: { snapshot in
             
             if let json = snapshot.value as? [String: Any], let user = User(json: json) {
@@ -29,10 +29,11 @@ class NoahService {
         })
     }
     
-    func fetchPersonage(_ completion: @escaping (Personage) -> ()) {
+    func fetchPersonage(_ completion: @escaping (Personage) -> Void) {
         FIRDatabase.database().reference().child("personages").observe(.childAdded, with: { snapshot in
             
             if let json = snapshot.value as? [String: Any], let personage = Personage(json: json) {
+                personage.id = snapshot.key
                 completion(personage)
             }
             
@@ -40,7 +41,7 @@ class NoahService {
     }
     
     
-    func signIn(_ uid: String, completion: @escaping (User) -> ()) {
+    func signIn(_ uid: String, completion: @escaping (User) -> Void) {
         //fetch user
         FIRDatabase.database().reference().child("users").child(uid).observe(.value, with: { (snapshot) in
             
@@ -49,11 +50,24 @@ class NoahService {
                 user.id = snapshot.key
                 
                 //fetch personage
-                FIRDatabase.database().reference().child("personages").child(uid).observe(.value, with: { snapshot in
+                var handle: UInt = 0
+                let ref = FIRDatabase.database().reference().child("personages").child(uid)
+                    
+                handle = ref.observe(.value, with: { snapshot in
                     
                     if let json = snapshot.value as? [String: Any], let personage = Personage(json: json) {
+                        ref.removeObserver(withHandle: handle)
+                        
                         user.personage = personage
                         completion(user)
+                    }
+                    
+                })
+                
+                ref.observe(.childChanged , with: { snapshot in
+                    
+                    if let value = snapshot.value as? String, !value.isEmpty {
+                        Session.shared.receiveChallenge(value)
                     }
                     
                 })
@@ -63,7 +77,7 @@ class NoahService {
         })
     }
     
-    func signIn(_ email: String, password: String, completion: @escaping (User) -> ()) {
+    func signIn(_ email: String, password: String, completion: @escaping (User) -> Void) {
         FIRAuth.auth()?.signIn(withEmail: email, password: password) { user, error in
             
             if let err = error {
@@ -80,7 +94,7 @@ class NoahService {
         }
     }
     
-    func signUp(_ name: String, email: String, password: String, profileImage: UIImage, completion: @escaping (User) -> ()) {
+    func signUp(_ name: String, email: String, password: String, profileImage: UIImage, completion: @escaping (User) -> Void) {
         FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user, error) in
             
             if let err = error {
@@ -113,7 +127,7 @@ class NoahService {
         })
     }
     
-    func createPersonage(_ personage: Personage, withUID uid: String, completion: @escaping () -> ()) {
+    func createPersonage(_ personage: Personage, withUID uid: String, completion: @escaping () -> Void) {
         
         guard let values = personage.toJSON() else {
             return
@@ -134,7 +148,7 @@ class NoahService {
         
     }
     
-    private func createUser(withUID uid: String, values: [String: Any], completion: @escaping (User) -> ()) {
+    private func createUser(withUID uid: String, values: [String: Any], completion: @escaping (User) -> Void) {
         let usersRef = FIRDatabase.database().reference().child("users").child(uid)
         usersRef.updateChildValues(values) { error, _ in
             
@@ -151,7 +165,7 @@ class NoahService {
         }
     }
     
-    private func saveImage(_ image: UIImage, path: String, filename: String, completion: @escaping (String) -> ()) {
+    private func saveImage(_ image: UIImage, path: String, filename: String, completion: @escaping (String) -> Void) {
         let storageRef = FIRStorage.storage().reference().child(path).child(filename)
         
         if let uploadData = UIImagePNGRepresentation(image) {
@@ -173,11 +187,49 @@ class NoahService {
 }
 
 
-// MARK: Challenge
 
 extension NoahService {
+
+    // MARK: Challenge
     
-    func createChallenge(_ challenge: Challenge, completion: @escaping (String) -> ()) {
+    //send push to enemy
+    func sendChallenge(to enemy: Personage, completion: @escaping () -> Void) {
+        guard let mypj = Session.shared.personage else {
+            return
+        }
+        
+        cancelChallenge(to: enemy, name: mypj.name, completion: completion)
+    }
+    
+    func cancelChallenge(to enemy: Personage, name: String = "", completion: @escaping () -> Void) {
+        
+        guard let enemyId = enemy.id else {
+            return
+        }
+        
+        
+        let ref = FIRDatabase.database().reference().child("personages").child(enemyId)
+        
+        let values = ["challengePending": name]
+        
+        ref.updateChildValues(values) { error, dataref in
+            
+            if let err = error {
+                print(err)
+                return
+            }
+            
+            completion()
+            
+        }
+        
+    }
+    
+    func acceptChallenge(to enemy: Personage, completion: @escaping (String) -> Void) {
+        
+    }
+    
+    func createChallenge(_ challenge: Challenge, enemy: Personage, completion: @escaping (String) -> Void) {
         
         guard let values = challenge.toJSON() else {
             return
@@ -193,11 +245,11 @@ extension NoahService {
             }
             
             completion(dataref.key)
-
+            
         }
     }
     
-    func observeSkills(challengeId: String, completion: @escaping (String) -> ()) {
+    func observeSkills(challengeId: String, completion: @escaping (String) -> Void) {
         FIRDatabase.database().reference().child("challenges").child(challengeId).child("skills").child("description").observe(.childChanged, with: { snapshot in
             
             if let json = snapshot.value as? [String: String], let skillname = json["description"] {
@@ -209,7 +261,7 @@ extension NoahService {
         })
     }
     
-    func activateSkill(_ skillName: String, challengeId: String, completion: @escaping (String) -> ()) {
+    func activateSkill(_ skillName: String, challengeId: String, completion: @escaping (String) -> Void) {
         let ref = FIRDatabase.database().reference().child("challenges").child(challengeId).child("skills")
         
         let values = ["description": skillName]
@@ -229,24 +281,26 @@ extension NoahService {
     
     func sendMessage(_ message: String, toId: String, completion: (() -> Void)?) {
         
-        if let fromId = FIRAuth.auth()?.currentUser?.uid {
-            let ref = FIRDatabase.database().reference().child("messages").childByAutoId()
+        guard let fromId = FIRAuth.auth()?.currentUser?.uid else {
+            return
+        }
+        
+        let ref = FIRDatabase.database().reference().child("messages").childByAutoId()
+        
+        let timestamp = NSNumber(value: Date().timeIntervalSince1970)
+        let values = ["fromId": fromId,
+                      "text": message,
+                      "toId": toId,
+                      "timestamp": timestamp] as [String : Any]
+        
+        ref.updateChildValues(values) { error, _ in
             
-            let timestamp = NSNumber(value: Date().timeIntervalSince1970)
-            let values = ["fromId": fromId,
-                          "text": message,
-                          "toId": toId,
-                          "timestamp": timestamp] as [String : Any]
-            
-            ref.updateChildValues(values) { error, _ in
-                
-                if let err = error {
-                    print(err)
-                    return
-                }
-                
-                completion?()
+            if let err = error {
+                print(err)
+                return
             }
+            
+            completion?()
         }
         
     }

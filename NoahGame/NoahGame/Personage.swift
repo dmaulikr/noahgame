@@ -10,6 +10,7 @@ import Gloss
 
 class Personage: GameEntity, Glossy {
     
+    var id: String?
     var name: String
     var health, energy: Int
     var level: Int

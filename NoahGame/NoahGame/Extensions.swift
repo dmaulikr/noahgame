@@ -48,3 +48,32 @@ extension UIImageView {
     }
     
 }
+
+extension UIViewController {
+
+    func receiveChallenge(_ enemyName: String) {
+        showAlert(title: "Challenge",
+                  message: "\(enemyName) has challenged you. Do you accept the challenge?", acceptHandler: {
+            print("acceptHandler")
+        }) {
+            print("cancelHandler")
+        }
+    }
+    
+    func showAlert(title: String, message: String, acceptHandler: (() -> Void)?, cancelHandler: (() -> Void)?) {
+    
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Accept", style: .destructive) { _ in
+            acceptHandler?()
+        })
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel) { _ in
+            cancelHandler?()
+        })
+        
+        self.present(alert, animated: true, completion: nil)
+        
+    }
+    
+}

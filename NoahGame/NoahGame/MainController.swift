@@ -9,7 +9,7 @@
 import UIKit
 import FirebaseAuth
 
-class MainController: UIViewController {
+class MainController: UIViewController, SessionDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,24 +18,31 @@ class MainController: UIViewController {
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(signOut))
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(newChallenge))
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        checkIfUserIsLoggedIn()
-    }
-    
-    func checkIfUserIsLoggedIn() {
+        //checkIfUserIsLoggedIn
         guard let uid = FIRAuth.auth()?.currentUser?.uid else {
+            Session.shared.delegate = nil
+            
             // Fix error: Unbalanced calls to begin/end appearance transitions for nav
             perform(#selector(signOut), with: nil, afterDelay: 0)
+            return
+        }
+        
+        if let user = Session.shared.user {
+            title = user.personage?.name
+            Session.shared.delegate = self
             return
         }
         
         NoahService.shared.signIn(uid) { user in
             Session.shared.user = user
             self.title = user.personage?.name
+            Session.shared.delegate = self
         }
     }
     
@@ -52,19 +59,19 @@ class MainController: UIViewController {
     }
     
     func showGameController(withPersonage personage: Personage) {
-        guard let mypj = Session.shared.personage else {
-            return
-        }
-        
-        let challenge = Challenge(personage: mypj, enemy: personage)
-        
-        NoahService.shared.createChallenge(challenge) { id in
-            challenge.id = id
-            
-            let controller = ChallengeController()
-            controller.challenge = challenge
-            self.navigationController?.pushViewController(controller, animated: true)
-        }
+//        guard let mypj = Session.shared.personage else {
+//            return
+//        }
+//        
+//        let challenge = Challenge(personage1: mypj, personage2: personage)
+//
+//        NoahService.shared.createChallenge(challenge) { id in
+//            challenge.id = id
+//            
+//            let controller = ChallengeController()
+//            controller.challenge = challenge
+//            self.navigationController?.pushViewController(controller, animated: true)
+//        }
     }
     
     func signOut() {
@@ -82,3 +89,4 @@ class MainController: UIViewController {
     }
     
 }
+

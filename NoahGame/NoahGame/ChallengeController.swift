@@ -74,7 +74,7 @@ class ChallengeController: UIViewController {
     }
     
     func setUpPersonages() {
-        if let pj1 = challenge?.personage, let pj2 = challenge?.enemy {
+        if let pj1 = challenge?.personage1, let pj2 = challenge?.personage2 {
             username1.text = "\(pj1.name) h:\(pj1.health) e:\(pj1.energy)"
             username2.text = "\(pj2.name) h:\(pj2.health) e:\(pj2.energy)"
         }

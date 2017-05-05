@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NewChallengeController: UITableViewController {
+class NewChallengeController: UITableViewController, SessionDelegate {
 
     let cellId = "cellId"
     var personages = [Personage]()
@@ -52,6 +52,10 @@ class NewChallengeController: UITableViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        Session.shared.delegate = self
+    }
     
     // MARK: - Table view data source
 
@@ -72,10 +76,30 @@ class NewChallengeController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        dismiss(animated: true) { 
-            let personage = self.personages[indexPath.row]
-            self.source?.showGameController(withPersonage: personage)
+        
+        let enemy = personages[indexPath.row]
+        
+        NoahService.shared.sendChallenge(to: enemy) {
+            self.showWaitingAlert(enemy: enemy)
         }
+        
+        self.tableView.deselectRow(at: indexPath, animated: true)
+        
+//        dismiss(animated: true) { 
+//            let personage = self.personages[indexPath.row]
+//            self.source?.showGameController(withPersonage: personage)
+//        }
+    }
+    
+    private func showWaitingAlert(enemy: Personage) {
+        let alert = UIAlertController(title: "Challenge",
+                                      message: "Waiting that \(enemy.name) will accept the challenge.",
+                                      preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel) { _ in
+            NoahService.shared.cancelChallenge(to: enemy) { }
+        })
+        
+        self.present(alert, animated: true, completion: nil)
     }
 
 }

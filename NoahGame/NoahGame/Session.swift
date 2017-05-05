@@ -6,6 +6,11 @@
 //  Copyright © 2017 francarfox. All rights reserved.
 //
 
+protocol SessionDelegate {
+    func receiveChallenge(_ enemyName: String)
+}
+
+
 class Session {
     static let shared = Session()
     var user: User?
@@ -16,5 +21,11 @@ class Session {
         }
     }
     
+    var delegate: SessionDelegate?
+    
     private init() { }
+    
+    func receiveChallenge(_ enemyName: String) {
+        delegate?.receiveChallenge(enemyName)
+    }
 }
