@@ -9,7 +9,7 @@
 import UIKit
 import FirebaseAuth
 
-class MainController: UIViewController, SessionDelegate {
+class MainController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,22 +58,6 @@ class MainController: UIViewController, SessionDelegate {
         }
     }
     
-    func showGameController(withPersonage personage: Personage) {
-//        guard let mypj = Session.shared.personage else {
-//            return
-//        }
-//        
-//        let challenge = Challenge(personage1: mypj, personage2: personage)
-//
-//        NoahService.shared.createChallenge(challenge) { id in
-//            challenge.id = id
-//            
-//            let controller = ChallengeController()
-//            controller.challenge = challenge
-//            self.navigationController?.pushViewController(controller, animated: true)
-//        }
-    }
-    
     func signOut() {
         
         do {
@@ -86,6 +70,17 @@ class MainController: UIViewController, SessionDelegate {
         let controller = LoginController()
         present(controller, animated: true, completion: nil)
         
+    }
+    
+}
+
+extension MainController: SessionDelegate {
+    
+    func startChallenge(_ challenge: Challenge) {
+        let controller = ChallengeController()
+        controller.challenge = challenge
+        
+        self.navigationController?.pushViewController(controller, animated: true)
     }
     
 }

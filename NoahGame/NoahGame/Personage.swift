@@ -24,6 +24,7 @@ class Personage: GameEntity, Glossy {
         }
         
         self.name = name
+        id = "id" <~~ json
         level = "level" <~~ json ?? 1
         health = 100
         energy = 100
@@ -31,6 +32,7 @@ class Personage: GameEntity, Glossy {
     
     func toJSON() -> JSON? {
         return jsonify([
+            "id" ~~> id,
             "name" ~~> name,
             "level" ~~> level
             ])

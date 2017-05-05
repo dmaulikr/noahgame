@@ -58,16 +58,38 @@ class NoahService {
                     if let json = snapshot.value as? [String: Any], let personage = Personage(json: json) {
                         ref.removeObserver(withHandle: handle)
                         
+                        personage.id = snapshot.key
                         user.personage = personage
                         completion(user)
                     }
                     
                 })
                 
+                //MARK: receive challenges
+                ref.observe(.childAdded , with: { snapshot in
+                    
+                    if let json = snapshot.value as? [String: Any], let enemy = Personage(json: json) {
+                        Session.shared.receiveChallenge(of: enemy)
+                    }
+                    else
+                    if "currentChallengeId" == snapshot.key, let challengeId = snapshot.value as? String {
+                     
+                        self.getChallenge(withId: challengeId) { challenge in
+                            Session.shared.startChallenge(challenge)
+                        }
+                        
+                    }
+                    
+                })
+                
                 ref.observe(.childChanged , with: { snapshot in
                     
-                    if let value = snapshot.value as? String, !value.isEmpty {
-                        Session.shared.receiveChallenge(value)
+                    if "currentChallengeId" == snapshot.key, let challengeId = snapshot.value as? String {
+                        
+                        self.getChallenge(withId: challengeId) { challenge in
+                            Session.shared.startChallenge(challenge)
+                        }
+                            
                     }
                     
                 })
@@ -198,38 +220,86 @@ extension NoahService {
             return
         }
         
-        cancelChallenge(to: enemy, name: mypj.name, completion: completion)
+        cancelChallenge(to: enemy, mypersonage: mypj, completion: completion)
     }
     
-    func cancelChallenge(to enemy: Personage, name: String = "", completion: @escaping () -> Void) {
+    func cancelChallenge(to enemy: Personage, mypersonage: Personage? = nil, completion: @escaping () -> Void) {
         
         guard let enemyId = enemy.id else {
             return
         }
         
         
-        let ref = FIRDatabase.database().reference().child("personages").child(enemyId)
+        let ref = FIRDatabase.database().reference().child("personages").child(enemyId).child("enemyPending")
         
-        let values = ["challengePending": name]
+        if let values = mypersonage?.toJSON() {
         
-        ref.updateChildValues(values) { error, dataref in
-            
-            if let err = error {
-                print(err)
-                return
+            ref.updateChildValues(values) { error, dataref in
+                self.handlerChallenge(error: error, completion: completion)
             }
             
-            completion()
+        } else {
+         
+            ref.removeValue { error, dataref in
+                self.handlerChallenge(error: error, completion: completion)
+            }
             
         }
         
     }
     
-    func acceptChallenge(to enemy: Personage, completion: @escaping (String) -> Void) {
+    private func handlerChallenge(error: Error?, completion: () -> Void) {
+        if let err = error {
+            print(err)
+            return
+        }
+        
+        completion()
+    }
+    
+    func acceptChallenge(to enemy: Personage, completion: @escaping (Challenge) -> Void) {
+        guard let mypj = Session.shared.personage, let myId = mypj.id, let enemyId = enemy.id else {
+            return
+        }
+        
+        cancelChallenge(to: mypj) {
+        
+            let challenge = Challenge(personage1: enemy, personage2: mypj)
+            
+            self.createChallenge(challenge) { id in
+                
+                challenge.id = id
+                
+                
+                //save currentChallengeId
+                let ref = FIRDatabase.database().reference().child("personages")
+                
+                let values = ["currentChallengeId": id]
+                
+                ref.child(myId).updateChildValues(values) { error, _ in
+                    if let err = error {
+                        print(err)
+                        return
+                    }
+                    
+                    ref.child(enemyId).updateChildValues(values) { error, _ in
+                        if let err = error {
+                            print(err)
+                            return
+                        }
+                        
+                        completion(challenge)
+                    }
+                    
+                }
+                
+            }
+        
+        }
         
     }
     
-    func createChallenge(_ challenge: Challenge, enemy: Personage, completion: @escaping (String) -> Void) {
+    func createChallenge(_ challenge: Challenge, completion: @escaping (String) -> Void) {
         
         guard let values = challenge.toJSON() else {
             return
@@ -248,6 +318,26 @@ extension NoahService {
             
         }
     }
+    
+    func getChallenge(withId id: String, completion: @escaping (Challenge) -> Void) {
+        
+        let ref = FIRDatabase.database().reference().child("challenges").child(id)
+            
+        ref.observe(.value, with: { snapshot in
+            
+            if let json = snapshot.value as? [String: Any], let challenge = Challenge(json: json) {
+                challenge.id = id
+                completion(challenge)
+                
+                ref.removeAllObservers()
+            }
+            
+        })
+        
+    }
+    
+    
+    // MARK: Skills
     
     func observeSkills(challengeId: String, completion: @escaping (String) -> Void) {
         FIRDatabase.database().reference().child("challenges").child(challengeId).child("skills").child("description").observe(.childChanged, with: { snapshot in

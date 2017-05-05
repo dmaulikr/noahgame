@@ -8,11 +8,11 @@
 
 import UIKit
 
-class NewChallengeController: UITableViewController, SessionDelegate {
+class NewChallengeController: UITableViewController {
 
     let cellId = "cellId"
     var personages = [Personage]()
-    var source: MainController?
+    var source: SessionDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -85,10 +85,6 @@ class NewChallengeController: UITableViewController, SessionDelegate {
         
         self.tableView.deselectRow(at: indexPath, animated: true)
         
-//        dismiss(animated: true) { 
-//            let personage = self.personages[indexPath.row]
-//            self.source?.showGameController(withPersonage: personage)
-//        }
     }
     
     private func showWaitingAlert(enemy: Personage) {
@@ -151,6 +147,18 @@ class PersonageCell: UITableViewCell {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+}
+
+extension NewChallengeController: SessionDelegate {
+    
+    func startChallenge(_ challenge: Challenge) {
+        dismiss(animated: true) {
+            self.dismiss(animated: true) {
+                self.source?.startChallenge(challenge)
+            }
+        }
     }
     
 }

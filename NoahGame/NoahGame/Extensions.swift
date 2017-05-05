@@ -51,13 +51,17 @@ extension UIImageView {
 
 extension UIViewController {
 
-    func receiveChallenge(_ enemyName: String) {
-        showAlert(title: "Challenge",
-                  message: "\(enemyName) has challenged you. Do you accept the challenge?", acceptHandler: {
-            print("acceptHandler")
-        }) {
-            print("cancelHandler")
-        }
+    func receiveChallenge(of enemy: Personage, completion: @escaping () -> Void) {
+        let message = "\(enemy.name) has challenged you. Do you accept the challenge?"
+        
+        showAlert(title: "Challenge", message: message, acceptHandler: {
+            
+            NoahService.shared.acceptChallenge(to: enemy) { challenge in
+                Session.shared.challenge = challenge
+                completion()
+            }
+            
+        }, cancelHandler: nil)
     }
     
     func showAlert(title: String, message: String, acceptHandler: (() -> Void)?, cancelHandler: (() -> Void)?) {

@@ -7,7 +7,8 @@
 //
 
 protocol SessionDelegate {
-    func receiveChallenge(_ enemyName: String)
+    func receiveChallenge(of enemy: Personage, completion: @escaping () -> Void)
+    func startChallenge(_ challenge: Challenge)
 }
 
 
@@ -21,11 +22,23 @@ class Session {
         }
     }
     
+    var challenge: Challenge?
+    
     var delegate: SessionDelegate?
     
     private init() { }
     
-    func receiveChallenge(_ enemyName: String) {
-        delegate?.receiveChallenge(enemyName)
+    func receiveChallenge(of enemy: Personage) {
+        delegate?.receiveChallenge(of: enemy) {
+            
+            if let ch = self.challenge {
+                self.delegate?.startChallenge(ch)
+            }
+        }
     }
+    
+    func startChallenge(_ challenge: Challenge) {
+        delegate?.startChallenge(challenge)
+    }
+    
 }
