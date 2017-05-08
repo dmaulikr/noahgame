@@ -2,7 +2,7 @@
 //  Extensions.swift
 //  NoahGame
 //
-//  Created by Technorides on 4/18/17.
+//  Created by Franklin Fox on 4/18/17.
 //  Copyright © 2017 francarfox. All rights reserved.
 //
 

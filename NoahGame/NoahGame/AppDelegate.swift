@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  NoahGame
 //
-//  Created by Technorides on 4/16/17.
+//  Created by Franklin Fox on 4/16/17.
 //  Copyright © 2017 francarfox. All rights reserved.
 //
 
