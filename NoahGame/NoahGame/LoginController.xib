@@ -11,10 +11,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginController" customModule="NoahGame" customModuleProvider="target">
             <connections>
-                <outlet property="emailTextField" destination="l7c-xI-KFP" id="RY6-ju-WJf"/>
-                <outlet property="nameTextField" destination="dTG-Id-KSV" id="rHo-Sq-b9T"/>
-                <outlet property="passwordTextField" destination="Xca-9C-QOB" id="svT-R6-b3X"/>
-                <outlet property="profileImageView" destination="nbE-S8-mnm" id="Gyi-eD-5TX"/>
+                <outlet property="email" destination="l7c-xI-KFP" id="brv-Mw-4Ps"/>
+                <outlet property="name" destination="dTG-Id-KSV" id="3hJ-H3-YR0"/>
+                <outlet property="password" destination="Xca-9C-QOB" id="gVj-Ph-N3n"/>
+                <outlet property="profileImage" destination="nbE-S8-mnm" id="0yf-JD-6Lq"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

@@ -10,45 +10,44 @@ import UIKit
 
 class LoginController: UIViewController {
 
-    @IBOutlet var profileImageView: UIImageView!
-    @IBOutlet var nameTextField: UITextField!
-    @IBOutlet var emailTextField: UITextField!
-    @IBOutlet var passwordTextField: UITextField!
+    @IBOutlet var profileImage: UIImageView!
+    @IBOutlet var name: UITextField!
+    @IBOutlet var email: UITextField!
+    @IBOutlet var password: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        profileImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(selectProfileImageView)))
-        profileImageView.isUserInteractionEnabled = true
+        profileImage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(selectProfileImage)))
+        profileImage.isUserInteractionEnabled = true
     }
 
     @IBAction func signIn(_ sender: Any) {
-        guard let email = emailTextField.text,
-            let pass = passwordTextField.text else {
+        guard let emailt = email.text, let pass = password.text else {
             print("Form is not valid")
             return
         }
         
-        NoahService.shared.signIn(email, password: pass) { user in
-            self.initSessionWith(user: user)
+        NoahService.shared.signIn(emailt, password: pass) { user in
+            self.initSession(withUser: user)
         }
     }
     
     @IBAction func signUp(_ sender: Any) {
-        guard let name = nameTextField.text,
-            let email = emailTextField.text,
-            let pass = passwordTextField.text,
-            let profileImage = profileImageView.image else {
+        guard let namet = name.text,
+            let emailt = email.text,
+            let pass = password.text,
+            let image = profileImage.image else {
             print("Form is not valid")
             return
         }
             
-        NoahService.shared.signUp(name, email: email, password: pass, profileImage: profileImage) { user in
-            self.initSessionWith(user: user)
+        NoahService.shared.signUp(namet, email: emailt, password: pass, profileImage: image) { user in
+            self.initSession(withUser: user)
         }
     }
     
-    func initSessionWith(user: User) {
+    func initSession(withUser user: User) {
         Session.shared.user = user
         self.dismiss(animated: true, completion: nil)
     }
@@ -57,7 +56,7 @@ class LoginController: UIViewController {
 
 extension LoginController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    func selectProfileImageView() {
+    func selectProfileImage() {
         let picker = UIImagePickerController()
         
         picker.delegate = self
@@ -77,7 +76,7 @@ extension LoginController: UIImagePickerControllerDelegate, UINavigationControll
         }
         
         if let selectedImage = selectedImageFromPicker {
-            profileImageView.image = selectedImage
+            profileImage.image = selectedImage
         }
         
         dismiss(animated: true, completion: nil)
